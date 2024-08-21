@@ -45,7 +45,8 @@ async def create_connection():
             host='172.105.61.104',
             user='root',
             password='MahitNahi@12',
-            database='stocksync'
+            database='stocksync',
+            auth_plugin='mysql_native_password'
         )
         if connection.is_connected():
             return connection
