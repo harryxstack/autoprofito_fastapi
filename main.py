@@ -215,7 +215,7 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
 
         response = await asyncio.get_event_loop().run_in_executor(None, smartApi.placeOrder, order_params)
         if not response or 'orderid' not in response:
-            logger.error(f"{get_current_time_formatted()} - Failed to place order for {tradingsymbol}: {response}")
+            #logger.error(f"{get_current_time_formatted()} - Failed to place order for {tradingsymbol}: {response}")
             return False
         
         buy_order_id = response.get("orderid")
