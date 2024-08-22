@@ -68,8 +68,6 @@ async def fetch_users(teacher_id: int):
         """
         cursor.execute(query, (teacher_id, teacher_id))
         result = cursor.fetchall()
-        cursor.close()  # Close the cursor after fetching
-
         return result
     finally:
         if connection.is_connected():
