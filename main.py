@@ -68,6 +68,8 @@ async def fetch_users(teacher_id: int):
         """
         cursor.execute(query, (teacher_id, teacher_id))
         result = cursor.fetchall()
+        cursor.close()  # Close the cursor after fetching
+
         return result
     finally:
         if connection.is_connected():
@@ -158,7 +160,7 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
     broker_qr_totp_token = broker_credentials['qr_totp_token']
     api_key = broker_credentials['api_key']
 
-    lot_size_limit = int(user['lot_size_limit'])
+    lot_size_limit = int(user['lot_size_limit'])                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
     tradingsymbol = order_data["buySymbol"]
     symboltoken = order_data["buyToken"]
     lotsize = order_data["lotsize"]

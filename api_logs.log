@@ -15,3 +15,567 @@
 2024-08-21 21:32:08,724 - main - ERROR - 2024-08-21 21:32:08 - Error placing exit order for BANKNIFTY21AUG2451500PE: Couldn't parse the JSON response received from the server: b''
 2024-08-21 21:32:08,948 - main - INFO - 2024-08-21 21:32:08 - Session terminated for user 160
 2024-08-21 21:32:08,949 - main - INFO - 2024-08-21 21:32:08 - Exit orders processed for all users
+2024-08-22 12:22:44,270 - main - ERROR - 2024-08-22 12:22:44 - Error in placing orders: 404: No active users found
+2024-08-22 12:25:00,175 - main - ERROR - 2024-08-22 12:25:00 - Token not found for instrument NIFTY14AUG2425850CE for user 157
+2024-08-22 12:25:00,182 - main - INFO - 2024-08-22 12:25:00 - Orders placed for user Harry with instruments: []
+2024-08-22 12:25:00,278 - main - ERROR - 2024-08-22 12:25:00 - Token not found for instrument NIFTY14AUG2425850CE for user 160
+2024-08-22 12:25:00,287 - main - INFO - 2024-08-22 12:25:00 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 12:25:00,366 - main - ERROR - 2024-08-22 12:25:00 - Token not found for instrument NIFTY14AUG2425850CE for user 161
+2024-08-22 12:25:00,372 - main - INFO - 2024-08-22 12:25:00 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 12:25:00,448 - main - ERROR - 2024-08-22 12:25:00 - Token not found for instrument NIFTY14AUG2425850CE for user 282
+2024-08-22 12:25:00,458 - main - INFO - 2024-08-22 12:25:00 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 12:26:54,410 - main - INFO - 2024-08-22 12:26:54 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 12:26:56,658 - main - INFO - 2024-08-22 12:26:56 - Orders placed for user Harry with instruments: []
+2024-08-22 12:26:56,737 - main - INFO - 2024-08-22 12:26:56 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 12:26:58,518 - main - INFO - 2024-08-22 12:26:58 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 12:26:58,605 - main - INFO - 2024-08-22 12:26:58 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 12:27:00,484 - main - INFO - 2024-08-22 12:27:00 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 12:27:00,567 - main - INFO - 2024-08-22 12:27:00 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 12:27:02,336 - main - INFO - 2024-08-22 12:27:02 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 12:34:29,600 - main - INFO - 2024-08-22 12:34:29 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 12:34:32,067 - main - INFO - 2024-08-22 12:34:32 - Orders placed for user Harry with instruments: []
+2024-08-22 12:34:32,176 - main - INFO - 2024-08-22 12:34:32 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 12:34:34,443 - main - INFO - 2024-08-22 12:34:34 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 12:34:34,515 - main - INFO - 2024-08-22 12:34:34 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 12:34:36,323 - main - INFO - 2024-08-22 12:34:36 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 12:34:36,389 - main - INFO - 2024-08-22 12:34:36 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 12:34:38,770 - main - INFO - 2024-08-22 12:34:38 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 12:44:57,623 - main - INFO - 2024-08-22 12:44:57 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 12:44:59,690 - main - INFO - 2024-08-22 12:44:59 - Orders placed for user Harry with instruments: []
+2024-08-22 12:44:59,762 - main - INFO - 2024-08-22 12:44:59 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 12:45:01,501 - main - INFO - 2024-08-22 12:45:01 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 12:45:01,582 - main - INFO - 2024-08-22 12:45:01 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 12:45:08,474 - main - INFO - 2024-08-22 12:45:08 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 12:45:08,853 - main - INFO - 2024-08-22 12:45:08 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 12:45:13,715 - main - INFO - 2024-08-22 12:45:13 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 12:45:57,192 - main - INFO - 2024-08-22 12:45:57 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 12:45:58,892 - main - INFO - 2024-08-22 12:45:58 - Orders placed for user Harry with instruments: []
+2024-08-22 12:45:58,979 - main - INFO - 2024-08-22 12:45:58 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 12:46:00,711 - main - INFO - 2024-08-22 12:46:00 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 12:46:00,794 - main - INFO - 2024-08-22 12:46:00 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 12:46:02,623 - main - INFO - 2024-08-22 12:46:02 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 12:46:02,703 - main - INFO - 2024-08-22 12:46:02 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 12:46:05,360 - main - INFO - 2024-08-22 12:46:05 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 13:00:00,497 - main - INFO - 2024-08-22 13:00:00 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 13:00:19,492 - main - INFO - 2024-08-22 13:00:19 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 13:00:23,427 - main - INFO - 2024-08-22 13:00:23 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 13:00:43,858 - main - INFO - 2024-08-22 13:00:43 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 13:00:48,227 - main - INFO - 2024-08-22 13:00:48 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 13:00:52,462 - main - INFO - 2024-08-22 13:00:52 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 13:00:57,043 - main - INFO - 2024-08-22 13:00:57 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 13:01:01,306 - main - INFO - 2024-08-22 13:01:01 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 13:01:06,861 - main - INFO - 2024-08-22 13:01:06 - Order data of BANKNIFTY28AUG2446400CE for user Harry
+2024-08-22 13:01:11,469 - main - INFO - 2024-08-22 13:01:11 - Order data of FINNIFTY27AUG2419700CE for user Harry
+2024-08-22 13:01:35,880 - main - INFO - 2024-08-22 13:01:35 - Order data of FINNIFTY27AUG2423800PE for user Harry
+2024-08-22 13:01:42,219 - main - INFO - 2024-08-22 13:01:42 - Order data of FINNIFTY27AUG2422900PE for user Harry
+2024-08-22 13:01:48,049 - main - INFO - 2024-08-22 13:01:48 - Order data of FINNIFTY27AUG2418900CE for user Harry
+2024-08-22 13:01:55,819 - main - INFO - 2024-08-22 13:01:55 - Orders placed for user Harry with instruments: []
+2024-08-22 13:01:56,523 - main - INFO - 2024-08-22 13:01:56 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 13:02:03,166 - main - INFO - 2024-08-22 13:02:03 - Order data of BANKNIFTY28AUG2453200PE for user aruna shinde
+2024-08-22 13:02:59,088 - main - INFO - 2024-08-22 13:02:59 - Order data of BANKNIFTY28AUG2444400CE for user aruna shinde
+2024-08-22 13:03:08,701 - main - INFO - 2024-08-22 13:03:08 - Order data of BANKNIFTY28AUG2452700CE for user aruna shinde
+2024-08-22 13:03:13,079 - main - INFO - 2024-08-22 13:03:13 - Order data of BANKNIFTY28AUG2458500CE for user aruna shinde
+2024-08-22 13:03:17,531 - main - INFO - 2024-08-22 13:03:17 - Order data of BANKNIFTY28AUG2446400CE for user aruna shinde
+2024-08-22 13:03:23,184 - main - INFO - 2024-08-22 13:03:23 - Order data of FINNIFTY27AUG2419700CE for user aruna shinde
+2024-08-22 13:03:27,817 - main - INFO - 2024-08-22 13:03:27 - Order data of FINNIFTY27AUG2423800PE for user aruna shinde
+2024-08-22 13:03:32,768 - main - INFO - 2024-08-22 13:03:32 - Order data of FINNIFTY27AUG2422900PE for user aruna shinde
+2024-08-22 13:03:37,090 - main - INFO - 2024-08-22 13:03:37 - Order data of FINNIFTY27AUG2418900CE for user aruna shinde
+2024-08-22 13:03:40,630 - main - INFO - 2024-08-22 13:03:40 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 13:03:41,336 - main - INFO - 2024-08-22 13:03:41 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 13:03:45,947 - main - INFO - 2024-08-22 13:03:45 - Order data of BANKNIFTY28AUG2453200PE for user Prasanna Deshmukh
+2024-08-22 13:03:50,216 - main - INFO - 2024-08-22 13:03:50 - Order data of BANKNIFTY28AUG2444400CE for user Prasanna Deshmukh
+2024-08-22 13:03:55,065 - main - INFO - 2024-08-22 13:03:55 - Order data of BANKNIFTY28AUG2452700CE for user Prasanna Deshmukh
+2024-08-22 13:03:59,519 - main - INFO - 2024-08-22 13:03:59 - Order data of BANKNIFTY28AUG2458500CE for user Prasanna Deshmukh
+2024-08-22 13:04:03,648 - main - INFO - 2024-08-22 13:04:03 - Order data of BANKNIFTY28AUG2446400CE for user Prasanna Deshmukh
+2024-08-22 13:04:07,643 - main - INFO - 2024-08-22 13:04:07 - Order data of FINNIFTY27AUG2419700CE for user Prasanna Deshmukh
+2024-08-22 13:04:11,446 - main - INFO - 2024-08-22 13:04:11 - Order data of FINNIFTY27AUG2423800PE for user Prasanna Deshmukh
+2024-08-22 13:04:15,707 - main - INFO - 2024-08-22 13:04:15 - Order data of FINNIFTY27AUG2422900PE for user Prasanna Deshmukh
+2024-08-22 13:04:19,773 - main - INFO - 2024-08-22 13:04:19 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-22 13:04:23,223 - main - INFO - 2024-08-22 13:04:23 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 13:04:23,819 - main - INFO - 2024-08-22 13:04:23 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 13:04:28,299 - main - INFO - 2024-08-22 13:04:28 - Order data of BANKNIFTY28AUG2453200PE for user Viraj Kadam
+2024-08-22 13:04:32,421 - main - INFO - 2024-08-22 13:04:32 - Order data of BANKNIFTY28AUG2444400CE for user Viraj Kadam
+2024-08-22 13:04:36,906 - main - INFO - 2024-08-22 13:04:36 - Order data of BANKNIFTY28AUG2452700CE for user Viraj Kadam
+2024-08-22 13:04:41,513 - main - INFO - 2024-08-22 13:04:41 - Order data of BANKNIFTY28AUG2458500CE for user Viraj Kadam
+2024-08-22 13:04:45,867 - main - INFO - 2024-08-22 13:04:45 - Order data of BANKNIFTY28AUG2446400CE for user Viraj Kadam
+2024-08-22 13:04:50,502 - main - INFO - 2024-08-22 13:04:50 - Order data of FINNIFTY27AUG2419700CE for user Viraj Kadam
+2024-08-22 13:04:54,603 - main - INFO - 2024-08-22 13:04:54 - Order data of FINNIFTY27AUG2423800PE for user Viraj Kadam
+2024-08-22 13:04:58,986 - main - INFO - 2024-08-22 13:04:58 - Order data of FINNIFTY27AUG2422900PE for user Viraj Kadam
+2024-08-22 13:05:40,468 - main - INFO - 2024-08-22 13:05:40 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 13:05:44,984 - main - INFO - 2024-08-22 13:05:44 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 13:05:50,622 - main - INFO - 2024-08-22 13:05:50 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 13:05:54,847 - main - INFO - 2024-08-22 13:05:54 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 13:05:59,169 - main - INFO - 2024-08-22 13:05:59 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 13:06:03,550 - main - INFO - 2024-08-22 13:06:03 - Order data of BANKNIFTY28AUG2446400CE for user Harry
+2024-08-22 13:06:20,819 - main - ERROR - 2024-08-22 13:06:20 - Error: 1159 (08S01): Got timeout reading communication packets
+2024-08-22 13:06:20,819 - main - ERROR - 2024-08-22 13:06:20 - Database connection failed
+2024-08-22 13:06:36,075 - main - INFO - 2024-08-22 13:06:36 - Order data of FINNIFTY27AUG2423800PE for user Harry
+2024-08-22 13:06:54,139 - main - INFO - 2024-08-22 13:06:54 - Order data of FINNIFTY27AUG2422900PE for user Harry
+2024-08-22 13:06:57,998 - main - INFO - 2024-08-22 13:06:57 - Order data of FINNIFTY27AUG2418900CE for user Harry
+2024-08-22 13:07:01,207 - main - INFO - 2024-08-22 13:07:01 - Orders placed for user Harry with instruments: []
+2024-08-22 13:07:01,925 - main - INFO - 2024-08-22 13:07:01 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 13:07:05,872 - main - INFO - 2024-08-22 13:07:05 - Order data of BANKNIFTY28AUG2453200PE for user aruna shinde
+2024-08-22 13:07:10,111 - main - INFO - 2024-08-22 13:07:10 - Order data of BANKNIFTY28AUG2444400CE for user aruna shinde
+2024-08-22 13:07:14,156 - main - INFO - 2024-08-22 13:07:14 - Order data of BANKNIFTY28AUG2452700CE for user aruna shinde
+2024-08-22 13:07:18,646 - main - INFO - 2024-08-22 13:07:18 - Order data of BANKNIFTY28AUG2458500CE for user aruna shinde
+2024-08-22 13:07:23,961 - main - INFO - 2024-08-22 13:07:23 - Order data of BANKNIFTY28AUG2446400CE for user aruna shinde
+2024-08-22 13:07:27,950 - main - INFO - 2024-08-22 13:07:27 - Order data of FINNIFTY27AUG2419700CE for user aruna shinde
+2024-08-22 13:07:31,872 - main - INFO - 2024-08-22 13:07:31 - Order data of FINNIFTY27AUG2423800PE for user aruna shinde
+2024-08-22 13:07:35,482 - main - INFO - 2024-08-22 13:07:35 - Order data of FINNIFTY27AUG2422900PE for user aruna shinde
+2024-08-22 13:07:39,263 - main - INFO - 2024-08-22 13:07:39 - Order data of FINNIFTY27AUG2418900CE for user aruna shinde
+2024-08-22 13:07:43,111 - main - INFO - 2024-08-22 13:07:43 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 13:07:43,924 - main - INFO - 2024-08-22 13:07:43 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 13:07:48,519 - main - INFO - 2024-08-22 13:07:48 - Order data of BANKNIFTY28AUG2453200PE for user Prasanna Deshmukh
+2024-08-22 13:07:52,507 - main - INFO - 2024-08-22 13:07:52 - Order data of BANKNIFTY28AUG2444400CE for user Prasanna Deshmukh
+2024-08-22 13:07:56,557 - main - INFO - 2024-08-22 13:07:56 - Order data of BANKNIFTY28AUG2452700CE for user Prasanna Deshmukh
+2024-08-22 13:08:01,183 - main - INFO - 2024-08-22 13:08:01 - Order data of BANKNIFTY28AUG2458500CE for user Prasanna Deshmukh
+2024-08-22 13:08:06,431 - main - INFO - 2024-08-22 13:08:06 - Order data of BANKNIFTY28AUG2446400CE for user Prasanna Deshmukh
+2024-08-22 13:08:10,688 - main - INFO - 2024-08-22 13:08:10 - Order data of FINNIFTY27AUG2419700CE for user Prasanna Deshmukh
+2024-08-22 13:08:14,596 - main - INFO - 2024-08-22 13:08:14 - Order data of FINNIFTY27AUG2423800PE for user Prasanna Deshmukh
+2024-08-22 13:08:18,492 - main - INFO - 2024-08-22 13:08:18 - Order data of FINNIFTY27AUG2422900PE for user Prasanna Deshmukh
+2024-08-22 13:08:22,194 - main - INFO - 2024-08-22 13:08:22 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-22 13:08:32,398 - main - INFO - 2024-08-22 13:08:32 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 13:08:32,974 - main - INFO - 2024-08-22 13:08:32 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 13:08:36,847 - main - INFO - 2024-08-22 13:08:36 - Order data of BANKNIFTY28AUG2453200PE for user Viraj Kadam
+2024-08-22 13:08:40,722 - main - INFO - 2024-08-22 13:08:40 - Order data of BANKNIFTY28AUG2444400CE for user Viraj Kadam
+2024-08-22 13:08:44,694 - main - INFO - 2024-08-22 13:08:44 - Order data of BANKNIFTY28AUG2452700CE for user Viraj Kadam
+2024-08-22 13:08:48,397 - main - INFO - 2024-08-22 13:08:48 - Order data of BANKNIFTY28AUG2458500CE for user Viraj Kadam
+2024-08-22 13:08:52,389 - main - INFO - 2024-08-22 13:08:52 - Order data of BANKNIFTY28AUG2446400CE for user Viraj Kadam
+2024-08-22 13:08:56,335 - main - INFO - 2024-08-22 13:08:56 - Order data of FINNIFTY27AUG2419700CE for user Viraj Kadam
+2024-08-22 13:09:00,203 - main - INFO - 2024-08-22 13:09:00 - Order data of FINNIFTY27AUG2423800PE for user Viraj Kadam
+2024-08-22 13:09:04,239 - main - INFO - 2024-08-22 13:09:04 - Order data of FINNIFTY27AUG2422900PE for user Viraj Kadam
+2024-08-22 13:09:08,391 - main - INFO - 2024-08-22 13:09:08 - Order data of FINNIFTY27AUG2418900CE for user Viraj Kadam
+2024-08-22 13:09:11,764 - main - INFO - 2024-08-22 13:09:11 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 13:17:01,543 - main - INFO - 2024-08-22 13:17:01 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 13:17:06,452 - main - INFO - 2024-08-22 13:17:06 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 13:17:10,268 - main - INFO - 2024-08-22 13:17:10 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 13:17:12,572 - main - INFO - 2024-08-22 13:17:12 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 13:17:15,146 - main - INFO - 2024-08-22 13:17:15 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 13:17:17,721 - main - INFO - 2024-08-22 13:17:17 - Order data of BANKNIFTY28AUG2446400CE for user Harry
+2024-08-22 13:17:20,646 - main - INFO - 2024-08-22 13:17:20 - Order data of FINNIFTY27AUG2419700CE for user Harry
+2024-08-22 13:17:24,821 - main - INFO - 2024-08-22 13:17:24 - Order data of FINNIFTY27AUG2423800PE for user Harry
+2024-08-22 13:17:29,483 - main - INFO - 2024-08-22 13:17:29 - Order data of FINNIFTY27AUG2422900PE for user Harry
+2024-08-22 13:17:39,534 - main - INFO - 2024-08-22 13:17:39 - Order data of FINNIFTY27AUG2418900CE for user Harry
+2024-08-22 13:17:48,815 - main - INFO - 2024-08-22 13:17:48 - Orders placed for user Harry with instruments: []
+2024-08-22 13:17:49,538 - main - INFO - 2024-08-22 13:17:49 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 13:17:58,555 - main - INFO - 2024-08-22 13:17:58 - Order data of BANKNIFTY28AUG2453200PE for user aruna shinde
+2024-08-22 13:18:08,654 - main - INFO - 2024-08-22 13:18:08 - Order data of BANKNIFTY28AUG2444400CE for user aruna shinde
+2024-08-22 13:18:17,966 - main - INFO - 2024-08-22 13:18:17 - Order data of BANKNIFTY28AUG2452700CE for user aruna shinde
+2024-08-22 13:18:29,050 - main - INFO - 2024-08-22 13:18:29 - Order data of BANKNIFTY28AUG2458500CE for user aruna shinde
+2024-08-22 13:18:37,209 - main - INFO - 2024-08-22 13:18:37 - Order data of BANKNIFTY28AUG2446400CE for user aruna shinde
+2024-08-22 13:18:41,795 - main - INFO - 2024-08-22 13:18:41 - Order data of FINNIFTY27AUG2419700CE for user aruna shinde
+2024-08-22 13:18:48,316 - main - INFO - 2024-08-22 13:18:48 - Order data of FINNIFTY27AUG2423800PE for user aruna shinde
+2024-08-22 13:18:55,597 - main - INFO - 2024-08-22 13:18:55 - Order data of FINNIFTY27AUG2422900PE for user aruna shinde
+2024-08-22 13:19:05,299 - main - INFO - 2024-08-22 13:19:05 - Order data of FINNIFTY27AUG2418900CE for user aruna shinde
+2024-08-22 13:19:10,677 - main - INFO - 2024-08-22 13:19:10 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 13:19:10,960 - main - INFO - 2024-08-22 13:19:10 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 13:19:17,472 - main - INFO - 2024-08-22 13:19:17 - Order data of BANKNIFTY28AUG2453200PE for user Prasanna Deshmukh
+2024-08-22 13:19:24,094 - main - INFO - 2024-08-22 13:19:24 - Order data of BANKNIFTY28AUG2444400CE for user Prasanna Deshmukh
+2024-08-22 13:19:29,998 - main - INFO - 2024-08-22 13:19:29 - Order data of BANKNIFTY28AUG2452700CE for user Prasanna Deshmukh
+2024-08-22 13:19:35,446 - main - INFO - 2024-08-22 13:19:35 - Order data of BANKNIFTY28AUG2458500CE for user Prasanna Deshmukh
+2024-08-22 13:19:42,513 - main - INFO - 2024-08-22 13:19:42 - Order data of BANKNIFTY28AUG2446400CE for user Prasanna Deshmukh
+2024-08-22 13:19:48,522 - main - INFO - 2024-08-22 13:19:48 - Order data of FINNIFTY27AUG2419700CE for user Prasanna Deshmukh
+2024-08-22 13:19:53,654 - main - INFO - 2024-08-22 13:19:53 - Order data of FINNIFTY27AUG2423800PE for user Prasanna Deshmukh
+2024-08-22 13:19:57,357 - main - INFO - 2024-08-22 13:19:57 - Order data of FINNIFTY27AUG2422900PE for user Prasanna Deshmukh
+2024-08-22 13:20:00,935 - main - INFO - 2024-08-22 13:20:00 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-22 13:20:04,324 - main - INFO - 2024-08-22 13:20:04 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 13:20:04,449 - main - INFO - 2024-08-22 13:20:04 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 13:20:07,986 - main - INFO - 2024-08-22 13:20:07 - Order data of BANKNIFTY28AUG2453200PE for user Viraj Kadam
+2024-08-22 13:20:11,636 - main - INFO - 2024-08-22 13:20:11 - Order data of BANKNIFTY28AUG2444400CE for user Viraj Kadam
+2024-08-22 13:20:15,651 - main - INFO - 2024-08-22 13:20:15 - Order data of BANKNIFTY28AUG2452700CE for user Viraj Kadam
+2024-08-22 13:20:20,004 - main - INFO - 2024-08-22 13:20:20 - Order data of BANKNIFTY28AUG2458500CE for user Viraj Kadam
+2024-08-22 13:20:23,642 - main - INFO - 2024-08-22 13:20:23 - Order data of BANKNIFTY28AUG2446400CE for user Viraj Kadam
+2024-08-22 13:20:26,842 - main - INFO - 2024-08-22 13:20:26 - Order data of FINNIFTY27AUG2419700CE for user Viraj Kadam
+2024-08-22 13:20:29,717 - main - INFO - 2024-08-22 13:20:29 - Order data of FINNIFTY27AUG2423800PE for user Viraj Kadam
+2024-08-22 13:20:32,456 - main - INFO - 2024-08-22 13:20:32 - Order data of FINNIFTY27AUG2422900PE for user Viraj Kadam
+2024-08-22 13:20:34,796 - main - INFO - 2024-08-22 13:20:34 - Order data of FINNIFTY27AUG2418900CE for user Viraj Kadam
+2024-08-22 13:20:36,934 - main - INFO - 2024-08-22 13:20:36 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 13:33:21,785 - main - INFO - 2024-08-22 13:33:21 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 13:33:27,722 - main - INFO - 2024-08-22 13:33:27 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 13:33:32,209 - main - INFO - 2024-08-22 13:33:32 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 13:33:37,088 - main - INFO - 2024-08-22 13:33:37 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 13:33:39,771 - main - INFO - 2024-08-22 13:33:39 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 13:33:43,599 - main - INFO - 2024-08-22 13:33:43 - Order data of BANKNIFTY28AUG2446400CE for user Harry
+2024-08-22 13:33:47,683 - main - INFO - 2024-08-22 13:33:47 - Order data of FINNIFTY27AUG2419700CE for user Harry
+2024-08-22 13:33:54,402 - main - INFO - 2024-08-22 13:33:54 - Order data of FINNIFTY27AUG2423800PE for user Harry
+2024-08-22 13:33:58,593 - main - INFO - 2024-08-22 13:33:58 - Order data of FINNIFTY27AUG2422900PE for user Harry
+2024-08-22 13:34:02,007 - main - INFO - 2024-08-22 13:34:02 - Order data of FINNIFTY27AUG2418900CE for user Harry
+2024-08-22 13:34:05,732 - main - INFO - 2024-08-22 13:34:05 - Orders placed for user Harry with instruments: []
+2024-08-22 13:34:06,031 - main - INFO - 2024-08-22 13:34:06 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 13:34:18,185 - main - INFO - 2024-08-22 13:34:18 - Order data of BANKNIFTY28AUG2453200PE for user Prasanna Deshmukh
+2024-08-22 13:34:50,879 - main - ERROR - 2024-08-22 13:34:50 - Error placing exit order: HTTPSConnectionPool(host='apiconnect.angelbroking.com', port=443): Max retries exceeded with url: /rest/secure/angelbroking/user/v1/getProfile?%7B%22refreshToken%22:%20%22eyJhbGciOiJIUzUxMiJ9.eyJ0b2tlbiI6IlJFRlJFU0gtVE9LRU4iLCJSRUZSRVNILVRPS0VOIjoiZXlKaGJHY2lPaUpTVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SjFjMlZ5WDNSNWNHVWlPaUpqYkdsbGJuUWlMQ0owYjJ0bGJsOTBlWEJsSWpvaWRISmhaR1ZmY21WbWNtVnphRjkwYjJ0bGJpSXNJbWR0WDJsa0lqb3dMQ0prWlhacFkyVmZhV1FpT2lJM1pXTTNaamcyWWkxa1l6bGtMVE0wTm1NdFlXTmtaaTFpTnpFNE5HRTBNMk15TURRaUxDSnJhV1FpT2lKMGNtRmtaVjlyWlhsZmRqRWlMQ0p2Ylc1bGJXRnVZV2RsY21sa0lqb3dMQ0pwYzNNaU9pSnNiMmRwYmw5elpYSjJhV05sSWl3aWMzVmlJam9pVURVNU5EWXhORFkwSWl3aVpYaHdJam94TnpJME5EZzJOamM0TENKdVltWWlPakUzTWpRek1UTTRNVGdzSW1saGRDSTZNVGN5TkRNeE16Z3hPQ3dpYW5ScElqb2laalU0T0RWallXSXRabVJsTkMwME5tRm1MVGhsWVdZdE5UQTFZV1l5TTJJME1HVTNJbjAuRU80Q3pNRDk0cjRNb1phbDh0XzBEcnBqX1RUWDRISUNRcXVwWGNoYzUtRGFyMDM4SnBJVVF3TTQ3Wnhual9ta3ZraDBSc0tQemFfejE5UlFoOTZUSG5SY1VNdDJvdlFnRmJZSWEyWVZTeVBKekRvVWFrU1lYMFRwTXMxYjVNcW9qUURkS3pMVFNKcW1YTmYza2RKdE1neDdOUGtPa0Q1dDhLSUlOZUw2dnVRIiwiaWF0IjoxNzI0MzEzODc4fQ.KFm6lAYPVzgB_G1_NWal1SZlCfuO4xM57OtIPbo8ben9wY-8U8LqdWaXxqm7i86wUs4rVzOnCvfEDpl2qU9PJQ%22%7D (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x70e48943a720>, 'Connection to apiconnect.angelbroking.com timed out. (connect timeout=7)'))
+2024-08-22 13:35:14,199 - main - ERROR - 2024-08-22 13:35:14 - Error in placing orders: HTTPSConnectionPool(host='apiconnect.angelbroking.com', port=443): Max retries exceeded with url: /rest/secure/angelbroking/user/v1/logout (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x70e48943b4a0>: Failed to resolve 'apiconnect.angelbroking.com' ([Errno -3] Temporary failure in name resolution)"))
+2024-08-22 13:36:24,825 - main - INFO - 2024-08-22 13:36:24 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 13:36:45,430 - main - ERROR - 2024-08-22 13:36:45 - Error placing exit order: HTTPSConnectionPool(host='apiconnect.angelbroking.com', port=443): Read timed out. (read timeout=7)
+2024-08-22 13:36:57,110 - main - INFO - 2024-08-22 13:36:57 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 13:37:20,989 - main - INFO - 2024-08-22 13:37:20 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 13:37:47,106 - main - INFO - 2024-08-22 13:37:47 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 13:37:50,833 - main - INFO - 2024-08-22 13:37:50 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 13:38:17,276 - main - ERROR - 2024-08-22 13:38:17 - Error placing exit order: HTTPSConnectionPool(host='apiconnect.angelbroking.com', port=443): Max retries exceeded with url: /rest/secure/angelbroking/order/v1/getLtpData (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x73501470b4a0>: Failed to resolve 'apiconnect.angelbroking.com' ([Errno -3] Temporary failure in name resolution)"))
+2024-08-22 13:38:37,864 - main - ERROR - 2024-08-22 13:38:37 - Error in placing orders: HTTPSConnectionPool(host='apiconnect.angelbroking.com', port=443): Max retries exceeded with url: /rest/secure/angelbroking/user/v1/logout (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x735014708fe0>: Failed to resolve 'apiconnect.angelbroking.com' ([Errno -3] Temporary failure in name resolution)"))
+2024-08-22 13:39:22,973 - main - INFO - 2024-08-22 13:39:22 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 13:39:53,694 - main - ERROR - 2024-08-22 13:39:53 - Error in placing orders: HTTPSConnectionPool(host='apiconnect.angelbroking.com', port=443): Max retries exceeded with url: /rest/secure/angelbroking/user/v1/logout (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x71cb90f716a0>: Failed to resolve 'apiconnect.angelbroking.com' ([Errno -3] Temporary failure in name resolution)"))
+2024-08-22 16:01:08,162 - main - INFO - 2024-08-22 16:01:08 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 16:01:10,013 - main - INFO - 2024-08-22 16:01:10 - Orders placed for user Harry with instruments: []
+2024-08-22 16:01:10,112 - main - INFO - 2024-08-22 16:01:10 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 16:01:15,793 - main - INFO - 2024-08-22 16:01:15 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 16:01:15,862 - main - INFO - 2024-08-22 16:01:15 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 16:01:18,228 - main - INFO - 2024-08-22 16:01:18 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 16:01:24,243 - main - INFO - 2024-08-22 16:01:24 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 16:01:26,237 - main - INFO - 2024-08-22 16:01:26 - Orders placed for user Harry with instruments: []
+2024-08-22 16:01:26,341 - main - INFO - 2024-08-22 16:01:26 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 16:01:28,351 - main - INFO - 2024-08-22 16:01:28 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 16:01:28,434 - main - INFO - 2024-08-22 16:01:28 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 16:01:30,349 - main - INFO - 2024-08-22 16:01:30 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 16:06:07,436 - main - INFO - 2024-08-22 16:06:07 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 16:06:14,925 - main - INFO - 2024-08-22 16:06:14 - Orders placed for user Harry with instruments: []
+2024-08-22 16:06:15,375 - main - INFO - 2024-08-22 16:06:15 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 16:06:18,293 - main - INFO - 2024-08-22 16:06:18 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 16:06:19,016 - main - INFO - 2024-08-22 16:06:19 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 16:06:38,310 - main - INFO - 2024-08-22 16:06:38 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 16:11:58,778 - main - INFO - 2024-08-22 16:11:58 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 16:12:00,889 - main - INFO - 2024-08-22 16:12:00 - Orders placed for user Harry with instruments: []
+2024-08-22 16:12:00,973 - main - INFO - 2024-08-22 16:12:00 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 16:12:07,984 - main - INFO - 2024-08-22 16:12:07 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 16:12:08,063 - main - INFO - 2024-08-22 16:12:08 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 16:12:09,976 - main - INFO - 2024-08-22 16:12:09 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 16:16:53,149 - main - INFO - 2024-08-22 16:16:53 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 16:16:55,190 - main - INFO - 2024-08-22 16:16:55 - Orders placed for user Harry with instruments: []
+2024-08-22 16:16:55,262 - main - INFO - 2024-08-22 16:16:55 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 16:16:59,081 - main - INFO - 2024-08-22 16:16:59 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 16:16:59,149 - main - INFO - 2024-08-22 16:16:59 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 16:17:02,708 - main - INFO - 2024-08-22 16:17:02 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 16:59:36,523 - main - INFO - 2024-08-22 16:59:36 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 16:59:39,748 - main - INFO - 2024-08-22 16:59:39 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 16:59:43,246 - main - INFO - 2024-08-22 16:59:43 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 16:59:46,333 - main - INFO - 2024-08-22 16:59:46 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 16:59:49,889 - main - INFO - 2024-08-22 16:59:49 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 16:59:53,587 - main - INFO - 2024-08-22 16:59:53 - Orders placed for user Harry with instruments: []
+2024-08-22 16:59:53,938 - main - INFO - 2024-08-22 16:59:53 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 16:59:58,125 - main - INFO - 2024-08-22 16:59:58 - Order data of BANKNIFTY28AUG2453200PE for user Prasanna Deshmukh
+2024-08-22 17:00:01,084 - main - INFO - 2024-08-22 17:00:01 - Order data of BANKNIFTY28AUG2444400CE for user Prasanna Deshmukh
+2024-08-22 17:00:04,340 - main - INFO - 2024-08-22 17:00:04 - Order data of BANKNIFTY28AUG2452700CE for user Prasanna Deshmukh
+2024-08-22 17:00:07,682 - main - INFO - 2024-08-22 17:00:07 - Order data of BANKNIFTY28AUG2458500CE for user Prasanna Deshmukh
+2024-08-22 17:00:10,269 - main - INFO - 2024-08-22 17:00:10 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 17:00:10,609 - main - INFO - 2024-08-22 17:00:10 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 17:00:13,732 - main - INFO - 2024-08-22 17:00:13 - Order data of BANKNIFTY28AUG2453200PE for user Viraj Kadam
+2024-08-22 17:00:16,674 - main - INFO - 2024-08-22 17:00:16 - Order data of BANKNIFTY28AUG2444400CE for user Viraj Kadam
+2024-08-22 17:00:19,883 - main - INFO - 2024-08-22 17:00:19 - Order data of BANKNIFTY28AUG2452700CE for user Viraj Kadam
+2024-08-22 17:00:23,020 - main - INFO - 2024-08-22 17:00:23 - Order data of BANKNIFTY28AUG2458500CE for user Viraj Kadam
+2024-08-22 17:00:25,543 - main - INFO - 2024-08-22 17:00:25 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 17:02:55,342 - main - ERROR - 2024-08-22 17:02:55 - Token not found for instrument BANKNIFTY21AUG2451500PE for user 157
+2024-08-22 17:02:55,702 - main - ERROR - 2024-08-22 17:02:55 - Token not found for instrument BANKNIFTY21AUG2451300CE for user 157
+2024-08-22 17:02:56,063 - main - ERROR - 2024-08-22 17:02:56 - Token not found for instrument BANKNIFTY21AUG2449200PE for user 157
+2024-08-22 17:02:56,396 - main - ERROR - 2024-08-22 17:02:56 - Token not found for instrument BANKNIFTY21AUG2448000CE for user 157
+2024-08-22 17:02:56,954 - main - ERROR - 2024-08-22 17:02:56 - Token not found for instrument BANKNIFTY21AUG2449300CE for user 157
+2024-08-22 17:02:57,378 - main - ERROR - 2024-08-22 17:02:57 - Token not found for instrument BANKNIFTY21AUG2452600PE for user 157
+2024-08-22 17:02:57,743 - main - ERROR - 2024-08-22 17:02:57 - Token not found for instrument BANKNIFTY21AUG2452900CE for user 157
+2024-08-22 17:02:58,142 - main - ERROR - 2024-08-22 17:02:58 - Token not found for instrument BANKNIFTY21AUG2457500CE for user 157
+2024-08-22 17:02:58,581 - main - ERROR - 2024-08-22 17:02:58 - Token not found for instrument BANKNIFTY21AUG2453000CE for user 157
+2024-08-22 17:02:58,994 - main - ERROR - 2024-08-22 17:02:58 - Token not found for instrument BANKNIFTY21AUG2447000PE for user 157
+2024-08-22 17:02:59,008 - main - INFO - 2024-08-22 17:02:59 - Orders placed for user Harry with instruments: []
+2024-08-22 17:02:59,421 - main - ERROR - 2024-08-22 17:02:59 - Token not found for instrument BANKNIFTY21AUG2451500PE for user 160
+2024-08-22 17:03:00,383 - main - ERROR - 2024-08-22 17:03:00 - Token not found for instrument BANKNIFTY21AUG2451300CE for user 160
+2024-08-22 17:03:00,907 - main - ERROR - 2024-08-22 17:03:00 - Token not found for instrument BANKNIFTY21AUG2449200PE for user 160
+2024-08-22 17:03:01,318 - main - ERROR - 2024-08-22 17:03:01 - Token not found for instrument BANKNIFTY21AUG2448000CE for user 160
+2024-08-22 17:03:01,624 - main - ERROR - 2024-08-22 17:03:01 - Token not found for instrument BANKNIFTY21AUG2449300CE for user 160
+2024-08-22 17:03:02,242 - main - ERROR - 2024-08-22 17:03:02 - Token not found for instrument BANKNIFTY21AUG2452600PE for user 160
+2024-08-22 17:03:02,782 - main - ERROR - 2024-08-22 17:03:02 - Token not found for instrument BANKNIFTY21AUG2452900CE for user 160
+2024-08-22 17:03:03,312 - main - ERROR - 2024-08-22 17:03:03 - Token not found for instrument BANKNIFTY21AUG2457500CE for user 160
+2024-08-22 17:03:03,632 - main - ERROR - 2024-08-22 17:03:03 - Token not found for instrument BANKNIFTY21AUG2453000CE for user 160
+2024-08-22 17:03:04,064 - main - ERROR - 2024-08-22 17:03:04 - Token not found for instrument BANKNIFTY21AUG2447000PE for user 160
+2024-08-22 17:03:04,092 - main - INFO - 2024-08-22 17:03:04 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 17:03:05,256 - main - ERROR - 2024-08-22 17:03:05 - Token not found for instrument BANKNIFTY21AUG2451500PE for user 161
+2024-08-22 17:03:05,682 - main - ERROR - 2024-08-22 17:03:05 - Token not found for instrument BANKNIFTY21AUG2451300CE for user 161
+2024-08-22 17:03:06,067 - main - ERROR - 2024-08-22 17:03:06 - Token not found for instrument BANKNIFTY21AUG2449200PE for user 161
+2024-08-22 17:03:06,428 - main - ERROR - 2024-08-22 17:03:06 - Token not found for instrument BANKNIFTY21AUG2448000CE for user 161
+2024-08-22 17:03:06,763 - main - ERROR - 2024-08-22 17:03:06 - Token not found for instrument BANKNIFTY21AUG2449300CE for user 161
+2024-08-22 17:03:07,153 - main - ERROR - 2024-08-22 17:03:07 - Token not found for instrument BANKNIFTY21AUG2452600PE for user 161
+2024-08-22 17:03:07,459 - main - ERROR - 2024-08-22 17:03:07 - Token not found for instrument BANKNIFTY21AUG2452900CE for user 161
+2024-08-22 17:03:07,786 - main - ERROR - 2024-08-22 17:03:07 - Token not found for instrument BANKNIFTY21AUG2457500CE for user 161
+2024-08-22 17:03:08,188 - main - ERROR - 2024-08-22 17:03:08 - Token not found for instrument BANKNIFTY21AUG2453000CE for user 161
+2024-08-22 17:03:08,502 - main - ERROR - 2024-08-22 17:03:08 - Token not found for instrument BANKNIFTY21AUG2447000PE for user 161
+2024-08-22 17:03:08,535 - main - INFO - 2024-08-22 17:03:08 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 17:03:08,902 - main - ERROR - 2024-08-22 17:03:08 - Token not found for instrument BANKNIFTY21AUG2451500PE for user 282
+2024-08-22 17:03:09,271 - main - ERROR - 2024-08-22 17:03:09 - Token not found for instrument BANKNIFTY21AUG2451300CE for user 282
+2024-08-22 17:03:09,617 - main - ERROR - 2024-08-22 17:03:09 - Token not found for instrument BANKNIFTY21AUG2449200PE for user 282
+2024-08-22 17:03:10,007 - main - ERROR - 2024-08-22 17:03:10 - Token not found for instrument BANKNIFTY21AUG2448000CE for user 282
+2024-08-22 17:03:10,342 - main - ERROR - 2024-08-22 17:03:10 - Token not found for instrument BANKNIFTY21AUG2449300CE for user 282
+2024-08-22 17:03:10,642 - main - ERROR - 2024-08-22 17:03:10 - Token not found for instrument BANKNIFTY21AUG2452600PE for user 282
+2024-08-22 17:03:11,024 - main - ERROR - 2024-08-22 17:03:11 - Token not found for instrument BANKNIFTY21AUG2452900CE for user 282
+2024-08-22 17:03:11,315 - main - ERROR - 2024-08-22 17:03:11 - Token not found for instrument BANKNIFTY21AUG2457500CE for user 282
+2024-08-22 17:03:11,743 - main - ERROR - 2024-08-22 17:03:11 - Token not found for instrument BANKNIFTY21AUG2453000CE for user 282
+2024-08-22 17:03:12,361 - main - ERROR - 2024-08-22 17:03:12 - Token not found for instrument BANKNIFTY21AUG2447000PE for user 282
+2024-08-22 17:03:12,456 - main - INFO - 2024-08-22 17:03:12 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 17:06:29,866 - main - INFO - 2024-08-22 17:06:29 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 17:06:33,368 - main - INFO - 2024-08-22 17:06:33 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 17:06:36,414 - main - INFO - 2024-08-22 17:06:36 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 17:06:39,623 - main - INFO - 2024-08-22 17:06:39 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 17:06:43,035 - main - INFO - 2024-08-22 17:06:43 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 17:06:46,335 - main - INFO - 2024-08-22 17:06:46 - Order data of FINNIFTY27AUG2419700CE for user Harry
+2024-08-22 17:06:49,766 - main - INFO - 2024-08-22 17:06:49 - Order data of FINNIFTY27AUG2423800PE for user Harry
+2024-08-22 17:06:53,042 - main - INFO - 2024-08-22 17:06:53 - Order data of FINNIFTY27AUG2422900PE for user Harry
+2024-08-22 17:06:56,570 - main - INFO - 2024-08-22 17:06:56 - Order data of FINNIFTY27AUG2422000PE for user Harry
+2024-08-22 17:07:00,246 - main - INFO - 2024-08-22 17:07:00 - Order data of FINNIFTY27AUG2418900CE for user Harry
+2024-08-22 17:07:03,470 - main - INFO - 2024-08-22 17:07:03 - Orders placed for user Harry with instruments: []
+2024-08-22 17:07:03,758 - main - INFO - 2024-08-22 17:07:03 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 17:07:09,801 - main - INFO - 2024-08-22 17:07:09 - Order data of BANKNIFTY28AUG2453200PE for user aruna shinde
+2024-08-22 17:07:12,924 - main - INFO - 2024-08-22 17:07:12 - Order data of BANKNIFTY28AUG2444400CE for user aruna shinde
+2024-08-22 17:07:16,105 - main - INFO - 2024-08-22 17:07:16 - Order data of BANKNIFTY28AUG2452700CE for user aruna shinde
+2024-08-22 17:07:19,071 - main - INFO - 2024-08-22 17:07:19 - Order data of BANKNIFTY28AUG2458500CE for user aruna shinde
+2024-08-22 17:07:22,373 - main - INFO - 2024-08-22 17:07:22 - Order data of FINNIFTY27AUG2419700CE for user aruna shinde
+2024-08-22 17:07:25,668 - main - INFO - 2024-08-22 17:07:25 - Order data of FINNIFTY27AUG2423800PE for user aruna shinde
+2024-08-22 17:07:28,709 - main - INFO - 2024-08-22 17:07:28 - Order data of FINNIFTY27AUG2422900PE for user aruna shinde
+2024-08-22 17:07:31,850 - main - INFO - 2024-08-22 17:07:31 - Order data of FINNIFTY27AUG2422000PE for user aruna shinde
+2024-08-22 17:07:34,932 - main - INFO - 2024-08-22 17:07:34 - Order data of FINNIFTY27AUG2418900CE for user aruna shinde
+2024-08-22 17:07:38,163 - main - INFO - 2024-08-22 17:07:38 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 17:07:38,827 - main - INFO - 2024-08-22 17:07:38 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 17:07:42,649 - main - INFO - 2024-08-22 17:07:42 - Order data of BANKNIFTY28AUG2453200PE for user Prasanna Deshmukh
+2024-08-22 17:07:45,765 - main - INFO - 2024-08-22 17:07:45 - Order data of BANKNIFTY28AUG2444400CE for user Prasanna Deshmukh
+2024-08-22 17:07:53,464 - main - INFO - 2024-08-22 17:07:53 - Order data of BANKNIFTY28AUG2452700CE for user Prasanna Deshmukh
+2024-08-22 17:07:58,355 - main - INFO - 2024-08-22 17:07:58 - Order data of BANKNIFTY28AUG2458500CE for user Prasanna Deshmukh
+2024-08-22 17:08:04,435 - main - INFO - 2024-08-22 17:08:04 - Order data of FINNIFTY27AUG2419700CE for user Prasanna Deshmukh
+2024-08-22 17:08:09,481 - main - INFO - 2024-08-22 17:08:09 - Order data of FINNIFTY27AUG2423800PE for user Prasanna Deshmukh
+2024-08-22 17:08:15,240 - main - INFO - 2024-08-22 17:08:15 - Order data of FINNIFTY27AUG2422900PE for user Prasanna Deshmukh
+2024-08-22 17:08:18,249 - main - INFO - 2024-08-22 17:08:18 - Order data of FINNIFTY27AUG2422000PE for user Prasanna Deshmukh
+2024-08-22 17:08:21,317 - main - INFO - 2024-08-22 17:08:21 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-22 17:08:24,218 - main - INFO - 2024-08-22 17:08:24 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 17:08:24,683 - main - INFO - 2024-08-22 17:08:24 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 17:08:27,887 - main - INFO - 2024-08-22 17:08:27 - Order data of BANKNIFTY28AUG2453200PE for user Viraj Kadam
+2024-08-22 17:08:30,843 - main - INFO - 2024-08-22 17:08:30 - Order data of BANKNIFTY28AUG2444400CE for user Viraj Kadam
+2024-08-22 17:08:33,961 - main - INFO - 2024-08-22 17:08:33 - Order data of BANKNIFTY28AUG2452700CE for user Viraj Kadam
+2024-08-22 17:08:36,889 - main - INFO - 2024-08-22 17:08:36 - Order data of BANKNIFTY28AUG2458500CE for user Viraj Kadam
+2024-08-22 17:08:40,168 - main - INFO - 2024-08-22 17:08:40 - Order data of FINNIFTY27AUG2419700CE for user Viraj Kadam
+2024-08-22 17:08:43,412 - main - INFO - 2024-08-22 17:08:43 - Order data of FINNIFTY27AUG2423800PE for user Viraj Kadam
+2024-08-22 17:08:49,249 - main - INFO - 2024-08-22 17:08:49 - Order data of FINNIFTY27AUG2422900PE for user Viraj Kadam
+2024-08-22 17:08:52,652 - main - INFO - 2024-08-22 17:08:52 - Order data of FINNIFTY27AUG2422000PE for user Viraj Kadam
+2024-08-22 17:08:56,551 - main - INFO - 2024-08-22 17:08:56 - Order data of FINNIFTY27AUG2418900CE for user Viraj Kadam
+2024-08-22 17:09:01,730 - main - INFO - 2024-08-22 17:09:01 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 18:11:47,196 - main - INFO - 2024-08-22 18:11:47 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 18:11:49,419 - main - INFO - 2024-08-22 18:11:49 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 18:11:51,409 - main - INFO - 2024-08-22 18:11:51 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 18:11:53,665 - main - INFO - 2024-08-22 18:11:53 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 18:11:55,677 - main - INFO - 2024-08-22 18:11:55 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 18:11:57,545 - main - INFO - 2024-08-22 18:11:57 - Order data of FINNIFTY27AUG2419700CE for user Harry
+2024-08-22 18:11:59,617 - main - INFO - 2024-08-22 18:11:59 - Order data of FINNIFTY27AUG2423800PE for user Harry
+2024-08-22 18:12:01,602 - main - INFO - 2024-08-22 18:12:01 - Order data of FINNIFTY27AUG2422900PE for user Harry
+2024-08-22 18:12:03,506 - main - INFO - 2024-08-22 18:12:03 - Order data of FINNIFTY27AUG2422000PE for user Harry
+2024-08-22 18:12:05,580 - main - INFO - 2024-08-22 18:12:05 - Order data of FINNIFTY27AUG2418900CE for user Harry
+2024-08-22 18:12:07,510 - main - INFO - 2024-08-22 18:12:07 - Order data of MIDCPNIFTY26AUG2411825CE for user Harry
+2024-08-22 18:12:09,493 - main - INFO - 2024-08-22 18:12:09 - Order data of MIDCPNIFTY26AUG2412150PE for user Harry
+2024-08-22 18:12:11,615 - main - INFO - 2024-08-22 18:12:11 - Order data of MIDCPNIFTY26AUG2413900CE for user Harry
+2024-08-22 18:12:13,582 - main - INFO - 2024-08-22 18:12:13 - Order data of MIDCPNIFTY26AUG2413800PE for user Harry
+2024-08-22 18:12:15,639 - main - INFO - 2024-08-22 18:12:15 - Order data of MIDCPNIFTY26AUG2414300PE for user Harry
+2024-08-22 18:12:17,653 - main - INFO - 2024-08-22 18:12:17 - Order data of MIDCPNIFTY26AUG2410625CE for user Harry
+2024-08-22 18:12:19,631 - main - INFO - 2024-08-22 18:12:19 - Order data of MIDCPNIFTY26AUG2411200CE for user Harry
+2024-08-22 18:12:21,514 - main - INFO - 2024-08-22 18:12:21 - Order data of MIDCPNIFTY26AUG2411725CE for user Harry
+2024-08-22 18:12:23,521 - main - INFO - 2024-08-22 18:12:23 - Order data of MIDCPNIFTY26AUG2410550CE for user Harry
+2024-08-22 18:12:25,489 - main - INFO - 2024-08-22 18:12:25 - Order data of MIDCPNIFTY26AUG2411475CE for user Harry
+2024-08-22 18:12:27,437 - main - INFO - 2024-08-22 18:12:27 - Orders placed for user Harry with instruments: []
+2024-08-22 18:12:27,551 - main - INFO - 2024-08-22 18:12:27 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-22 18:12:29,530 - main - INFO - 2024-08-22 18:12:29 - Order data of BANKNIFTY28AUG2453200PE for user aruna shinde
+2024-08-22 18:12:31,490 - main - INFO - 2024-08-22 18:12:31 - Order data of BANKNIFTY28AUG2444400CE for user aruna shinde
+2024-08-22 18:12:33,533 - main - INFO - 2024-08-22 18:12:33 - Order data of BANKNIFTY28AUG2452700CE for user aruna shinde
+2024-08-22 18:12:35,559 - main - INFO - 2024-08-22 18:12:35 - Order data of BANKNIFTY28AUG2458500CE for user aruna shinde
+2024-08-22 18:12:37,588 - main - INFO - 2024-08-22 18:12:37 - Order data of FINNIFTY27AUG2419700CE for user aruna shinde
+2024-08-22 18:12:39,733 - main - INFO - 2024-08-22 18:12:39 - Order data of FINNIFTY27AUG2423800PE for user aruna shinde
+2024-08-22 18:12:41,748 - main - INFO - 2024-08-22 18:12:41 - Order data of FINNIFTY27AUG2422900PE for user aruna shinde
+2024-08-22 18:12:43,939 - main - INFO - 2024-08-22 18:12:43 - Order data of FINNIFTY27AUG2422000PE for user aruna shinde
+2024-08-22 18:12:46,138 - main - INFO - 2024-08-22 18:12:46 - Order data of FINNIFTY27AUG2418900CE for user aruna shinde
+2024-08-22 18:12:48,123 - main - INFO - 2024-08-22 18:12:48 - Order data of MIDCPNIFTY26AUG2411825CE for user aruna shinde
+2024-08-22 18:12:50,191 - main - INFO - 2024-08-22 18:12:50 - Order data of MIDCPNIFTY26AUG2412150PE for user aruna shinde
+2024-08-22 18:12:52,216 - main - INFO - 2024-08-22 18:12:52 - Order data of MIDCPNIFTY26AUG2413900CE for user aruna shinde
+2024-08-22 18:12:54,575 - main - INFO - 2024-08-22 18:12:54 - Order data of MIDCPNIFTY26AUG2413800PE for user aruna shinde
+2024-08-22 18:12:57,261 - main - INFO - 2024-08-22 18:12:57 - Order data of MIDCPNIFTY26AUG2414300PE for user aruna shinde
+2024-08-22 18:12:59,277 - main - INFO - 2024-08-22 18:12:59 - Order data of MIDCPNIFTY26AUG2410625CE for user aruna shinde
+2024-08-22 18:13:01,579 - main - INFO - 2024-08-22 18:13:01 - Order data of MIDCPNIFTY26AUG2411200CE for user aruna shinde
+2024-08-22 18:13:03,549 - main - INFO - 2024-08-22 18:13:03 - Order data of MIDCPNIFTY26AUG2411725CE for user aruna shinde
+2024-08-22 18:13:05,692 - main - INFO - 2024-08-22 18:13:05 - Order data of MIDCPNIFTY26AUG2410550CE for user aruna shinde
+2024-08-22 18:13:07,597 - main - INFO - 2024-08-22 18:13:07 - Order data of MIDCPNIFTY26AUG2411475CE for user aruna shinde
+2024-08-22 18:13:09,437 - main - INFO - 2024-08-22 18:13:09 - Orders placed for user aruna shinde with instruments: []
+2024-08-22 18:13:09,543 - main - INFO - 2024-08-22 18:13:09 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-22 18:13:11,682 - main - INFO - 2024-08-22 18:13:11 - Order data of BANKNIFTY28AUG2453200PE for user Prasanna Deshmukh
+2024-08-22 18:13:13,810 - main - INFO - 2024-08-22 18:13:13 - Order data of BANKNIFTY28AUG2444400CE for user Prasanna Deshmukh
+2024-08-22 18:13:15,954 - main - INFO - 2024-08-22 18:13:15 - Order data of BANKNIFTY28AUG2452700CE for user Prasanna Deshmukh
+2024-08-22 18:13:18,062 - main - INFO - 2024-08-22 18:13:18 - Order data of BANKNIFTY28AUG2458500CE for user Prasanna Deshmukh
+2024-08-22 18:13:20,172 - main - INFO - 2024-08-22 18:13:20 - Order data of FINNIFTY27AUG2419700CE for user Prasanna Deshmukh
+2024-08-22 18:13:22,230 - main - INFO - 2024-08-22 18:13:22 - Order data of FINNIFTY27AUG2423800PE for user Prasanna Deshmukh
+2024-08-22 18:13:24,243 - main - INFO - 2024-08-22 18:13:24 - Order data of FINNIFTY27AUG2422900PE for user Prasanna Deshmukh
+2024-08-22 18:13:26,417 - main - INFO - 2024-08-22 18:13:26 - Order data of FINNIFTY27AUG2422000PE for user Prasanna Deshmukh
+2024-08-22 18:13:28,532 - main - INFO - 2024-08-22 18:13:28 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-22 18:13:30,553 - main - INFO - 2024-08-22 18:13:30 - Order data of MIDCPNIFTY26AUG2411825CE for user Prasanna Deshmukh
+2024-08-22 18:13:32,665 - main - INFO - 2024-08-22 18:13:32 - Order data of MIDCPNIFTY26AUG2412150PE for user Prasanna Deshmukh
+2024-08-22 18:13:34,674 - main - INFO - 2024-08-22 18:13:34 - Order data of MIDCPNIFTY26AUG2413900CE for user Prasanna Deshmukh
+2024-08-22 18:13:36,757 - main - INFO - 2024-08-22 18:13:36 - Order data of MIDCPNIFTY26AUG2413800PE for user Prasanna Deshmukh
+2024-08-22 18:13:38,695 - main - INFO - 2024-08-22 18:13:38 - Order data of MIDCPNIFTY26AUG2414300PE for user Prasanna Deshmukh
+2024-08-22 18:13:40,938 - main - INFO - 2024-08-22 18:13:40 - Order data of MIDCPNIFTY26AUG2410625CE for user Prasanna Deshmukh
+2024-08-22 18:13:42,947 - main - INFO - 2024-08-22 18:13:42 - Order data of MIDCPNIFTY26AUG2411200CE for user Prasanna Deshmukh
+2024-08-22 18:13:44,977 - main - INFO - 2024-08-22 18:13:44 - Order data of MIDCPNIFTY26AUG2411725CE for user Prasanna Deshmukh
+2024-08-22 18:13:47,677 - main - INFO - 2024-08-22 18:13:47 - Order data of MIDCPNIFTY26AUG2410550CE for user Prasanna Deshmukh
+2024-08-22 18:13:49,796 - main - INFO - 2024-08-22 18:13:49 - Order data of MIDCPNIFTY26AUG2411475CE for user Prasanna Deshmukh
+2024-08-22 18:13:52,190 - main - INFO - 2024-08-22 18:13:52 - Orders placed for user Prasanna Deshmukh with instruments: []
+2024-08-22 18:13:52,275 - main - INFO - 2024-08-22 18:13:52 - Order data of BANKNIFTY28AUG2444300PE for user Viraj Kadam
+2024-08-22 18:13:54,542 - main - INFO - 2024-08-22 18:13:54 - Order data of BANKNIFTY28AUG2453200PE for user Viraj Kadam
+2024-08-22 18:13:56,570 - main - INFO - 2024-08-22 18:13:56 - Order data of BANKNIFTY28AUG2444400CE for user Viraj Kadam
+2024-08-22 18:13:58,734 - main - INFO - 2024-08-22 18:13:58 - Order data of BANKNIFTY28AUG2452700CE for user Viraj Kadam
+2024-08-22 18:14:00,741 - main - INFO - 2024-08-22 18:14:00 - Order data of BANKNIFTY28AUG2458500CE for user Viraj Kadam
+2024-08-22 18:14:02,963 - main - INFO - 2024-08-22 18:14:02 - Order data of FINNIFTY27AUG2419700CE for user Viraj Kadam
+2024-08-22 18:14:05,100 - main - INFO - 2024-08-22 18:14:05 - Order data of FINNIFTY27AUG2423800PE for user Viraj Kadam
+2024-08-22 18:14:07,186 - main - INFO - 2024-08-22 18:14:07 - Order data of FINNIFTY27AUG2422900PE for user Viraj Kadam
+2024-08-22 18:14:09,272 - main - INFO - 2024-08-22 18:14:09 - Order data of FINNIFTY27AUG2422000PE for user Viraj Kadam
+2024-08-22 18:14:11,589 - main - INFO - 2024-08-22 18:14:11 - Order data of FINNIFTY27AUG2418900CE for user Viraj Kadam
+2024-08-22 18:14:16,608 - main - INFO - 2024-08-22 18:14:16 - Order data of MIDCPNIFTY26AUG2411825CE for user Viraj Kadam
+2024-08-22 18:14:18,736 - main - INFO - 2024-08-22 18:14:18 - Order data of MIDCPNIFTY26AUG2412150PE for user Viraj Kadam
+2024-08-22 18:14:20,844 - main - INFO - 2024-08-22 18:14:20 - Order data of MIDCPNIFTY26AUG2413900CE for user Viraj Kadam
+2024-08-22 18:14:23,174 - main - INFO - 2024-08-22 18:14:23 - Order data of MIDCPNIFTY26AUG2413800PE for user Viraj Kadam
+2024-08-22 18:14:25,303 - main - INFO - 2024-08-22 18:14:25 - Order data of MIDCPNIFTY26AUG2414300PE for user Viraj Kadam
+2024-08-22 18:14:27,400 - main - INFO - 2024-08-22 18:14:27 - Order data of MIDCPNIFTY26AUG2410625CE for user Viraj Kadam
+2024-08-22 18:14:29,513 - main - INFO - 2024-08-22 18:14:29 - Order data of MIDCPNIFTY26AUG2411200CE for user Viraj Kadam
+2024-08-22 18:14:31,725 - main - INFO - 2024-08-22 18:14:31 - Order data of MIDCPNIFTY26AUG2411725CE for user Viraj Kadam
+2024-08-22 18:14:33,687 - main - INFO - 2024-08-22 18:14:33 - Order data of MIDCPNIFTY26AUG2410550CE for user Viraj Kadam
+2024-08-22 18:14:35,618 - main - INFO - 2024-08-22 18:14:35 - Order data of MIDCPNIFTY26AUG2411475CE for user Viraj Kadam
+2024-08-22 18:14:37,725 - main - INFO - 2024-08-22 18:14:37 - Orders placed for user Viraj Kadam with instruments: []
+2024-08-22 18:14:37,802 - main - INFO - 2024-08-22 18:14:37 - Order data of BANKNIFTY28AUG2444300PE for user sumit Khadke
+2024-08-22 18:14:38,117 - main - ERROR - 2024-08-22 18:14:38 - Session generation failed for user 437
+2024-08-22 18:14:39,334 - main - INFO - 2024-08-22 18:14:39 - Order data of BANKNIFTY28AUG2453200PE for user sumit Khadke
+2024-08-22 18:14:39,714 - main - ERROR - 2024-08-22 18:14:39 - Session generation failed for user 437
+2024-08-22 18:14:40,942 - main - INFO - 2024-08-22 18:14:40 - Order data of BANKNIFTY28AUG2444400CE for user sumit Khadke
+2024-08-22 18:14:41,279 - main - ERROR - 2024-08-22 18:14:41 - Session generation failed for user 437
+2024-08-22 18:14:42,481 - main - INFO - 2024-08-22 18:14:42 - Order data of BANKNIFTY28AUG2452700CE for user sumit Khadke
+2024-08-22 18:14:42,893 - main - ERROR - 2024-08-22 18:14:42 - Session generation failed for user 437
+2024-08-22 18:14:44,108 - main - INFO - 2024-08-22 18:14:44 - Order data of BANKNIFTY28AUG2458500CE for user sumit Khadke
+2024-08-22 18:14:44,419 - main - ERROR - 2024-08-22 18:14:44 - Session generation failed for user 437
+2024-08-22 18:14:45,700 - main - INFO - 2024-08-22 18:14:45 - Order data of FINNIFTY27AUG2419700CE for user sumit Khadke
+2024-08-22 18:14:46,237 - main - ERROR - 2024-08-22 18:14:46 - Session generation failed for user 437
+2024-08-22 18:14:47,584 - main - INFO - 2024-08-22 18:14:47 - Order data of FINNIFTY27AUG2423800PE for user sumit Khadke
+2024-08-22 18:14:48,321 - main - ERROR - 2024-08-22 18:14:48 - Session generation failed for user 437
+2024-08-22 18:14:49,613 - main - INFO - 2024-08-22 18:14:49 - Order data of FINNIFTY27AUG2422900PE for user sumit Khadke
+2024-08-22 18:14:50,107 - main - ERROR - 2024-08-22 18:14:50 - Session generation failed for user 437
+2024-08-22 18:14:51,576 - main - INFO - 2024-08-22 18:14:51 - Order data of FINNIFTY27AUG2422000PE for user sumit Khadke
+2024-08-22 18:14:52,002 - main - ERROR - 2024-08-22 18:14:52 - Session generation failed for user 437
+2024-08-22 18:14:53,261 - main - INFO - 2024-08-22 18:14:53 - Order data of FINNIFTY27AUG2418900CE for user sumit Khadke
+2024-08-22 18:14:53,519 - main - ERROR - 2024-08-22 18:14:53 - Session generation failed for user 437
+2024-08-22 18:14:54,780 - main - INFO - 2024-08-22 18:14:54 - Order data of MIDCPNIFTY26AUG2411825CE for user sumit Khadke
+2024-08-22 18:14:55,111 - main - ERROR - 2024-08-22 18:14:55 - Session generation failed for user 437
+2024-08-22 18:14:56,366 - main - INFO - 2024-08-22 18:14:56 - Order data of MIDCPNIFTY26AUG2412150PE for user sumit Khadke
+2024-08-22 18:14:56,722 - main - ERROR - 2024-08-22 18:14:56 - Session generation failed for user 437
+2024-08-22 18:14:57,955 - main - INFO - 2024-08-22 18:14:57 - Order data of MIDCPNIFTY26AUG2413900CE for user sumit Khadke
+2024-08-22 18:14:58,248 - main - ERROR - 2024-08-22 18:14:58 - Session generation failed for user 437
+2024-08-22 18:14:59,484 - main - INFO - 2024-08-22 18:14:59 - Order data of MIDCPNIFTY26AUG2413800PE for user sumit Khadke
+2024-08-22 18:14:59,866 - main - ERROR - 2024-08-22 18:14:59 - Session generation failed for user 437
+2024-08-22 18:15:01,374 - main - INFO - 2024-08-22 18:15:01 - Order data of MIDCPNIFTY26AUG2414300PE for user sumit Khadke
+2024-08-22 18:15:01,719 - main - ERROR - 2024-08-22 18:15:01 - Session generation failed for user 437
+2024-08-22 18:15:02,961 - main - INFO - 2024-08-22 18:15:02 - Order data of MIDCPNIFTY26AUG2410625CE for user sumit Khadke
+2024-08-22 18:15:03,297 - main - ERROR - 2024-08-22 18:15:03 - Session generation failed for user 437
+2024-08-22 18:15:04,514 - main - INFO - 2024-08-22 18:15:04 - Order data of MIDCPNIFTY26AUG2411200CE for user sumit Khadke
+2024-08-22 18:15:04,857 - main - ERROR - 2024-08-22 18:15:04 - Session generation failed for user 437
+2024-08-22 18:15:06,194 - main - INFO - 2024-08-22 18:15:06 - Order data of MIDCPNIFTY26AUG2411725CE for user sumit Khadke
+2024-08-22 18:15:06,465 - main - ERROR - 2024-08-22 18:15:06 - Session generation failed for user 437
+2024-08-22 18:15:07,679 - main - INFO - 2024-08-22 18:15:07 - Order data of MIDCPNIFTY26AUG2410550CE for user sumit Khadke
+2024-08-22 18:15:08,097 - main - ERROR - 2024-08-22 18:15:08 - Session generation failed for user 437
+2024-08-22 18:15:09,306 - main - INFO - 2024-08-22 18:15:09 - Order data of MIDCPNIFTY26AUG2411475CE for user sumit Khadke
+2024-08-22 18:15:09,627 - main - ERROR - 2024-08-22 18:15:09 - Session generation failed for user 437
+2024-08-22 18:15:10,797 - main - INFO - 2024-08-22 18:15:10 - Orders placed for user sumit Khadke with instruments: []
+2024-08-22 18:15:10,875 - main - INFO - 2024-08-22 18:15:10 - Order data of BANKNIFTY28AUG2444300PE for user Vaibhav Taware
+2024-08-22 18:15:13,085 - main - INFO - 2024-08-22 18:15:13 - Order data of BANKNIFTY28AUG2453200PE for user Vaibhav Taware
+2024-08-22 18:15:15,364 - main - INFO - 2024-08-22 18:15:15 - Order data of BANKNIFTY28AUG2444400CE for user Vaibhav Taware
+2024-08-22 18:15:17,683 - main - INFO - 2024-08-22 18:15:17 - Order data of BANKNIFTY28AUG2452700CE for user Vaibhav Taware
+2024-08-22 18:15:19,818 - main - INFO - 2024-08-22 18:15:19 - Order data of BANKNIFTY28AUG2458500CE for user Vaibhav Taware
+2024-08-22 18:15:22,305 - main - INFO - 2024-08-22 18:15:22 - Order data of FINNIFTY27AUG2419700CE for user Vaibhav Taware
+2024-08-22 18:15:24,634 - main - INFO - 2024-08-22 18:15:24 - Order data of FINNIFTY27AUG2423800PE for user Vaibhav Taware
+2024-08-22 18:15:27,068 - main - INFO - 2024-08-22 18:15:27 - Order data of FINNIFTY27AUG2422900PE for user Vaibhav Taware
+2024-08-22 18:15:30,006 - main - INFO - 2024-08-22 18:15:30 - Order data of FINNIFTY27AUG2422000PE for user Vaibhav Taware
+2024-08-22 18:15:32,615 - main - INFO - 2024-08-22 18:15:32 - Order data of FINNIFTY27AUG2418900CE for user Vaibhav Taware
+2024-08-22 18:15:34,561 - main - INFO - 2024-08-22 18:15:34 - Order data of MIDCPNIFTY26AUG2411825CE for user Vaibhav Taware
+2024-08-22 18:15:36,662 - main - INFO - 2024-08-22 18:15:36 - Order data of MIDCPNIFTY26AUG2412150PE for user Vaibhav Taware
+2024-08-22 18:15:38,997 - main - INFO - 2024-08-22 18:15:38 - Order data of MIDCPNIFTY26AUG2413900CE for user Vaibhav Taware
+2024-08-22 18:15:40,977 - main - INFO - 2024-08-22 18:15:40 - Order data of MIDCPNIFTY26AUG2413800PE for user Vaibhav Taware
+2024-08-22 18:15:43,002 - main - INFO - 2024-08-22 18:15:43 - Order data of MIDCPNIFTY26AUG2414300PE for user Vaibhav Taware
+2024-08-22 18:15:45,311 - main - INFO - 2024-08-22 18:15:45 - Order data of MIDCPNIFTY26AUG2410625CE for user Vaibhav Taware
+2024-08-22 18:15:47,445 - main - INFO - 2024-08-22 18:15:47 - Order data of MIDCPNIFTY26AUG2411200CE for user Vaibhav Taware
+2024-08-22 18:15:49,634 - main - INFO - 2024-08-22 18:15:49 - Order data of MIDCPNIFTY26AUG2411725CE for user Vaibhav Taware
+2024-08-22 18:15:51,941 - main - INFO - 2024-08-22 18:15:51 - Order data of MIDCPNIFTY26AUG2410550CE for user Vaibhav Taware
+2024-08-22 18:15:54,054 - main - INFO - 2024-08-22 18:15:54 - Order data of MIDCPNIFTY26AUG2411475CE for user Vaibhav Taware
+2024-08-22 18:15:56,193 - main - INFO - 2024-08-22 18:15:56 - Orders placed for user Vaibhav Taware with instruments: []
+2024-08-22 18:15:56,312 - main - INFO - 2024-08-22 18:15:56 - Order data of BANKNIFTY28AUG2444300PE for user Vaibhav Sutar
+2024-08-22 18:15:58,324 - main - INFO - 2024-08-22 18:15:58 - Order data of BANKNIFTY28AUG2453200PE for user Vaibhav Sutar
+2024-08-22 18:16:00,539 - main - INFO - 2024-08-22 18:16:00 - Order data of BANKNIFTY28AUG2444400CE for user Vaibhav Sutar
+2024-08-22 18:16:02,623 - main - INFO - 2024-08-22 18:16:02 - Order data of BANKNIFTY28AUG2452700CE for user Vaibhav Sutar
+2024-08-22 18:16:04,735 - main - INFO - 2024-08-22 18:16:04 - Order data of BANKNIFTY28AUG2458500CE for user Vaibhav Sutar
+2024-08-22 18:16:06,867 - main - INFO - 2024-08-22 18:16:06 - Order data of FINNIFTY27AUG2419700CE for user Vaibhav Sutar
+2024-08-22 18:16:08,894 - main - INFO - 2024-08-22 18:16:08 - Order data of FINNIFTY27AUG2423800PE for user Vaibhav Sutar
+2024-08-22 18:16:10,910 - main - INFO - 2024-08-22 18:16:10 - Order data of FINNIFTY27AUG2422900PE for user Vaibhav Sutar
+2024-08-22 18:16:12,879 - main - INFO - 2024-08-22 18:16:12 - Order data of FINNIFTY27AUG2422000PE for user Vaibhav Sutar
+2024-08-22 18:16:15,023 - main - INFO - 2024-08-22 18:16:15 - Order data of FINNIFTY27AUG2418900CE for user Vaibhav Sutar
+2024-08-22 18:16:17,149 - main - INFO - 2024-08-22 18:16:17 - Order data of MIDCPNIFTY26AUG2411825CE for user Vaibhav Sutar
+2024-08-22 18:16:19,543 - main - INFO - 2024-08-22 18:16:19 - Order data of MIDCPNIFTY26AUG2412150PE for user Vaibhav Sutar
+2024-08-22 18:16:21,620 - main - INFO - 2024-08-22 18:16:21 - Order data of MIDCPNIFTY26AUG2413900CE for user Vaibhav Sutar
+2024-08-22 18:16:23,578 - main - INFO - 2024-08-22 18:16:23 - Order data of MIDCPNIFTY26AUG2413800PE for user Vaibhav Sutar
+2024-08-22 18:16:25,574 - main - INFO - 2024-08-22 18:16:25 - Order data of MIDCPNIFTY26AUG2414300PE for user Vaibhav Sutar
+2024-08-22 18:16:27,583 - main - INFO - 2024-08-22 18:16:27 - Order data of MIDCPNIFTY26AUG2410625CE for user Vaibhav Sutar
+2024-08-22 18:16:29,667 - main - INFO - 2024-08-22 18:16:29 - Order data of MIDCPNIFTY26AUG2411200CE for user Vaibhav Sutar
+2024-08-22 18:16:31,585 - main - INFO - 2024-08-22 18:16:31 - Order data of MIDCPNIFTY26AUG2411725CE for user Vaibhav Sutar
+2024-08-22 18:16:33,576 - main - INFO - 2024-08-22 18:16:33 - Order data of MIDCPNIFTY26AUG2410550CE for user Vaibhav Sutar
+2024-08-22 18:16:35,575 - main - INFO - 2024-08-22 18:16:35 - Order data of MIDCPNIFTY26AUG2411475CE for user Vaibhav Sutar
+2024-08-22 18:16:38,372 - main - INFO - 2024-08-22 18:16:38 - Orders placed for user Vaibhav Sutar with instruments: []
+2024-08-22 18:16:38,445 - main - INFO - 2024-08-22 18:16:38 - Order data of BANKNIFTY28AUG2444300PE for user Pramod Kale
+2024-08-22 18:16:41,225 - main - INFO - 2024-08-22 18:16:41 - Order data of BANKNIFTY28AUG2453200PE for user Pramod Kale
+2024-08-22 18:16:43,595 - main - INFO - 2024-08-22 18:16:43 - Order data of BANKNIFTY28AUG2444400CE for user Pramod Kale
+2024-08-22 18:16:45,666 - main - INFO - 2024-08-22 18:16:45 - Order data of BANKNIFTY28AUG2452700CE for user Pramod Kale
+2024-08-22 18:16:48,371 - main - INFO - 2024-08-22 18:16:48 - Order data of BANKNIFTY28AUG2458500CE for user Pramod Kale
+2024-08-22 18:16:51,623 - main - INFO - 2024-08-22 18:16:51 - Order data of FINNIFTY27AUG2419700CE for user Pramod Kale
+2024-08-22 18:16:53,587 - main - INFO - 2024-08-22 18:16:53 - Order data of FINNIFTY27AUG2423800PE for user Pramod Kale
+2024-08-22 18:16:55,589 - main - INFO - 2024-08-22 18:16:55 - Order data of FINNIFTY27AUG2422900PE for user Pramod Kale
+2024-08-22 18:16:57,717 - main - INFO - 2024-08-22 18:16:57 - Order data of FINNIFTY27AUG2422000PE for user Pramod Kale
+2024-08-22 18:16:59,870 - main - INFO - 2024-08-22 18:16:59 - Order data of FINNIFTY27AUG2418900CE for user Pramod Kale
+2024-08-22 18:17:02,223 - main - INFO - 2024-08-22 18:17:02 - Order data of MIDCPNIFTY26AUG2411825CE for user Pramod Kale
+2024-08-22 18:17:04,364 - main - INFO - 2024-08-22 18:17:04 - Order data of MIDCPNIFTY26AUG2412150PE for user Pramod Kale
+2024-08-22 18:17:06,503 - main - INFO - 2024-08-22 18:17:06 - Order data of MIDCPNIFTY26AUG2413900CE for user Pramod Kale
+2024-08-22 18:17:08,509 - main - INFO - 2024-08-22 18:17:08 - Order data of MIDCPNIFTY26AUG2413800PE for user Pramod Kale
+2024-08-22 18:17:11,173 - main - INFO - 2024-08-22 18:17:11 - Order data of MIDCPNIFTY26AUG2414300PE for user Pramod Kale
+2024-08-22 18:17:13,283 - main - INFO - 2024-08-22 18:17:13 - Order data of MIDCPNIFTY26AUG2410625CE for user Pramod Kale
+2024-08-22 18:17:15,432 - main - INFO - 2024-08-22 18:17:15 - Order data of MIDCPNIFTY26AUG2411200CE for user Pramod Kale
+2024-08-22 18:17:17,507 - main - INFO - 2024-08-22 18:17:17 - Order data of MIDCPNIFTY26AUG2411725CE for user Pramod Kale
+2024-08-22 18:17:19,624 - main - INFO - 2024-08-22 18:17:19 - Order data of MIDCPNIFTY26AUG2410550CE for user Pramod Kale
+2024-08-22 18:17:21,634 - main - INFO - 2024-08-22 18:17:21 - Order data of MIDCPNIFTY26AUG2411475CE for user Pramod Kale
+2024-08-22 18:17:23,632 - main - INFO - 2024-08-22 18:17:23 - Orders placed for user Pramod Kale with instruments: []
+2024-08-22 18:17:23,723 - main - INFO - 2024-08-22 18:17:23 - Order data of BANKNIFTY28AUG2444300PE for user Prachi Jadhav
+2024-08-22 18:17:25,902 - main - INFO - 2024-08-22 18:17:25 - Order data of BANKNIFTY28AUG2453200PE for user Prachi Jadhav
+2024-08-22 18:17:28,049 - main - INFO - 2024-08-22 18:17:28 - Order data of BANKNIFTY28AUG2444400CE for user Prachi Jadhav
+2024-08-22 18:17:30,117 - main - INFO - 2024-08-22 18:17:30 - Order data of BANKNIFTY28AUG2452700CE for user Prachi Jadhav
+2024-08-22 18:17:32,227 - main - INFO - 2024-08-22 18:17:32 - Order data of BANKNIFTY28AUG2458500CE for user Prachi Jadhav
+2024-08-22 18:17:34,519 - main - INFO - 2024-08-22 18:17:34 - Order data of FINNIFTY27AUG2419700CE for user Prachi Jadhav
+2024-08-22 18:17:37,600 - main - INFO - 2024-08-22 18:17:37 - Order data of FINNIFTY27AUG2423800PE for user Prachi Jadhav
+2024-08-22 18:17:39,604 - main - INFO - 2024-08-22 18:17:39 - Order data of FINNIFTY27AUG2422900PE for user Prachi Jadhav
+2024-08-22 18:17:41,718 - main - INFO - 2024-08-22 18:17:41 - Order data of FINNIFTY27AUG2422000PE for user Prachi Jadhav
+2024-08-22 18:17:43,694 - main - INFO - 2024-08-22 18:17:43 - Order data of FINNIFTY27AUG2418900CE for user Prachi Jadhav
+2024-08-22 18:17:45,649 - main - INFO - 2024-08-22 18:17:45 - Order data of MIDCPNIFTY26AUG2411825CE for user Prachi Jadhav
+2024-08-22 18:17:47,880 - main - INFO - 2024-08-22 18:17:47 - Order data of MIDCPNIFTY26AUG2412150PE for user Prachi Jadhav
+2024-08-22 18:17:50,171 - main - INFO - 2024-08-22 18:17:50 - Order data of MIDCPNIFTY26AUG2413900CE for user Prachi Jadhav
+2024-08-22 18:17:52,237 - main - INFO - 2024-08-22 18:17:52 - Order data of MIDCPNIFTY26AUG2413800PE for user Prachi Jadhav
+2024-08-22 18:17:54,433 - main - INFO - 2024-08-22 18:17:54 - Order data of MIDCPNIFTY26AUG2414300PE for user Prachi Jadhav
+2024-08-22 18:17:56,527 - main - INFO - 2024-08-22 18:17:56 - Order data of MIDCPNIFTY26AUG2410625CE for user Prachi Jadhav
+2024-08-22 18:17:58,666 - main - INFO - 2024-08-22 18:17:58 - Order data of MIDCPNIFTY26AUG2411200CE for user Prachi Jadhav
+2024-08-22 18:18:00,756 - main - INFO - 2024-08-22 18:18:00 - Order data of MIDCPNIFTY26AUG2411725CE for user Prachi Jadhav
+2024-08-22 18:18:02,757 - main - INFO - 2024-08-22 18:18:02 - Order data of MIDCPNIFTY26AUG2410550CE for user Prachi Jadhav
+2024-08-22 18:18:04,773 - main - INFO - 2024-08-22 18:18:04 - Order data of MIDCPNIFTY26AUG2411475CE for user Prachi Jadhav
+2024-08-22 18:18:06,746 - main - INFO - 2024-08-22 18:18:06 - Orders placed for user Prachi Jadhav with instruments: []
+2024-08-22 18:39:40,037 - main - INFO - 2024-08-22 18:39:40 - Order data of BANKNIFTY28AUG2444300PE for user Harry
+2024-08-22 18:39:42,326 - main - INFO - 2024-08-22 18:39:42 - Order data of BANKNIFTY28AUG2453200PE for user Harry
+2024-08-22 18:39:44,431 - main - INFO - 2024-08-22 18:39:44 - Order data of BANKNIFTY28AUG2444400CE for user Harry
+2024-08-22 18:39:46,364 - main - INFO - 2024-08-22 18:39:46 - Order data of BANKNIFTY28AUG2452700CE for user Harry
+2024-08-22 18:39:48,481 - main - INFO - 2024-08-22 18:39:48 - Order data of BANKNIFTY28AUG2458500CE for user Harry
+2024-08-22 18:39:50,811 - main - INFO - 2024-08-22 18:39:50 - Order data of FINNIFTY27AUG2419700CE for user Harry
+2024-08-22 18:39:53,005 - main - INFO - 2024-08-22 18:39:53 - Order data of FINNIFTY27AUG2423800PE for user Harry
+2024-08-22 18:39:55,099 - main - INFO - 2024-08-22 18:39:55 - Order data of FINNIFTY27AUG2422900PE for user Harry
+2024-08-22 18:39:57,236 - main - INFO - 2024-08-22 18:39:57 - Order data of FINNIFTY27AUG2422000PE for user Harry
+2024-08-22 18:39:59,283 - main - INFO - 2024-08-22 18:39:59 - Order data of FINNIFTY27AUG2418900CE for user Harry
+2024-08-22 18:40:01,324 - main - INFO - 2024-08-22 18:40:01 - Order data of MIDCPNIFTY26AUG2411825CE for user Harry
+2024-08-22 18:40:03,449 - main - INFO - 2024-08-22 18:40:03 - Order data of MIDCPNIFTY26AUG2412150PE for user Harry
+2024-08-22 18:40:06,045 - main - INFO - 2024-08-22 18:40:06 - Order data of MIDCPNIFTY26AUG2413900CE for user Harry
+2024-08-22 18:40:08,358 - main - INFO - 2024-08-22 18:40:08 - Order data of MIDCPNIFTY26AUG2413800PE for user Harry
+2024-08-22 18:40:10,433 - main - INFO - 2024-08-22 18:40:10 - Order data of MIDCPNIFTY26AUG2414300PE for user Harry
+2024-08-22 18:40:12,455 - main - INFO - 2024-08-22 18:40:12 - Order data of MIDCPNIFTY26AUG2410625CE for user Harry
+2024-08-22 18:40:14,488 - main - INFO - 2024-08-22 18:40:14 - Order data of MIDCPNIFTY26AUG2411200CE for user Harry
+2024-08-22 18:40:16,753 - main - INFO - 2024-08-22 18:40:16 - Order data of MIDCPNIFTY26AUG2411725CE for user Harry
+2024-08-22 18:40:18,738 - main - INFO - 2024-08-22 18:40:18 - Order data of MIDCPNIFTY26AUG2410550CE for user Harry
