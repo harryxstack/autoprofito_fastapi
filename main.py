@@ -155,7 +155,7 @@ async def process_orders_for_user(user: Dict[str, Any], instrument_data: List[Di
     return instrument_list
 
 # Broker buy order function
-async def insert_trade_book_live(connection, user_id, tradingsymbol, symboltoken, actual_quantity2, lot_size_limit, ltp, buy_order_id, exchange, ordertype, producttype, duration):
+async def insert_trade_book_live(connection, user_id, tradingsymbol, symboltoken, actual_quantity2, lot_size_limit, ltp, buy_order_id, exchange, ordertype, producttype, duration, transactionType):
     try:
         with connection.cursor() as cursor:
             currentDateAndTime = datetime.now()
@@ -176,7 +176,7 @@ async def insert_trade_book_live(connection, user_id, tradingsymbol, symboltoken
                 str(ordertype),
                 str(producttype),
                 str(duration),
-                'BUY',
+                str(transactionType),
                 str(currentDateAndTime)
             )
             
@@ -328,7 +328,8 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
                         exchange,
                         ordertype,
                         producttype,
-                        duration
+                        duration, 
+                        transactionType
                     )
                     
                     if insert_success:
@@ -388,7 +389,7 @@ async def process_student_pending_orders(user: Dict[str, Any]):
     try:
         with connection.cursor() as cursor:
             query = """
-            SELECT stock_symbol, stock_token, stock_quantity FROM trade_book_live
+            SELECT stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration FROM trade_book_live
             WHERE user_id = %s AND orderid IS NOT NULL
             """
             cursor.execute(query, (user['user_id'],))
@@ -405,8 +406,6 @@ async def process_student_pending_orders(user: Dict[str, Any]):
         success = await broker_sell_students_all_pending_order(user, trades_list)
         if success:
             return {"st": 1, "msg": f"Exit orders placed successfully for user {user['user_id']}"}
-        else:
-            return {"st": 3, "msg": f"Failed to place some or all exit orders for user {user['user_id']}"}
     else:
         logger.info(f"{get_current_time_formatted()} - No trades found for user {user['user_id']}")
         return {"st": 2, "msg": f"No trades found for user {user['user_id']}"}
@@ -440,29 +439,87 @@ async def broker_sell_students_all_pending_order(user: Dict[str, Any], trades: L
         for trade in trades:
             tradingsymbol = trade["stock_symbol"]
             symboltoken = trade["stock_token"]
+            transaction_type1=trade["transactiontype"]
+            exchange=trade["exchange"]
+            ordertype=trade["ordertype"]
+            producttype=trade["producttype"]
+            duration=trade["duration"]
+            lot_size_limit=trade["lot_size"]
+            orderid=trade["orderid"]
+            price=trade["price"]
+           
             try:
                 quantity = abs(int(float(trade["stock_quantity"])))
             except ValueError as e:
                 logger.error(f"{get_current_time_formatted()} - Invalid quantity format for trade {trade}: {e}")
                 continue
 
+            transactionType=None
+            if transaction_type1 == "BUY":
+                transactionType="SELL"
+            else:
+                transactionType="BUY"
+                
             order_params = {
                 "variety": "NORMAL",
                 "tradingsymbol": tradingsymbol,
                 "symboltoken": symboltoken,
-                "transactiontype": "SELL",
-                "exchange": "NFO",
-                "ordertype": "MARKET",
-                "producttype": "MIS",
-                "duration": "DAY",
-                "quantity": quantity
+                "transactiontype": transactionType,
+                "exchange": exchange,
+                "ordertype": ordertype,
+                "producttype": producttype,
+                "duration": duration,
+                "quantity": str(quantity)
             }
             logger.info(f"{get_current_time_formatted()} - Placing order with params: {order_params}")
 
             try:
                 response = await asyncio.get_event_loop().run_in_executor(None, smartApi.placeOrder, order_params)
-                logger.info(f"{get_current_time_formatted()} - Raw response from placeOrder: {response}")
+                logger.info(f"{get_current_time_formatted()} - Order placement response: {response}")
+                
+                connection = await create_connection()
+                actual_quantity2=str(quantity)
+                lot_size_limit=lot_size_limit
+                ltp=price
+                buy_order_id=orderid
+                exchange=exchange
+                ordertype=ordertype
+                producttype=producttype
+                duration=duration
+                
+                if not connection:
+                    logger.error(f"{get_current_time_formatted()} - Database connection failed")
+                    return False
+                
+                try:
+                    # Test database connection
+                    with connection.cursor() as cursor:
+                        cursor.execute("SELECT 1")
+                        result = cursor.fetchone()
+                        logger.info(f"Database connection test result: {result}")
 
+                    insert_success = await insert_trade_book_live(
+                        connection,
+                        user['user_id'],
+                        tradingsymbol,
+                        symboltoken,
+                        actual_quantity2,
+                        lot_size_limit,
+                        ltp,
+                        buy_order_id,
+                        exchange,
+                        ordertype,
+                        producttype,
+                        duration,
+                        transactionType
+                    )
+                finally:
+                    connection.close()
+            
+                if not response:
+                    logger.error(f"{get_current_time_formatted()} - No response received from placeOrder for {tradingsymbol}")
+                    return False
+        
                 if response:
                     if isinstance(response, str):
                         try:
@@ -523,3 +580,9 @@ async def exit_all_student_pending(request: ExitPendingRequest):
     except Exception as e:
         logger.error(f"{get_current_time_formatted()} - Error in exit_all_student_pending: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
+
+
+
+
+
+

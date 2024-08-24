@@ -1,0 +1,203 @@
+@csrf_exempt
+def exit_student_instrument(request):
+    try:
+        if request.method == 'POST':
+            data = json.loads(request.body.decode("utf-8"))
+            student_id = data['student_id']
+            instrument = data['instrument_data']
+
+            if not student_id:
+                logger.error("Student ID is required")
+                return JsonResponse({"st": 3, "msg": "Student ID is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+            try:
+                student_id = int(student_id)
+            except (TypeError, ValueError):
+                logger.error("Invalid Student id. It must be an integer.")
+                return JsonResponse({"st": 3, "msg": "Invalid Student id. It must be an integer."}, status=400)
+
+            try:
+                user = User.objects.get(user_id=student_id)
+            except User.DoesNotExist:
+                logger.error("Student not found")
+                return JsonResponse({"st": 2, "msg": "Student not found"}, status=status.HTTP_404_NOT_FOUND)
+
+            if not instrument:
+                logger.error("No instrument data provided")
+                return JsonResponse({"st": 3, "msg": "No instrument data provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+            if not instrument.get('tradingsymbol'):
+                return JsonResponse({"st": 3, "msg": "Tradingsymbol is required"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            if not instrument.get('symboltoken'):
+                return JsonResponse({"st": 3, "msg": "Symboltoken is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+            tradingsymbol = instrument.get("tradingsymbol")
+            symboltoken = instrument.get("symboltoken")
+
+            user = User.objects.filter(user_id=student_id).first()
+            print(user)
+
+            broker_sell_student_order(request, user, instrument)
+
+          
+
+            return JsonResponse({"st": 1, "msg": "Exit order placed"})
+
+        else:
+            return JsonResponse({"st": 4, "msg": "Invalid request method"})
+
+    except Exception as e:
+        print(e)
+        traceback.print_exc()
+        logger.error(str(e))
+        return JsonResponse({"st": 2, "msg": str(e)})
+
+
+def broker_sell_student_order(request, user, instrument):
+    broker_client_id = user.broker_client_id
+    broker_password = user.broker_password
+    broker_qr_totp_token = user.broker_qr_totp_token
+    api_key = user.broker_api_key
+
+    try:
+        totp = pyotp.TOTP(broker_qr_totp_token).now()
+    except Exception as e:
+        logger.error("Invalid Token: The provided token is not valid.")
+        return JsonResponse({"st": 2, "msg": "Invalid Token: The provided token is not valid."})
+
+    try:
+        smartApi = SmartConnect(api_key)
+        data = smartApi.generateSession(broker_client_id, broker_password, totp)
+
+        if data["message"] == 'SUCCESS':
+            tradingsymbol = instrument.get("tradingsymbol")
+            symboltoken = instrument.get("symboltoken")
+            # exit_lot = exit_lot
+            exit_lot =user.lot_size_limit
+
+            instrument_obj = Instrument.objects.filter(token=symboltoken).first()
+            lotsize = instrument_obj.lotsize
+            quantity = int(exit_lot) * int(lotsize)
+
+            print(tradingsymbol)
+
+            trade_obj = trade_book_live.objects.filter(
+                user_id=user.user_id,
+                stock_symbol=tradingsymbol,
+                stock_token=symboltoken
+            ).first()
+            print(trade_obj)
+
+            try:
+                transaction_type1=None
+                if trade_obj.transactiontype == "BUY":
+                    transaction_type1="SELL"
+                else:
+                    transaction_type1="BUY"
+
+                order_params = {
+                    "variety": "NORMAL",
+                    "tradingsymbol": tradingsymbol,
+                    "symboltoken": symboltoken,
+                    "transactiontype": transaction_type1,
+                    "exchange": trade_obj.exchange,
+                    "ordertype": trade_obj.ordertype,
+                    "producttype": trade_obj.producttype,
+                    "duration": "DAY",
+                    "squareoff": "0",
+                    "stoploss": "0",
+                    "quantity": quantity
+                }
+
+                response = smartApi.placeOrderFullResponse(order_params)
+                print(f"This is output {response}")
+                sell_order_id = response["data"]["orderid"]
+                uniqueorderid = response["data"]["uniqueorderid"]
+
+                if response:
+                    print("yes")
+
+                    if sell_order_id:
+                        if len(sell_order_id) > 10 and sell_order_id.isdigit():
+                            try:
+                                ltp_data = smartApi.ltpData(exchange="NFO", tradingsymbol=tradingsymbol, symboltoken=symboltoken)
+                                ltp = float(ltp_data['data']['ltp'])
+                                trade_queryset = trade_book_live.objects.filter(
+                                        user_id=user.user_id,
+                                        stock_symbol=tradingsymbol,
+                                        stock_token=symboltoken,
+                                        transactiontype=transaction_type1
+                                        )
+
+                                if trade_queryset.exists():
+
+                                    
+                                    avg_price = trade_queryset.aggregate(Avg('price'))['price__avg']
+
+                                    total_stock_quantity = trade_queryset.aggregate(Sum('stock_quantity'))['stock_quantity__sum']
+                                    logger.error(f"Total stock quantity {total_stock_quantity}")
+
+                                    total_lots = trade_queryset.aggregate(Sum('lot_size'))['lot_size__sum']
+                                    
+
+
+                                    # Calculate the new weighted average price
+                                    total_stock_quantity += int(quantity)
+                                    total_stock_quantity2=int(total_stock_quantity)
+                                    total_lots += int(exit_lot)
+                                    total_lots2 = int(total_lots)
+                                    avg_price += ltp
+                                    
+                                    avg_price = round((avg_price * (total_lots)) / total_lots,2)
+
+                                    # Update the existing entries with the new average price
+                                    trade_queryset.update(price=avg_price,lot_size=total_lots2,stock_quantity=total_stock_quantity2)
+
+                                else:
+                                    trade = trade_book_live.objects.create(
+                                        user_id=user.user_id,
+                                        stock_symbol=tradingsymbol,
+                                        stock_token=symboltoken,
+                                        datetime=timezone.now(),
+                                        orderid=sell_order_id,
+                                        uniqueorderid=uniqueorderid,
+                                        price=ltp,
+                                        stock_quantity=quantity,
+                                        lot_size=exit_lot,
+                                        transactiontype=transaction_type1,
+                                        exchange=trade_obj.exchange,
+                                        producttype=trade_obj.producttype,
+                                        duration="DAY",
+                                        ordertype=trade_obj.ordertype
+                                        
+                                    )
+                                    trade.save()
+                                    print("Exit order placed")
+                                    
+
+                            except Exception as e:
+                                print(e)
+                                traceback.print_exc()
+                                logger.error(str(e))
+                                return JsonResponse({"st": 2, "msg": "Failed to save trade details: " + str(e)})
+                        else:
+                            return JsonResponse({"st": 2, "msg": "Invalid sell order ID received."})
+                    else:
+                        return JsonResponse({"st": 2, "msg": "Failed to place sell order."})
+
+
+            except Exception as e:
+                print(f"Error during processing: {e}")
+                traceback.print_exc()
+                return JsonResponse({"st": 2, "msg": str(e)})
+
+            time.sleep(1)
+
+        else:
+            return JsonResponse({"st": 2, "msg": "Failed to generate session: " + data["message"]})
+
+    except Exception as e:
+        print(e)
+        traceback.print_exc()
+        return JsonResponse({"st": 2, "msg": str(e)})
