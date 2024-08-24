@@ -16,9 +16,10 @@ from SmartApi import SmartConnect
 from datetime import datetime
 from typing import List, Dict, Any
 import json
+import time
 # import mysql.connector
 # from mysql.connector import Error
-
+from concurrent.futures import ThreadPoolExecutor
 # Setup logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -46,6 +47,17 @@ class ExecuteOrdersRequest(BaseModel):
 class ExitPendingRequest(BaseModel):
     teacher_id: int
 
+class ExitStudentInstrumentRequest(BaseModel):
+    student_id: int
+    instrument_data: Dict[str, str]
+
+class ExitStudentAllInstrumentsRequest(BaseModel):
+    student_id: int
+
+class ExitPositionRequest(BaseModel):
+    teacher_id: int
+    order_data: List[OrderData]
+    
 def get_current_time_formatted():
     return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -584,5 +596,428 @@ async def exit_all_student_pending(request: ExitPendingRequest):
 
 
 
+async def fetch_user1(user_id: int):
+    connection = await create_connection()
+    if not connection:
+        raise HTTPException(status_code=500, detail="Database connection failed")
+    try:
+        with connection.cursor() as cursor:
+            query = """
+            SELECT * FROM user WHERE user_id = %s
+              AND broker_conn_status = 1
+              AND is_active = 1
+              AND trade_status = 1
+            """
+            cursor.execute(query, (user_id,))
+            result = cursor.fetchone()
+            return result
+    finally:
+        connection.close()
 
+# API endpoint
+@app.post("/exit_student_instrument")
+async def exit_student_instrument(request: ExitStudentInstrumentRequest):
+    logger.info(f"{get_current_time_formatted()} - Received request to exit_student_instrument: {request}")
+    try:
+        user_id = request.student_id  # We're using student_id as user_id
+        instrument_data = request.instrument_data
+
+        user = await fetch_user1(user_id)
+        if not user:
+            logger.error(f"{get_current_time_formatted()} - No active user found for user_id {user_id}")
+            raise HTTPException(status_code=404, detail="No active user found")
+
+        result = await process_student_instrument_exit(user, instrument_data)
+        return result
+
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error in exit_student_instrument: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error in exit_student_instrument: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+# Business logic functions
+async def process_student_instrument_exit(user: Dict[str, Any], instrument_data: Dict[str, str]):
+    logger.info(f"{get_current_time_formatted()} - Starting process_student_instrument_exit for user {user['user_id']}")
+    connection = await create_connection()
+    if not connection:
+        logger.error(f"{get_current_time_formatted()} - Database connection failed for user {user['user_id']}")
+        return {"st": 3, "msg": f"Database connection failed for user {user['user_id']}"}
+
+    try:
+        with connection.cursor() as cursor:
+            query = """
+            SELECT stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration 
+            FROM trade_book_live
+            WHERE user_id = %s AND stock_symbol = %s AND stock_token = %s AND orderid IS NOT NULL
+            """
+            cursor.execute(query, (user['user_id'], instrument_data['tradingsymbol'], instrument_data['symboltoken']))
+            trade = cursor.fetchone()
+            logger.info(f"{get_current_time_formatted()} - Fetched trade for user {user['user_id']}: {trade}")
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error executing query: {e}")
+        return {"st": 3, "msg": f"Error fetching trade for user {user['user_id']}"}
+    finally:
+        connection.close()
+
+    if trade:
+        success = await broker_exit_instrument(user, trade)
+        if success:
+            return {"st": 1, "msg": f"Exit order placed successfully for user {user['user_id']} and instrument {instrument_data['tradingsymbol']}"}
+        else:
+            return {"st": 0, "msg": f"Failed to place exit order for user {user['user_id']} and instrument {instrument_data['tradingsymbol']}"}
+    else:
+        logger.info(f"{get_current_time_formatted()} - No trade found for user {user['user_id']} and instrument {instrument_data['tradingsymbol']}")
+        return {"st": 2, "msg": f"No trade found for user {user['user_id']} and instrument {instrument_data['tradingsymbol']}"}
+
+async def broker_exit_instrument(user: Dict[str, Any], trade: Dict[str, Any]):
+    logger.info(f"{get_current_time_formatted()} - Starting broker_exit_instrument for user {user['user_id']}")
+    broker_credentials = await fetch_broker_credentials(user['user_id'])
+    if not broker_credentials:
+        logger.error(f"{get_current_time_formatted()} - Broker credentials not found for user {user['user_id']}")
+        return False
+
+    connection = await create_connection()
+    if not connection:
+        logger.error(f"{get_current_time_formatted()} - Database connection failed for user {user['user_id']}")
+        return False
+
+    try:
+        obj = SmartConnect(api_key=broker_credentials['api_key'])
+        data = obj.generateSession(broker_credentials['client_id'], broker_credentials['password'], pyotp.TOTP(broker_credentials['qr_totp_token']).now())
+        refreshToken = data['data']['refreshToken']
+        feedToken = obj.getfeedToken()
+        userProfile = obj.getProfile(refreshToken)
+        logger.info(f"{get_current_time_formatted()} - Generated session for user {user['user_id']}")
+
+        tradingsymbol = trade["stock_symbol"]
+        symboltoken = trade["stock_token"]
+        quantity = abs(int(float(trade["stock_quantity"])))
+        transaction_type = "SELL" if trade["transactiontype"] == "BUY" else "BUY"
+        
+        order_params = {
+            "variety": "NORMAL",
+            "tradingsymbol": tradingsymbol,
+            "symboltoken": symboltoken,
+            "transactiontype": transaction_type,
+            "exchange": trade["exchange"],
+            "ordertype": trade["ordertype"],
+            "producttype": trade["producttype"],
+            "duration": trade["duration"],
+            "quantity": str(quantity)
+        }
+
+        order_id = obj.placeOrder(order_params)
+        logger.info(f"{get_current_time_formatted()} - Placed order for user {user['user_id']}: {order_id}")
+
+        # Insert the new order into trade_book_live
+        with connection.cursor() as cursor:
+            currentDateAndTime = datetime.now()
+            insert_query = """
+            INSERT INTO trade_book_live (user_id, stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """
+            cursor.execute(insert_query, (
+                user['user_id'], tradingsymbol, symboltoken, -quantity, trade["price"],
+                order_id, transaction_type, trade["lot_size"], trade["exchange"],
+                trade["ordertype"], trade["producttype"], trade["duration"], currentDateAndTime
+            ))
+            connection.commit()
+
+        return True
+
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error in broker_exit_instrument: {e}")
+        return False
+    finally:
+        try:
+            obj.terminateSession(user['user_id'])
+            logger.info(f"{get_current_time_formatted()} - Terminated session for user {user['user_id']}")
+        except:
+            pass
+        connection.close()
+
+
+@app.post("/exit_students_all_instrument")
+async def exit_students_all_instrument(request: ExitStudentAllInstrumentsRequest):
+    logger.info(f"{get_current_time_formatted()} - Received request to exit_students_all_instrument: {request}")
+    try:
+        user_id = request.student_id
+
+        user = await fetch_user1(user_id)
+        if not user:
+            logger.error(f"{get_current_time_formatted()} - No active user found for user_id {user_id}")
+            raise HTTPException(status_code=404, detail="No active user found")
+
+        result = await process_student_all_instruments_exit(user)
+        return result
+
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error in exit_students_all_instrument: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+async def process_student_all_instruments_exit(user: Dict[str, Any]):
+    logger.info(f"{get_current_time_formatted()} - Starting process_student_all_instruments_exit for user {user['user_id']}")
+    connection = await create_connection()
+    if not connection:
+        logger.error(f"{get_current_time_formatted()} - Database connection failed for user {user['user_id']}")
+        return {"st": 3, "msg": f"Database connection failed for user {user['user_id']}"}
+
+    try:
+        with connection.cursor() as cursor:
+            query = """
+            SELECT stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration 
+            FROM trade_book_live
+            WHERE user_id = %s AND orderid IS NOT NULL
+            """
+            cursor.execute(query, (user['user_id'],))
+            trades = cursor.fetchall()
+            logger.info(f"{get_current_time_formatted()} - Fetched {len(trades)} trades for user {user['user_id']}")
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error executing query: {e}")
+        return {"st": 3, "msg": f"Error fetching trades for user {user['user_id']}"}
+    finally:
+        connection.close()
+
+    if trades:
+        success = await broker_exit_all_instruments(user, trades)
+        if success:
+            return {"st": 1, "msg": f"Exit orders placed successfully for all instruments of user {user['user_id']}"}
+        else:
+            return {"st": 0, "msg": f"Failed to place exit orders for some or all instruments of user {user['user_id']}"}
+    else:
+        logger.info(f"{get_current_time_formatted()} - No trades found for user {user['user_id']}")
+        return {"st": 2, "msg": f"No trades found for user {user['user_id']}"}
+
+async def broker_exit_all_instruments(user: Dict[str, Any], trades: List[Dict[str, Any]]):
+    logger.info(f"{get_current_time_formatted()} - Starting broker_exit_all_instruments for user {user['user_id']}")
+    broker_credentials = await fetch_broker_credentials(user['user_id'])
+    if not broker_credentials:
+        logger.error(f"{get_current_time_formatted()} - Broker credentials not found for user {user['user_id']}")
+        return False
+
+    connection = await create_connection()
+    if not connection:
+        logger.error(f"{get_current_time_formatted()} - Database connection failed for user {user['user_id']}")
+        return False
+
+    try:
+        obj = SmartConnect(api_key=broker_credentials['api_key'])
+        data = obj.generateSession(broker_credentials['client_id'], broker_credentials['password'], pyotp.TOTP(broker_credentials['qr_totp_token']).now())
+        refreshToken = data['data']['refreshToken']
+        feedToken = obj.getfeedToken()
+        userProfile = obj.getProfile(refreshToken)
+        logger.info(f"{get_current_time_formatted()} - Generated session for user {user['user_id']}")
+
+        all_orders_placed = True
+
+        for trade in trades:
+            tradingsymbol = trade["stock_symbol"]
+            symboltoken = trade["stock_token"]
+            quantity = abs(int(float(trade["stock_quantity"])))
+            transaction_type = "SELL" if trade["transactiontype"] == "BUY" else "BUY"
+            
+            order_params = {
+                "variety": "NORMAL",
+                "tradingsymbol": tradingsymbol,
+                "symboltoken": symboltoken,
+                "transactiontype": transaction_type,
+                "exchange": trade["exchange"],
+                "ordertype": trade["ordertype"],
+                "producttype": trade["producttype"],
+                "duration": trade["duration"],
+                "quantity": str(quantity)
+            }
+
+            try:
+                order_id = obj.placeOrder(order_params)
+                logger.info(f"{get_current_time_formatted()} - Placed order for user {user['user_id']}, instrument {tradingsymbol}: {order_id}")
+
+                # Insert the new order into trade_book_live
+                with connection.cursor() as cursor:
+                    currentDateAndTime = datetime.now()
+                    insert_query = """
+                    INSERT INTO trade_book_live (user_id, stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration, datetime)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    """
+                    cursor.execute(insert_query, (
+                        user['user_id'], tradingsymbol, symboltoken, -quantity, trade["price"],
+                        order_id, transaction_type, trade["lot_size"], trade["exchange"],
+                        trade["ordertype"], trade["producttype"], trade["duration"], currentDateAndTime
+                    ))
+                    connection.commit()
+
+            except Exception as e:
+                logger.error(f"{get_current_time_formatted()} - Error placing exit order for user {user['user_id']}, instrument {tradingsymbol}: {e}")
+                all_orders_placed = False
+
+            await asyncio.sleep(0.5)  # Add a small delay between orders to avoid rate limiting
+
+        return all_orders_placed
+
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error in broker_exit_all_instruments: {e}")
+        return False
+    finally:
+        try:
+            obj.terminateSession(user['user_id'])
+            logger.info(f"{get_current_time_formatted()} - Terminated session for user {user['user_id']}")
+        except:
+            pass
+        connection.close()
+
+
+
+
+class ExitTeacherInstrumentRequest(BaseModel):
+    teacher_id: int
+    order_data: List[Dict[str, str]]
+
+# Fetch teacher details
+async def fetch_teacher(teacher_id: int):
+    connection = await create_connection()
+    if not connection:
+        raise HTTPException(status_code=500, detail="Database connection failed")
+    try:
+        with connection.cursor() as cursor:
+            query = """
+            SELECT * FROM user WHERE teacher_id = %s
+              AND broker_conn_status = 1
+              AND is_active = 1
+              AND trade_status = 1
+            """
+            cursor.execute(query, (teacher_id,))
+            result = cursor.fetchone()
+            return result
+    finally:
+        connection.close()
+
+
+@app.post("/exit_position")
+async def exit_teacher_instrument(request: ExitTeacherInstrumentRequest):
+    logger.info(f"{get_current_time_formatted()} - Received request to exit_teacher_instrument: {request}")
+    try:
+        teacher_id = request.teacher_id
+        order_data = request.order_data
+
+        teacher = await fetch_teacher(teacher_id)
+        if not teacher:
+            logger.error(f"{get_current_time_formatted()} - No active teacher found for teacher_id {teacher_id}")
+            raise HTTPException(status_code=404, detail="No active teacher found")
+
+        results = []
+        for data in order_data:
+            result = await process_teacher_instrument_exit(teacher, data)
+            results.append(result)
+
+        return {"status": "success", "results": results}
+
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error in exit_teacher_instrument: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+# Process exit for each instrument
+async def process_teacher_instrument_exit(teacher: Dict[str, Any], instrument_data: Dict[str, str]):
+    logger.info(f"{get_current_time_formatted()} - Starting process_teacher_instrument_exit for teacher {teacher['teacher_id']}")
+    connection = await create_connection()
+    if not connection:
+        logger.error(f"{get_current_time_formatted()} - Database connection failed for teacher {teacher['teacher_id']}")
+        return {"st": 3, "msg": f"Database connection failed for teacher {teacher['teacher_id']}"}
+
+    try:
+        with connection.cursor() as cursor:
+            query = """
+            SELECT stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration 
+            FROM trade_book_live
+            WHERE user_id = %s AND stock_symbol = %s AND stock_token = %s AND orderid IS NOT NULL
+            """
+            cursor.execute(query, (teacher['teacher_id'], instrument_data['instrument'], instrument_data['symboltoken']))
+            trade = cursor.fetchone()
+            logger.info(f"{get_current_time_formatted()} - Fetched trade for teacher {teacher['teacher_id']}: {trade}")
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error executing query: {e}")
+        return {"st": 3, "msg": f"Error fetching trade for teacher {teacher['teacher_id']}"}
+    finally:
+        connection.close()
+
+    if trade:
+        success = await broker_exit_instrument(teacher, trade, int(instrument_data['exit_lot']))
+        if success:
+            return {"st": 1, "msg": f"Exit order placed successfully for teacher {teacher['teacher_id']} and instrument {instrument_data['instrument']}"}
+        else:
+            return {"st": 0, "msg": f"Failed to place exit order for teacher {teacher['teacher_id']} and instrument {instrument_data['instrument']}"}
+    else:
+        logger.info(f"{get_current_time_formatted()} - No trade found for teacher {teacher['teacher_id']} and instrument {instrument_data['instrument']}")
+        return {"st": 2, "msg": f"No trade found for teacher {teacher['teacher_id']} and instrument {instrument_data['instrument']}"}
+
+# Exit instrument function with lot size parameter
+async def broker_exit_instrument(teacher: Dict[str, Any], trade: Dict[str, Any], exit_lot: int):
+    logger.info(f"{get_current_time_formatted()} - Starting broker_exit_instrument for teacher {teacher['teacher_id']}")
+    broker_credentials = await fetch_broker_credentials(teacher['teacher_id'])
+    if not broker_credentials:
+        logger.error(f"{get_current_time_formatted()} - Broker credentials not found for teacher {teacher['teacher_id']}")
+        return False
+
+    connection = await create_connection()
+    if not connection:
+        logger.error(f"{get_current_time_formatted()} - Database connection failed for teacher {teacher['teacher_id']}")
+        return False
+
+    try:
+        obj = SmartConnect(api_key=broker_credentials['api_key'])
+        data = obj.generateSession(broker_credentials['client_id'], broker_credentials['password'], pyotp.TOTP(broker_credentials['qr_totp_token']).now())
+        refreshToken = data['data']['refreshToken']
+        feedToken = obj.getfeedToken()
+        userProfile = obj.getProfile(refreshToken)
+        logger.info(f"{get_current_time_formatted()} - Generated session for teacher {teacher['teacher_id']}")
+
+        tradingsymbol = trade["stock_symbol"]
+        symboltoken = trade["stock_token"]
+        quantity =  trade['stock_quantity']
+        transaction_type = "SELL" if trade["transactiontype"] == "BUY" else "BUY"
+        
+        order_params = {
+            "variety": "NORMAL",
+            "tradingsymbol": tradingsymbol,
+            "symboltoken": symboltoken,
+            "transactiontype": transaction_type,
+            "exchange": trade["exchange"],
+            "ordertype": trade["ordertype"],
+            "producttype": trade["producttype"],
+            "duration": trade["duration"],
+            "quantity": str(quantity)
+        }
+
+        response = await asyncio.get_event_loop().run_in_executor(None, obj.placeOrder, order_params)
+        logger.info(f"{get_current_time_formatted()} - Order placement response: {response}")
+        order_id=10
+
+        # Insert the new order into trade_book_live
+        with connection.cursor() as cursor:
+            currentDateAndTime = datetime.now()
+            insert_query = """
+            INSERT INTO trade_book_live (user_id, stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """
+            cursor.execute(insert_query, (
+                teacher['teacher_id'], tradingsymbol, symboltoken, quantity, trade["price"],
+                order_id, transaction_type, trade["lot_size"], trade["exchange"],
+                trade["ordertype"], trade["producttype"], trade["duration"], currentDateAndTime
+            ))
+            connection.commit()
+
+        return True
+
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error in broker_exit_instrument: {e}")
+        return False
+    finally:
+        try:
+            obj.terminateSession(teacher['teacher_id'])
+            logger.info(f"{get_current_time_formatted()} - Terminated session for teacher {teacher['teacher_id']}")
+        except:
+            pass
+        connection.close()
 
