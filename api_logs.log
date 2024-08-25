@@ -1,0 +1,851 @@
+2024-08-24 18:14:39,760 - main - INFO - 2024-08-24 18:14:39 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-24 18:14:39,761 - main - INFO - 2024-08-24 18:14:39 - Starting broker_buy_order for user 157
+2024-08-24 18:14:40,723 - main - INFO - 2024-08-24 18:14:40 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:14:41,093 - main - INFO - 2024-08-24 18:14:41 - Order placement response: 240824100001342
+2024-08-24 18:14:41,093 - main - INFO - 2024-08-24 18:14:41 - Order placed successfully. Order ID: 240824100001342
+2024-08-24 18:14:41,093 - main - INFO - 2024-08-24 18:14:41 - Order placed successfully. Order ID: 240824100001342
+2024-08-24 18:14:41,094 - main - INFO - 2024-08-24 18:14:41 - Attempting to update trade book for order ID: 240824100001342
+2024-08-24 18:14:41,165 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:14:41,166 - main - INFO - 2024-08-24 18:14:41 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:14:41,166 - main - INFO - 2024-08-24 18:14:41 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824100001342', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:14:41.166509')
+2024-08-24 18:14:41,176 - main - INFO - 2024-08-24 18:14:41 - Affected rows: 1
+2024-08-24 18:14:41,195 - main - INFO - 2024-08-24 18:14:41 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:14:41,195 - main - INFO - 2024-08-24 18:14:41 - Trade book entry created successfully for order ID: 240824100001342
+2024-08-24 18:14:41,372 - main - INFO - 2024-08-24 18:14:41 - Session terminated for user H225144
+2024-08-24 18:14:42,513 - main - INFO - 2024-08-24 18:14:42 - Order data of FINNIFTY27AUG2418900CE for user Hari Shastri
+2024-08-24 18:14:42,521 - main - INFO - 2024-08-24 18:14:42 - Starting broker_buy_order for user 157
+2024-08-24 18:14:43,748 - main - INFO - 2024-08-24 18:14:43 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:14:44,116 - main - INFO - 2024-08-24 18:14:44 - Order placement response: 240824100001343
+2024-08-24 18:14:44,117 - main - INFO - 2024-08-24 18:14:44 - Order placed successfully. Order ID: 240824100001343
+2024-08-24 18:14:44,117 - main - INFO - 2024-08-24 18:14:44 - Order placed successfully. Order ID: 240824100001343
+2024-08-24 18:14:44,120 - main - INFO - 2024-08-24 18:14:44 - Attempting to update trade book for order ID: 240824100001343
+2024-08-24 18:14:44,170 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:14:44,170 - main - INFO - 2024-08-24 18:14:44 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:14:44,170 - main - INFO - 2024-08-24 18:14:44 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824100001343', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:14:44.170763')
+2024-08-24 18:14:44,184 - main - INFO - 2024-08-24 18:14:44 - Affected rows: 1
+2024-08-24 18:14:44,199 - main - INFO - 2024-08-24 18:14:44 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:14:44,200 - main - INFO - 2024-08-24 18:14:44 - Trade book entry created successfully for order ID: 240824100001343
+2024-08-24 18:14:44,389 - main - INFO - 2024-08-24 18:14:44 - Session terminated for user H225144
+2024-08-24 18:14:45,394 - main - INFO - 2024-08-24 18:14:45 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-24 18:14:45,450 - main - INFO - 2024-08-24 18:14:45 - Order data of BANKNIFTY28AUG2444300PE for user aruna shinde
+2024-08-24 18:14:45,452 - main - INFO - 2024-08-24 18:14:45 - Starting broker_buy_order for user 160
+2024-08-24 18:14:47,023 - main - INFO - 2024-08-24 18:14:47 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:14:47,510 - main - ERROR - 2024-08-24 18:14:47 - Error placing order for BANKNIFTY28AUG2444300PE: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+2024-08-24 18:14:47,711 - main - INFO - 2024-08-24 18:14:47 - Session terminated for user A59177355
+2024-08-24 18:14:48,773 - main - INFO - 2024-08-24 18:14:48 - Order data of FINNIFTY27AUG2418900CE for user aruna shinde
+2024-08-24 18:14:48,774 - main - INFO - 2024-08-24 18:14:48 - Starting broker_buy_order for user 160
+2024-08-24 18:14:49,595 - main - INFO - 2024-08-24 18:14:49 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:14:49,770 - main - ERROR - 2024-08-24 18:14:49 - Error placing order for FINNIFTY27AUG2418900CE: Couldn't parse the JSON response received from the server: b'Access denied because of exceeding access rate'
+2024-08-24 18:14:49,922 - main - INFO - 2024-08-24 18:14:49 - Session terminated for user A59177355
+2024-08-24 18:14:50,924 - main - INFO - 2024-08-24 18:14:50 - Orders placed for user aruna shinde with instruments: []
+2024-08-24 18:15:50,051 - main - INFO - 2024-08-24 18:15:50 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-24 18:15:50,051 - main - INFO - 2024-08-24 18:15:50 - Starting broker_buy_order for user 157
+2024-08-24 18:15:51,302 - main - INFO - 2024-08-24 18:15:51 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:15:51,545 - main - INFO - 2024-08-24 18:15:51 - Order placement response: 240824100001344
+2024-08-24 18:15:51,547 - main - INFO - 2024-08-24 18:15:51 - Order placed successfully. Order ID: 240824100001344
+2024-08-24 18:15:51,548 - main - INFO - 2024-08-24 18:15:51 - Order placed successfully. Order ID: 240824100001344
+2024-08-24 18:15:51,550 - main - INFO - 2024-08-24 18:15:51 - Attempting to update trade book for order ID: 240824100001344
+2024-08-24 18:15:51,608 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:15:51,612 - main - INFO - 2024-08-24 18:15:51 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:15:51,615 - main - INFO - 2024-08-24 18:15:51 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824100001344', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:15:51.612058')
+2024-08-24 18:15:51,627 - main - INFO - 2024-08-24 18:15:51 - Affected rows: 1
+2024-08-24 18:15:51,637 - main - INFO - 2024-08-24 18:15:51 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:15:51,639 - main - INFO - 2024-08-24 18:15:51 - Trade book entry created successfully for order ID: 240824100001344
+2024-08-24 18:15:51,864 - main - INFO - 2024-08-24 18:15:51 - Session terminated for user H225144
+2024-08-24 18:15:54,029 - main - INFO - 2024-08-24 18:15:54 - Order data of FINNIFTY27AUG2418900CE for user Hari Shastri
+2024-08-24 18:15:54,029 - main - INFO - 2024-08-24 18:15:54 - Starting broker_buy_order for user 157
+2024-08-24 18:15:55,047 - main - INFO - 2024-08-24 18:15:55 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:15:55,406 - main - INFO - 2024-08-24 18:15:55 - Order placement response: 240824100001345
+2024-08-24 18:15:55,406 - main - INFO - 2024-08-24 18:15:55 - Order placed successfully. Order ID: 240824100001345
+2024-08-24 18:15:55,407 - main - INFO - 2024-08-24 18:15:55 - Order placed successfully. Order ID: 240824100001345
+2024-08-24 18:15:55,407 - main - INFO - 2024-08-24 18:15:55 - Attempting to update trade book for order ID: 240824100001345
+2024-08-24 18:15:55,445 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:15:55,452 - main - INFO - 2024-08-24 18:15:55 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:15:55,453 - main - INFO - 2024-08-24 18:15:55 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824100001345', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:15:55.447168')
+2024-08-24 18:15:55,463 - main - INFO - 2024-08-24 18:15:55 - Affected rows: 1
+2024-08-24 18:15:55,482 - main - INFO - 2024-08-24 18:15:55 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:15:55,482 - main - INFO - 2024-08-24 18:15:55 - Trade book entry created successfully for order ID: 240824100001345
+2024-08-24 18:15:55,621 - main - INFO - 2024-08-24 18:15:55 - Session terminated for user H225144
+2024-08-24 18:15:56,626 - main - INFO - 2024-08-24 18:15:56 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-24 18:15:56,664 - main - INFO - 2024-08-24 18:15:56 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-24 18:15:56,668 - main - INFO - 2024-08-24 18:15:56 - Starting broker_buy_order for user 161
+2024-08-24 18:15:58,180 - main - INFO - 2024-08-24 18:15:58 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:15:58,506 - main - INFO - 2024-08-24 18:15:58 - Order placement response: 240824000000159
+2024-08-24 18:15:58,506 - main - INFO - 2024-08-24 18:15:58 - Order placed successfully. Order ID: 240824000000159
+2024-08-24 18:15:58,507 - main - INFO - 2024-08-24 18:15:58 - Order placed successfully. Order ID: 240824000000159
+2024-08-24 18:15:58,507 - main - INFO - 2024-08-24 18:15:58 - Attempting to update trade book for order ID: 240824000000159
+2024-08-24 18:15:58,547 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:15:58,548 - main - INFO - 2024-08-24 18:15:58 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:15:58,549 - main - INFO - 2024-08-24 18:15:58 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824000000159', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:15:58.548244')
+2024-08-24 18:15:58,557 - main - INFO - 2024-08-24 18:15:58 - Affected rows: 1
+2024-08-24 18:15:58,566 - main - INFO - 2024-08-24 18:15:58 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:15:58,566 - main - INFO - 2024-08-24 18:15:58 - Trade book entry created successfully for order ID: 240824000000159
+2024-08-24 18:15:58,766 - main - INFO - 2024-08-24 18:15:58 - Session terminated for user P59461464
+2024-08-24 18:15:59,822 - main - INFO - 2024-08-24 18:15:59 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-24 18:15:59,823 - main - INFO - 2024-08-24 18:15:59 - Starting broker_buy_order for user 161
+2024-08-24 18:16:00,890 - main - INFO - 2024-08-24 18:16:00 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:16:01,288 - main - INFO - 2024-08-24 18:16:01 - Order placement response: 240824000000160
+2024-08-24 18:16:01,288 - main - INFO - 2024-08-24 18:16:01 - Order placed successfully. Order ID: 240824000000160
+2024-08-24 18:16:01,288 - main - INFO - 2024-08-24 18:16:01 - Order placed successfully. Order ID: 240824000000160
+2024-08-24 18:16:01,289 - main - INFO - 2024-08-24 18:16:01 - Attempting to update trade book for order ID: 240824000000160
+2024-08-24 18:16:01,332 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:16:01,332 - main - INFO - 2024-08-24 18:16:01 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:16:01,333 - main - INFO - 2024-08-24 18:16:01 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824000000160', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:16:01.332611')
+2024-08-24 18:16:01,339 - main - INFO - 2024-08-24 18:16:01 - Affected rows: 1
+2024-08-24 18:16:01,347 - main - INFO - 2024-08-24 18:16:01 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:16:01,347 - main - INFO - 2024-08-24 18:16:01 - Trade book entry created successfully for order ID: 240824000000160
+2024-08-24 18:16:01,477 - main - INFO - 2024-08-24 18:16:01 - Session terminated for user P59461464
+2024-08-24 18:16:02,486 - main - INFO - 2024-08-24 18:16:02 - Orders placed for user Prasanna Deshmukh with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-24 18:16:41,432 - main - INFO - 2024-08-24 18:16:41 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-24 18:16:41,433 - main - INFO - 2024-08-24 18:16:41 - Starting broker_buy_order for user 157
+2024-08-24 18:16:42,094 - main - INFO - 2024-08-24 18:16:42 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:16:42,417 - main - INFO - 2024-08-24 18:16:42 - Order placement response: 240824100001346
+2024-08-24 18:16:42,418 - main - INFO - 2024-08-24 18:16:42 - Order placed successfully. Order ID: 240824100001346
+2024-08-24 18:16:42,418 - main - INFO - 2024-08-24 18:16:42 - Order placed successfully. Order ID: 240824100001346
+2024-08-24 18:16:42,418 - main - INFO - 2024-08-24 18:16:42 - Attempting to update trade book for order ID: 240824100001346
+2024-08-24 18:16:42,502 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:16:42,502 - main - INFO - 2024-08-24 18:16:42 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:16:42,502 - main - INFO - 2024-08-24 18:16:42 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824100001346', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:16:42.502460')
+2024-08-24 18:16:42,572 - main - INFO - 2024-08-24 18:16:42 - Affected rows: 1
+2024-08-24 18:16:42,592 - main - INFO - 2024-08-24 18:16:42 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:16:42,592 - main - INFO - 2024-08-24 18:16:42 - Trade book entry created successfully for order ID: 240824100001346
+2024-08-24 18:16:43,143 - main - INFO - 2024-08-24 18:16:43 - Session terminated for user H225144
+2024-08-24 18:16:44,155 - main - INFO - 2024-08-24 18:16:44 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE']
+2024-08-24 18:16:44,296 - main - INFO - 2024-08-24 18:16:44 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-24 18:16:44,298 - main - INFO - 2024-08-24 18:16:44 - Starting broker_buy_order for user 161
+2024-08-24 18:16:45,763 - main - INFO - 2024-08-24 18:16:45 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:16:46,266 - main - INFO - 2024-08-24 18:16:46 - Order placement response: 240824000000161
+2024-08-24 18:16:46,266 - main - INFO - 2024-08-24 18:16:46 - Order placed successfully. Order ID: 240824000000161
+2024-08-24 18:16:46,266 - main - INFO - 2024-08-24 18:16:46 - Order placed successfully. Order ID: 240824000000161
+2024-08-24 18:16:46,266 - main - INFO - 2024-08-24 18:16:46 - Attempting to update trade book for order ID: 240824000000161
+2024-08-24 18:16:46,311 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:16:46,311 - main - INFO - 2024-08-24 18:16:46 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:16:46,311 - main - INFO - 2024-08-24 18:16:46 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824000000161', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:16:46.311363')
+2024-08-24 18:16:46,328 - main - INFO - 2024-08-24 18:16:46 - Affected rows: 1
+2024-08-24 18:16:46,342 - main - INFO - 2024-08-24 18:16:46 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:16:46,342 - main - INFO - 2024-08-24 18:16:46 - Trade book entry created successfully for order ID: 240824000000161
+2024-08-24 18:16:46,459 - main - INFO - 2024-08-24 18:16:46 - Session terminated for user P59461464
+2024-08-24 18:16:47,462 - main - INFO - 2024-08-24 18:16:47 - Orders placed for user Prasanna Deshmukh with instruments: ['BANKNIFTY28AUG2444300PE']
+2024-08-24 18:17:24,367 - main - INFO - 2024-08-24 18:17:24 - Received request to exit_student_instrument: student_id=160 instrument_data={'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}
+2024-08-24 18:17:24,430 - main - ERROR - 2024-08-24 18:17:24 - No active user found for user_id 160
+2024-08-24 18:17:24,434 - main - ERROR - 2024-08-24 18:17:24 - Error in exit_student_instrument: 404: No active user found
+2024-08-24 18:18:00,435 - main - INFO - 2024-08-24 18:18:00 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-24 18:18:00,435 - main - INFO - 2024-08-24 18:18:00 - Starting broker_buy_order for user 157
+2024-08-24 18:18:01,560 - main - INFO - 2024-08-24 18:18:01 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:18:02,120 - main - INFO - 2024-08-24 18:18:02 - Order placement response: 240824100001347
+2024-08-24 18:18:02,122 - main - INFO - 2024-08-24 18:18:02 - Order placed successfully. Order ID: 240824100001347
+2024-08-24 18:18:02,123 - main - INFO - 2024-08-24 18:18:02 - Order placed successfully. Order ID: 240824100001347
+2024-08-24 18:18:02,123 - main - INFO - 2024-08-24 18:18:02 - Attempting to update trade book for order ID: 240824100001347
+2024-08-24 18:18:02,217 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:02,217 - main - INFO - 2024-08-24 18:18:02 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:02,217 - main - INFO - 2024-08-24 18:18:02 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824100001347', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:18:02.217478')
+2024-08-24 18:18:02,227 - main - INFO - 2024-08-24 18:18:02 - Affected rows: 1
+2024-08-24 18:18:02,246 - main - INFO - 2024-08-24 18:18:02 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:18:02,247 - main - INFO - 2024-08-24 18:18:02 - Trade book entry created successfully for order ID: 240824100001347
+2024-08-24 18:18:02,392 - main - INFO - 2024-08-24 18:18:02 - Session terminated for user H225144
+2024-08-24 18:18:03,510 - main - INFO - 2024-08-24 18:18:03 - Order data of FINNIFTY27AUG2418900CE for user Hari Shastri
+2024-08-24 18:18:03,519 - main - INFO - 2024-08-24 18:18:03 - Starting broker_buy_order for user 157
+2024-08-24 18:18:04,749 - main - INFO - 2024-08-24 18:18:04 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:18:04,987 - main - INFO - 2024-08-24 18:18:04 - Order placement response: 240824100001348
+2024-08-24 18:18:04,987 - main - INFO - 2024-08-24 18:18:04 - Order placed successfully. Order ID: 240824100001348
+2024-08-24 18:18:04,988 - main - INFO - 2024-08-24 18:18:04 - Order placed successfully. Order ID: 240824100001348
+2024-08-24 18:18:04,988 - main - INFO - 2024-08-24 18:18:04 - Attempting to update trade book for order ID: 240824100001348
+2024-08-24 18:18:05,044 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:05,046 - main - INFO - 2024-08-24 18:18:05 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:05,046 - main - INFO - 2024-08-24 18:18:05 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824100001348', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:18:05.046099')
+2024-08-24 18:18:05,057 - main - INFO - 2024-08-24 18:18:05 - Affected rows: 1
+2024-08-24 18:18:05,075 - main - INFO - 2024-08-24 18:18:05 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:18:05,076 - main - INFO - 2024-08-24 18:18:05 - Trade book entry created successfully for order ID: 240824100001348
+2024-08-24 18:18:05,350 - main - INFO - 2024-08-24 18:18:05 - Session terminated for user H225144
+2024-08-24 18:18:06,363 - main - INFO - 2024-08-24 18:18:06 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-24 18:18:06,432 - main - INFO - 2024-08-24 18:18:06 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-24 18:18:06,438 - main - INFO - 2024-08-24 18:18:06 - Starting broker_buy_order for user 161
+2024-08-24 18:18:08,018 - main - INFO - 2024-08-24 18:18:08 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:18:08,595 - main - INFO - 2024-08-24 18:18:08 - Order placement response: 240824000000163
+2024-08-24 18:18:08,595 - main - INFO - 2024-08-24 18:18:08 - Order placed successfully. Order ID: 240824000000163
+2024-08-24 18:18:08,596 - main - INFO - 2024-08-24 18:18:08 - Order placed successfully. Order ID: 240824000000163
+2024-08-24 18:18:08,597 - main - INFO - 2024-08-24 18:18:08 - Attempting to update trade book for order ID: 240824000000163
+2024-08-24 18:18:08,630 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:08,632 - main - INFO - 2024-08-24 18:18:08 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:08,633 - main - INFO - 2024-08-24 18:18:08 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824000000163', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:18:08.632572')
+2024-08-24 18:18:08,650 - main - INFO - 2024-08-24 18:18:08 - Affected rows: 1
+2024-08-24 18:18:08,660 - main - INFO - 2024-08-24 18:18:08 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:18:08,662 - main - INFO - 2024-08-24 18:18:08 - Trade book entry created successfully for order ID: 240824000000163
+2024-08-24 18:18:09,205 - main - INFO - 2024-08-24 18:18:09 - Session terminated for user P59461464
+2024-08-24 18:18:10,271 - main - INFO - 2024-08-24 18:18:10 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-24 18:18:10,273 - main - INFO - 2024-08-24 18:18:10 - Starting broker_buy_order for user 161
+2024-08-24 18:18:11,073 - main - INFO - 2024-08-24 18:18:11 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:18:11,509 - main - INFO - 2024-08-24 18:18:11 - Order placement response: 240824000000164
+2024-08-24 18:18:11,510 - main - INFO - 2024-08-24 18:18:11 - Order placed successfully. Order ID: 240824000000164
+2024-08-24 18:18:11,510 - main - INFO - 2024-08-24 18:18:11 - Order placed successfully. Order ID: 240824000000164
+2024-08-24 18:18:11,511 - main - INFO - 2024-08-24 18:18:11 - Attempting to update trade book for order ID: 240824000000164
+2024-08-24 18:18:11,546 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:11,546 - main - INFO - 2024-08-24 18:18:11 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:11,548 - main - INFO - 2024-08-24 18:18:11 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824000000164', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:18:11.546819')
+2024-08-24 18:18:11,560 - main - INFO - 2024-08-24 18:18:11 - Affected rows: 1
+2024-08-24 18:18:11,573 - main - INFO - 2024-08-24 18:18:11 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:18:11,574 - main - INFO - 2024-08-24 18:18:11 - Trade book entry created successfully for order ID: 240824000000164
+2024-08-24 18:18:11,733 - main - INFO - 2024-08-24 18:18:11 - Session terminated for user P59461464
+2024-08-24 18:18:12,737 - main - INFO - 2024-08-24 18:18:12 - Orders placed for user Prasanna Deshmukh with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-24 18:18:23,563 - main - INFO - 2024-08-24 18:18:23 - Received request to exit_all_student_pending: teacher_id=157
+2024-08-24 18:18:23,599 - main - INFO - 2024-08-24 18:18:23 - Found 2 active users
+2024-08-24 18:18:23,605 - main - INFO - 2024-08-24 18:18:23 - Starting process_student_pending_orders for user 157
+2024-08-24 18:18:23,638 - main - INFO - 2024-08-24 18:18:23 - Fetched trades list for user 157: [{'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240824100001347', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}, {'stock_symbol': 'FINNIFTY27AUG2418900CE', 'stock_token': '46329', 'stock_quantity': '25000', 'price': '3440.6', 'orderid': '240824100001348', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}]
+2024-08-24 18:18:23,640 - main - INFO - 2024-08-24 18:18:23 - Database connection closed for user 157
+2024-08-24 18:18:23,641 - main - INFO - 2024-08-24 18:18:23 - Starting broker_sell_students_all_pending_order for user 157
+2024-08-24 18:18:23,747 - main - INFO - 2024-08-24 18:18:23 - Starting process_student_pending_orders for user 161
+2024-08-24 18:18:23,782 - main - INFO - 2024-08-24 18:18:23 - Fetched trades list for user 161: [{'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240824000000163', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}, {'stock_symbol': 'FINNIFTY27AUG2418900CE', 'stock_token': '46329', 'stock_quantity': '25000', 'price': '3440.6', 'orderid': '240824000000164', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}]
+2024-08-24 18:18:23,783 - main - INFO - 2024-08-24 18:18:23 - Database connection closed for user 161
+2024-08-24 18:18:23,784 - main - INFO - 2024-08-24 18:18:23 - Starting broker_sell_students_all_pending_order for user 161
+2024-08-24 18:18:24,290 - main - INFO - 2024-08-24 18:18:24 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '15000'}
+2024-08-24 18:18:24,455 - main - INFO - 2024-08-24 18:18:24 - Order placement response: 240824100001349
+2024-08-24 18:18:24,503 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:24,503 - main - INFO - 2024-08-24 18:18:24 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:24,503 - main - INFO - 2024-08-24 18:18:24 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824100001347', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-24 18:18:24.503486')
+2024-08-24 18:18:24,512 - main - INFO - 2024-08-24 18:18:24 - Affected rows: 1
+2024-08-24 18:18:24,521 - main - INFO - 2024-08-24 18:18:24 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:18:24,522 - main - ERROR - 2024-08-24 18:18:24 - Error placing exit order for BANKNIFTY28AUG2444300PE: argument of type 'int' is not iterable
+2024-08-24 18:18:24,523 - main - INFO - 2024-08-24 18:18:24 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '15000'}
+2024-08-24 18:18:24,877 - main - INFO - 2024-08-24 18:18:24 - Order placement response: 240824000000165
+2024-08-24 18:18:24,952 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:24,953 - main - INFO - 2024-08-24 18:18:24 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:24,953 - main - INFO - 2024-08-24 18:18:24 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824000000163', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-24 18:18:24.952898')
+2024-08-24 18:18:24,967 - main - INFO - 2024-08-24 18:18:24 - Affected rows: 1
+2024-08-24 18:18:24,988 - main - INFO - 2024-08-24 18:18:24 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:18:24,990 - main - ERROR - 2024-08-24 18:18:24 - Error placing exit order for BANKNIFTY28AUG2444300PE: argument of type 'int' is not iterable
+2024-08-24 18:18:25,024 - main - INFO - 2024-08-24 18:18:25 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '25000'}
+2024-08-24 18:18:25,399 - main - INFO - 2024-08-24 18:18:25 - Order placement response: 240824100001350
+2024-08-24 18:18:25,432 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:25,433 - main - INFO - 2024-08-24 18:18:25 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:25,433 - main - INFO - 2024-08-24 18:18:25 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824100001348', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-24 18:18:25.433224')
+2024-08-24 18:18:25,441 - main - INFO - 2024-08-24 18:18:25 - Affected rows: 1
+2024-08-24 18:18:25,450 - main - INFO - 2024-08-24 18:18:25 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:18:25,450 - main - ERROR - 2024-08-24 18:18:25 - Error placing exit order for FINNIFTY27AUG2418900CE: argument of type 'int' is not iterable
+2024-08-24 18:18:25,491 - main - INFO - 2024-08-24 18:18:25 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '25000'}
+2024-08-24 18:18:25,730 - main - INFO - 2024-08-24 18:18:25 - Order placement response: 240824000000166
+2024-08-24 18:18:25,761 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:18:25,762 - main - INFO - 2024-08-24 18:18:25 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:18:25,762 - main - INFO - 2024-08-24 18:18:25 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824000000164', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-24 18:18:25.762231')
+2024-08-24 18:18:25,768 - main - INFO - 2024-08-24 18:18:25 - Affected rows: 1
+2024-08-24 18:18:25,776 - main - INFO - 2024-08-24 18:18:25 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:18:25,776 - main - ERROR - 2024-08-24 18:18:25 - Error placing exit order for FINNIFTY27AUG2418900CE: argument of type 'int' is not iterable
+2024-08-24 18:18:26,344 - main - INFO - 2024-08-24 18:18:26 - Session terminated for user 157
+2024-08-24 18:18:26,571 - main - INFO - 2024-08-24 18:18:26 - Session terminated for user 161
+2024-08-24 18:18:26,582 - main - INFO - 2024-08-24 18:18:26 - Exit orders processed for all users
+2024-08-24 18:18:38,326 - main - INFO - 2024-08-24 18:18:38 - Received request to exit_students_all_instrument: student_id=160
+2024-08-24 18:18:38,382 - main - ERROR - 2024-08-24 18:18:38 - No active user found for user_id 160
+2024-08-24 18:18:38,383 - main - ERROR - 2024-08-24 18:18:38 - Error in exit_students_all_instrument: 404: No active user found
+2024-08-24 18:19:07,326 - main - INFO - 2024-08-24 18:19:07 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-24 18:19:07,326 - main - INFO - 2024-08-24 18:19:07 - Starting broker_buy_order for user 157
+2024-08-24 18:19:08,571 - main - INFO - 2024-08-24 18:19:08 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:19:08,672 - main - INFO - 2024-08-24 18:19:08 - Order placement response: 240824100001351
+2024-08-24 18:19:08,672 - main - INFO - 2024-08-24 18:19:08 - Order placed successfully. Order ID: 240824100001351
+2024-08-24 18:19:08,672 - main - INFO - 2024-08-24 18:19:08 - Order placed successfully. Order ID: 240824100001351
+2024-08-24 18:19:08,672 - main - INFO - 2024-08-24 18:19:08 - Attempting to update trade book for order ID: 240824100001351
+2024-08-24 18:19:08,711 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:19:08,711 - main - INFO - 2024-08-24 18:19:08 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:19:08,711 - main - INFO - 2024-08-24 18:19:08 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824100001351', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:19:08.711544')
+2024-08-24 18:19:08,721 - main - INFO - 2024-08-24 18:19:08 - Affected rows: 1
+2024-08-24 18:19:08,731 - main - INFO - 2024-08-24 18:19:08 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:19:08,731 - main - INFO - 2024-08-24 18:19:08 - Trade book entry created successfully for order ID: 240824100001351
+2024-08-24 18:19:08,894 - main - INFO - 2024-08-24 18:19:08 - Session terminated for user H225144
+2024-08-24 18:19:09,997 - main - INFO - 2024-08-24 18:19:09 - Order data of FINNIFTY27AUG2418900CE for user Hari Shastri
+2024-08-24 18:19:09,997 - main - INFO - 2024-08-24 18:19:09 - Starting broker_buy_order for user 157
+2024-08-24 18:19:11,212 - main - INFO - 2024-08-24 18:19:11 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:19:11,517 - main - INFO - 2024-08-24 18:19:11 - Order placement response: 240824100001352
+2024-08-24 18:19:11,517 - main - INFO - 2024-08-24 18:19:11 - Order placed successfully. Order ID: 240824100001352
+2024-08-24 18:19:11,519 - main - INFO - 2024-08-24 18:19:11 - Order placed successfully. Order ID: 240824100001352
+2024-08-24 18:19:11,519 - main - INFO - 2024-08-24 18:19:11 - Attempting to update trade book for order ID: 240824100001352
+2024-08-24 18:19:11,561 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:19:11,561 - main - INFO - 2024-08-24 18:19:11 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:19:11,562 - main - INFO - 2024-08-24 18:19:11 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824100001352', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:19:11.561684')
+2024-08-24 18:19:11,570 - main - INFO - 2024-08-24 18:19:11 - Affected rows: 1
+2024-08-24 18:19:11,580 - main - INFO - 2024-08-24 18:19:11 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:19:11,580 - main - INFO - 2024-08-24 18:19:11 - Trade book entry created successfully for order ID: 240824100001352
+2024-08-24 18:19:11,836 - main - INFO - 2024-08-24 18:19:11 - Session terminated for user H225144
+2024-08-24 18:19:12,842 - main - INFO - 2024-08-24 18:19:12 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-24 18:19:12,910 - main - INFO - 2024-08-24 18:19:12 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-24 18:19:12,911 - main - INFO - 2024-08-24 18:19:12 - Starting broker_buy_order for user 161
+2024-08-24 18:19:14,272 - main - INFO - 2024-08-24 18:19:14 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-24 18:19:14,523 - main - INFO - 2024-08-24 18:19:14 - Order placement response: 240824000000167
+2024-08-24 18:19:14,523 - main - INFO - 2024-08-24 18:19:14 - Order placed successfully. Order ID: 240824000000167
+2024-08-24 18:19:14,523 - main - INFO - 2024-08-24 18:19:14 - Order placed successfully. Order ID: 240824000000167
+2024-08-24 18:19:14,524 - main - INFO - 2024-08-24 18:19:14 - Attempting to update trade book for order ID: 240824000000167
+2024-08-24 18:19:14,668 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:19:14,668 - main - INFO - 2024-08-24 18:19:14 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:19:14,668 - main - INFO - 2024-08-24 18:19:14 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240824000000167', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:19:14.668434')
+2024-08-24 18:19:14,688 - main - INFO - 2024-08-24 18:19:14 - Affected rows: 1
+2024-08-24 18:19:14,701 - main - INFO - 2024-08-24 18:19:14 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-24 18:19:14,703 - main - INFO - 2024-08-24 18:19:14 - Trade book entry created successfully for order ID: 240824000000167
+2024-08-24 18:19:14,835 - main - INFO - 2024-08-24 18:19:14 - Session terminated for user P59461464
+2024-08-24 18:19:15,973 - main - INFO - 2024-08-24 18:19:15 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-24 18:19:15,973 - main - INFO - 2024-08-24 18:19:15 - Starting broker_buy_order for user 161
+2024-08-24 18:19:16,358 - main - INFO - 2024-08-24 18:19:16 - Received request to exit_students_all_instrument: student_id=160
+2024-08-24 18:19:17,397 - main - ERROR - 2024-08-24 18:19:17 - No active user found for user_id 160
+2024-08-24 18:19:17,398 - main - ERROR - 2024-08-24 18:19:17 - Error in exit_students_all_instrument: 404: No active user found
+2024-08-24 18:19:17,791 - main - INFO - 2024-08-24 18:19:17 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-24 18:19:18,359 - main - INFO - 2024-08-24 18:19:18 - Order placement response: 240824000000168
+2024-08-24 18:19:18,359 - main - INFO - 2024-08-24 18:19:18 - Order placed successfully. Order ID: 240824000000168
+2024-08-24 18:19:18,359 - main - INFO - 2024-08-24 18:19:18 - Order placed successfully. Order ID: 240824000000168
+2024-08-24 18:19:18,359 - main - INFO - 2024-08-24 18:19:18 - Attempting to update trade book for order ID: 240824000000168
+2024-08-24 18:19:18,468 - main - INFO - Database connection test result: {'1': 1}
+2024-08-24 18:19:18,470 - main - INFO - 2024-08-24 18:19:18 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-24 18:19:18,470 - main - INFO - 2024-08-24 18:19:18 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240824000000168', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-24 18:19:18.470100')
+2024-08-24 18:19:18,588 - main - INFO - 2024-08-24 18:19:18 - Affected rows: 1
+2024-08-24 18:19:18,627 - main - INFO - 2024-08-24 18:19:18 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-24 18:19:18,628 - main - INFO - 2024-08-24 18:19:18 - Trade book entry created successfully for order ID: 240824000000168
+2024-08-24 18:19:18,966 - main - INFO - 2024-08-24 18:19:18 - Session terminated for user P59461464
+2024-08-24 18:19:19,997 - main - INFO - 2024-08-24 18:19:19 - Orders placed for user Prasanna Deshmukh with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-24 18:19:23,558 - main - INFO - 2024-08-24 18:19:23 - Received request to exit_students_all_instrument: student_id=160
+2024-08-24 18:19:23,611 - main - ERROR - 2024-08-24 18:19:23 - No active user found for user_id 160
+2024-08-24 18:19:23,612 - main - ERROR - 2024-08-24 18:19:23 - Error in exit_students_all_instrument: 404: No active user found
+2024-08-24 18:19:28,237 - main - INFO - 2024-08-24 18:19:28 - Received request to exit_student_instrument: student_id=160 instrument_data={'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}
+2024-08-24 18:19:28,316 - main - ERROR - 2024-08-24 18:19:28 - No active user found for user_id 160
+2024-08-24 18:19:28,316 - main - ERROR - 2024-08-24 18:19:28 - Error in exit_student_instrument: 404: No active user found
+2024-08-24 18:19:31,203 - main - INFO - 2024-08-24 18:19:31 - Received request to exit_student_instrument: student_id=160 instrument_data={'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}
+2024-08-24 18:19:31,254 - main - ERROR - 2024-08-24 18:19:31 - No active user found for user_id 160
+2024-08-24 18:19:31,256 - main - ERROR - 2024-08-24 18:19:31 - Error in exit_student_instrument: 404: No active user found
+2024-08-24 18:19:45,080 - main - INFO - 2024-08-24 18:19:45 - Received request to exit_students_all_instrument: student_id=161
+2024-08-24 18:19:45,143 - main - INFO - 2024-08-24 18:19:45 - Starting process_student_all_instruments_exit for user 161
+2024-08-24 18:19:45,196 - main - INFO - 2024-08-24 18:19:45 - Fetched 4 trades for user 161
+2024-08-24 18:19:45,197 - main - INFO - 2024-08-24 18:19:45 - Starting broker_exit_all_instruments for user 161
+2024-08-24 18:19:45,887 - main - INFO - 2024-08-24 18:19:45 - Generated session for user 161
+2024-08-24 18:19:46,317 - main - INFO - 2024-08-24 18:19:46 - Placed order for user 161, instrument BANKNIFTY28AUG2444300PE: 240824000000169
+2024-08-24 18:19:47,231 - main - INFO - 2024-08-24 18:19:47 - Placed order for user 161, instrument FINNIFTY27AUG2418900CE: 240824000000170
+2024-08-24 18:19:48,063 - main - INFO - 2024-08-24 18:19:48 - Placed order for user 161, instrument BANKNIFTY28AUG2444300PE: 240824000000171
+2024-08-24 18:19:48,993 - main - INFO - 2024-08-24 18:19:48 - Placed order for user 161, instrument FINNIFTY27AUG2418900CE: 240824000000172
+2024-08-24 18:19:49,877 - main - INFO - 2024-08-24 18:19:49 - Terminated session for user 161
+2024-08-24 18:19:59,826 - main - INFO - 2024-08-24 18:19:59 - Received request to exit_student_instrument: student_id=160 instrument_data={'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}
+2024-08-24 18:19:59,863 - main - ERROR - 2024-08-24 18:19:59 - No active user found for user_id 160
+2024-08-24 18:19:59,864 - main - ERROR - 2024-08-24 18:19:59 - Error in exit_student_instrument: 404: No active user found
+2024-08-24 18:20:03,094 - main - INFO - 2024-08-24 18:20:03 - Received request to exit_student_instrument: student_id=160 instrument_data={'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}
+2024-08-24 18:20:03,143 - main - ERROR - 2024-08-24 18:20:03 - No active user found for user_id 160
+2024-08-24 18:20:03,143 - main - ERROR - 2024-08-24 18:20:03 - Error in exit_student_instrument: 404: No active user found
+2024-08-24 18:20:07,514 - main - INFO - 2024-08-24 18:20:07 - Received request to exit_student_instrument: student_id=161 instrument_data={'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}
+2024-08-24 18:20:07,558 - main - INFO - 2024-08-24 18:20:07 - Starting process_student_instrument_exit for user 161
+2024-08-24 18:20:07,606 - main - INFO - 2024-08-24 18:20:07 - Fetched trade for user 161: {'stock_symbol': 'FINNIFTY27AUG2418900CE', 'stock_token': '46329', 'stock_quantity': '25000', 'price': '3440.6', 'orderid': '240824000000164', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}
+2024-08-24 18:20:07,608 - main - INFO - 2024-08-24 18:20:07 - Starting broker_exit_instrument for user 161
+2024-08-24 18:20:08,504 - main - INFO - 2024-08-24 18:20:08 - Generated session for user 161
+2024-08-24 18:20:08,682 - main - INFO - 2024-08-24 18:20:08 - Placed order for user 161: 240824000000174
+2024-08-24 18:20:08,798 - main - INFO - 2024-08-24 18:20:08 - Terminated session for user 161
+2024-08-24 18:20:32,187 - main - INFO - 2024-08-24 18:20:32 - Received request to exit_teacher_instrument: teacher_id=157 order_data=[{'instrument': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'exit_lot': '1'}]
+2024-08-24 18:20:32,256 - main - INFO - 2024-08-24 18:20:32 - Starting process_teacher_instrument_exit for teacher 157
+2024-08-24 18:20:32,308 - main - INFO - 2024-08-24 18:20:32 - Fetched trade for teacher 157: {'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240824100001347', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}
+2024-08-24 18:20:32,314 - main - INFO - 2024-08-24 18:20:32 - Starting broker_exit_instrument for teacher 157
+2024-08-24 18:20:33,306 - main - INFO - 2024-08-24 18:20:33 - Generated session for teacher 157
+2024-08-24 18:20:33,558 - main - INFO - 2024-08-24 18:20:33 - Order placement response: 240824100001353
+2024-08-24 18:20:33,790 - main - INFO - 2024-08-24 18:20:33 - Terminated session for teacher 157
+2024-08-24 18:20:40,265 - main - INFO - 2024-08-24 18:20:40 - Received request to exit_teacher_instrument: teacher_id=157 order_data=[{'instrument': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'exit_lot': '1'}]
+2024-08-24 18:20:40,345 - main - INFO - 2024-08-24 18:20:40 - Starting process_teacher_instrument_exit for teacher 157
+2024-08-24 18:20:40,386 - main - INFO - 2024-08-24 18:20:40 - Fetched trade for teacher 157: {'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240824100001347', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}
+2024-08-24 18:20:40,387 - main - INFO - 2024-08-24 18:20:40 - Starting broker_exit_instrument for teacher 157
+2024-08-24 18:20:40,862 - main - INFO - 2024-08-24 18:20:40 - Generated session for teacher 157
+2024-08-24 18:20:41,117 - main - INFO - 2024-08-24 18:20:41 - Order placement response: 240824100001354
+2024-08-24 18:20:41,312 - main - INFO - 2024-08-24 18:20:41 - Terminated session for teacher 157
+2024-08-24 18:21:51,340 - main - INFO - 2024-08-24 18:21:51 - Received request to exit_all_student_pending: teacher_id=157
+2024-08-24 18:21:51,413 - main - INFO - 2024-08-24 18:21:51 - Found 2 active users
+2024-08-24 18:21:51,413 - main - INFO - 2024-08-24 18:21:51 - Starting process_student_pending_orders for user 157
+2024-08-24 18:21:51,457 - main - INFO - 2024-08-24 18:21:51 - Fetched trades list for user 157: ()
+2024-08-24 18:21:51,457 - main - INFO - 2024-08-24 18:21:51 - Database connection closed for user 157
+2024-08-24 18:21:51,458 - main - INFO - 2024-08-24 18:21:51 - No trades found for user 157
+2024-08-24 18:21:51,458 - main - INFO - 2024-08-24 18:21:51 - Starting process_student_pending_orders for user 161
+2024-08-24 18:21:51,494 - main - INFO - 2024-08-24 18:21:51 - Fetched trades list for user 161: ()
+2024-08-24 18:21:51,494 - main - INFO - 2024-08-24 18:21:51 - Database connection closed for user 161
+2024-08-24 18:21:51,494 - main - INFO - 2024-08-24 18:21:51 - No trades found for user 161
+2024-08-24 18:21:51,494 - main - INFO - 2024-08-24 18:21:51 - Exit orders processed for all users
+2024-08-24 18:21:58,921 - main - INFO - 2024-08-24 18:21:58 - Received request to exit_teacher_instrument: teacher_id=157 order_data=[{'instrument': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'exit_lot': '1'}]
+2024-08-24 18:21:58,973 - main - INFO - 2024-08-24 18:21:58 - Starting process_teacher_instrument_exit for teacher 157
+2024-08-24 18:21:59,072 - main - INFO - 2024-08-24 18:21:59 - Fetched trade for teacher 157: None
+2024-08-24 18:21:59,073 - main - INFO - 2024-08-24 18:21:59 - No trade found for teacher 157 and instrument BANKNIFTY28AUG2444300PE
+2024-08-24 18:22:03,667 - main - INFO - 2024-08-24 18:22:03 - Received request to exit_students_all_instrument: student_id=161
+2024-08-24 18:22:03,701 - main - INFO - 2024-08-24 18:22:03 - Starting process_student_all_instruments_exit for user 161
+2024-08-24 18:22:03,737 - main - INFO - 2024-08-24 18:22:03 - Fetched 0 trades for user 161
+2024-08-24 18:22:03,738 - main - INFO - 2024-08-24 18:22:03 - No trades found for user 161
+2024-08-24 18:22:06,818 - main - INFO - 2024-08-24 18:22:06 - Received request to exit_student_instrument: student_id=161 instrument_data={'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}
+2024-08-24 18:22:07,839 - main - INFO - 2024-08-24 18:22:07 - Starting process_student_instrument_exit for user 161
+2024-08-24 18:22:08,318 - main - INFO - 2024-08-24 18:22:08 - Fetched trade for user 161: None
+2024-08-24 18:22:08,319 - main - INFO - 2024-08-24 18:22:08 - No trade found for user 161 and instrument FINNIFTY27AUG2418900CE
+2024-08-25 13:00:25,685 - main - INFO - 2024-08-25 13:00:25 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-25 13:00:25,685 - main - INFO - 2024-08-25 13:00:25 - Starting broker_buy_order for user 157
+2024-08-25 13:00:26,541 - main - INFO - 2024-08-25 13:00:26 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-25 13:00:26,706 - main - INFO - 2024-08-25 13:00:26 - Order placement response: 240825100000092
+2024-08-25 13:00:26,707 - main - INFO - 2024-08-25 13:00:26 - Order placed successfully. Order ID: 240825100000092
+2024-08-25 13:00:26,707 - main - INFO - 2024-08-25 13:00:26 - Order placed successfully. Order ID: 240825100000092
+2024-08-25 13:00:26,707 - main - INFO - 2024-08-25 13:00:26 - Attempting to update trade book for order ID: 240825100000092
+2024-08-25 13:00:26,848 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:00:26,849 - main - INFO - 2024-08-25 13:00:26 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:00:26,849 - main - INFO - 2024-08-25 13:00:26 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825100000092', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:00:26.849058')
+2024-08-25 13:00:26,879 - main - INFO - 2024-08-25 13:00:26 - Affected rows: 1
+2024-08-25 13:00:26,908 - main - INFO - 2024-08-25 13:00:26 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:00:26,909 - main - INFO - 2024-08-25 13:00:26 - Trade book entry created successfully for order ID: 240825100000092
+2024-08-25 13:00:27,072 - main - INFO - 2024-08-25 13:00:27 - Session terminated for user H225144
+2024-08-25 13:00:28,223 - main - INFO - 2024-08-25 13:00:28 - Order data of FINNIFTY27AUG2418900CE for user Hari Shastri
+2024-08-25 13:00:28,225 - main - INFO - 2024-08-25 13:00:28 - Starting broker_buy_order for user 157
+2024-08-25 13:00:29,146 - main - INFO - 2024-08-25 13:00:29 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-25 13:00:29,330 - main - INFO - 2024-08-25 13:00:29 - Order placement response: 240825100000093
+2024-08-25 13:00:29,330 - main - INFO - 2024-08-25 13:00:29 - Order placed successfully. Order ID: 240825100000093
+2024-08-25 13:00:29,331 - main - INFO - 2024-08-25 13:00:29 - Order placed successfully. Order ID: 240825100000093
+2024-08-25 13:00:29,331 - main - INFO - 2024-08-25 13:00:29 - Attempting to update trade book for order ID: 240825100000093
+2024-08-25 13:00:29,468 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:00:29,469 - main - INFO - 2024-08-25 13:00:29 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:00:29,469 - main - INFO - 2024-08-25 13:00:29 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825100000093', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:00:29.468917')
+2024-08-25 13:00:29,497 - main - INFO - 2024-08-25 13:00:29 - Affected rows: 1
+2024-08-25 13:00:29,525 - main - INFO - 2024-08-25 13:00:29 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:00:29,526 - main - INFO - 2024-08-25 13:00:29 - Trade book entry created successfully for order ID: 240825100000093
+2024-08-25 13:00:29,685 - main - INFO - 2024-08-25 13:00:29 - Session terminated for user H225144
+2024-08-25 13:00:30,687 - main - INFO - 2024-08-25 13:00:30 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-25 13:00:30,977 - main - INFO - 2024-08-25 13:00:30 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-25 13:00:30,977 - main - INFO - 2024-08-25 13:00:30 - Starting broker_buy_order for user 161
+2024-08-25 13:00:31,774 - main - INFO - 2024-08-25 13:00:31 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-25 13:00:32,026 - main - INFO - 2024-08-25 13:00:32 - Order placement response: 240825000000057
+2024-08-25 13:00:32,026 - main - INFO - 2024-08-25 13:00:32 - Order placed successfully. Order ID: 240825000000057
+2024-08-25 13:00:32,026 - main - INFO - 2024-08-25 13:00:32 - Order placed successfully. Order ID: 240825000000057
+2024-08-25 13:00:32,027 - main - INFO - 2024-08-25 13:00:32 - Attempting to update trade book for order ID: 240825000000057
+2024-08-25 13:00:32,163 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:00:32,164 - main - INFO - 2024-08-25 13:00:32 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:00:32,164 - main - INFO - 2024-08-25 13:00:32 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825000000057', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:00:32.163952')
+2024-08-25 13:00:32,192 - main - INFO - 2024-08-25 13:00:32 - Affected rows: 1
+2024-08-25 13:00:32,222 - main - INFO - 2024-08-25 13:00:32 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:00:32,223 - main - INFO - 2024-08-25 13:00:32 - Trade book entry created successfully for order ID: 240825000000057
+2024-08-25 13:00:32,408 - main - INFO - 2024-08-25 13:00:32 - Session terminated for user P59461464
+2024-08-25 13:00:33,710 - main - INFO - 2024-08-25 13:00:33 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-25 13:00:33,714 - main - INFO - 2024-08-25 13:00:33 - Starting broker_buy_order for user 161
+2024-08-25 13:00:34,487 - main - INFO - 2024-08-25 13:00:34 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-25 13:00:34,710 - main - INFO - 2024-08-25 13:00:34 - Order placement response: 240825000000058
+2024-08-25 13:00:34,710 - main - INFO - 2024-08-25 13:00:34 - Order placed successfully. Order ID: 240825000000058
+2024-08-25 13:00:34,711 - main - INFO - 2024-08-25 13:00:34 - Order placed successfully. Order ID: 240825000000058
+2024-08-25 13:00:34,711 - main - INFO - 2024-08-25 13:00:34 - Attempting to update trade book for order ID: 240825000000058
+2024-08-25 13:00:34,845 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:00:34,845 - main - INFO - 2024-08-25 13:00:34 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:00:34,845 - main - INFO - 2024-08-25 13:00:34 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825000000058', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:00:34.845265')
+2024-08-25 13:00:34,873 - main - INFO - 2024-08-25 13:00:34 - Affected rows: 1
+2024-08-25 13:00:34,902 - main - INFO - 2024-08-25 13:00:34 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:00:34,902 - main - INFO - 2024-08-25 13:00:34 - Trade book entry created successfully for order ID: 240825000000058
+2024-08-25 13:00:35,071 - main - INFO - 2024-08-25 13:00:35 - Session terminated for user P59461464
+2024-08-25 13:00:36,075 - main - INFO - 2024-08-25 13:00:36 - Orders placed for user Prasanna Deshmukh with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE']
+2024-08-25 13:01:29,225 - main - INFO - 2024-08-25 13:01:29 - Received request to exit_position: teacher_id='157' order_data=[{'instrument': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837'}]
+2024-08-25 13:01:29,368 - main - INFO - 2024-08-25 13:01:29 - Found 2 active users
+2024-08-25 13:01:29,368 - main - INFO - 2024-08-25 13:01:29 - Starting process_instrument_orders for user 157
+2024-08-25 13:01:29,507 - main - INFO - 2024-08-25 13:01:29 - Fetched trades list for user 157: [{'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240825100000092', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}]
+2024-08-25 13:01:29,508 - main - INFO - 2024-08-25 13:01:29 - Database connection closed for user 157
+2024-08-25 13:01:29,508 - main - INFO - 2024-08-25 13:01:29 - Starting place_exit_orders for user 157
+2024-08-25 13:01:29,684 - main - INFO - 2024-08-25 13:01:29 - Starting process_instrument_orders for user 161
+2024-08-25 13:01:29,825 - main - INFO - 2024-08-25 13:01:29 - Fetched trades list for user 161: [{'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240825000000057', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}]
+2024-08-25 13:01:29,825 - main - INFO - 2024-08-25 13:01:29 - Database connection closed for user 161
+2024-08-25 13:01:29,826 - main - INFO - 2024-08-25 13:01:29 - Starting place_exit_orders for user 161
+2024-08-25 13:01:30,099 - main - INFO - 2024-08-25 13:01:30 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '15000'}
+2024-08-25 13:01:30,280 - main - INFO - 2024-08-25 13:01:30 - Order placement response: 240825100000096
+2024-08-25 13:01:30,389 - main - INFO - 2024-08-25 13:01:30 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:01:30,389 - main - INFO - 2024-08-25 13:01:30 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825100000092', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-25 13:01:30.389055')
+2024-08-25 13:01:30,416 - main - INFO - 2024-08-25 13:01:30 - Affected rows: 1
+2024-08-25 13:01:30,446 - main - INFO - 2024-08-25 13:01:30 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:01:30,447 - main - ERROR - 2024-08-25 13:01:30 - Error placing exit order for BANKNIFTY28AUG2444300PE: argument of type 'int' is not iterable
+2024-08-25 13:01:30,448 - main - INFO - 2024-08-25 13:01:30 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '15000'}
+2024-08-25 13:01:30,695 - main - INFO - 2024-08-25 13:01:30 - Order placement response: 240825000000059
+2024-08-25 13:01:30,805 - main - INFO - 2024-08-25 13:01:30 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:01:30,805 - main - INFO - 2024-08-25 13:01:30 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825000000057', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-25 13:01:30.805582')
+2024-08-25 13:01:30,834 - main - INFO - 2024-08-25 13:01:30 - Affected rows: 1
+2024-08-25 13:01:30,864 - main - INFO - 2024-08-25 13:01:30 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:01:30,865 - main - ERROR - 2024-08-25 13:01:30 - Error placing exit order for BANKNIFTY28AUG2444300PE: argument of type 'int' is not iterable
+2024-08-25 13:01:31,148 - main - INFO - 2024-08-25 13:01:31 - Session terminated for user 157
+2024-08-25 13:01:31,521 - main - INFO - 2024-08-25 13:01:31 - Session terminated for user 161
+2024-08-25 13:01:31,523 - main - INFO - 2024-08-25 13:01:31 - Exit orders processed for all users
+2024-08-25 13:13:55,324 - main - INFO - 2024-08-25 13:13:55 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-25 13:13:55,324 - main - INFO - 2024-08-25 13:13:55 - Starting broker_buy_order for user 157
+2024-08-25 13:13:56,048 - main - INFO - 2024-08-25 13:13:56 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-25 13:13:56,212 - main - INFO - 2024-08-25 13:13:56 - Order placement response: 240825100000099
+2024-08-25 13:13:56,213 - main - INFO - 2024-08-25 13:13:56 - Order placed successfully. Order ID: 240825100000099
+2024-08-25 13:13:56,213 - main - INFO - 2024-08-25 13:13:56 - Order placed successfully. Order ID: 240825100000099
+2024-08-25 13:13:56,213 - main - INFO - 2024-08-25 13:13:56 - Attempting to update trade book for order ID: 240825100000099
+2024-08-25 13:13:56,352 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:13:56,352 - main - INFO - 2024-08-25 13:13:56 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:13:56,353 - main - INFO - 2024-08-25 13:13:56 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825100000099', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:13:56.352587')
+2024-08-25 13:13:56,382 - main - INFO - 2024-08-25 13:13:56 - Affected rows: 1
+2024-08-25 13:13:56,413 - main - INFO - 2024-08-25 13:13:56 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:13:56,413 - main - INFO - 2024-08-25 13:13:56 - Trade book entry created successfully for order ID: 240825100000099
+2024-08-25 13:13:56,594 - main - INFO - 2024-08-25 13:13:56 - Session terminated for user H225144
+2024-08-25 13:13:57,745 - main - INFO - 2024-08-25 13:13:57 - Order data of FINNIFTY27AUG2418900CE for user Hari Shastri
+2024-08-25 13:13:57,746 - main - INFO - 2024-08-25 13:13:57 - Starting broker_buy_order for user 157
+2024-08-25 13:13:58,450 - main - INFO - 2024-08-25 13:13:58 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-25 13:13:58,648 - main - INFO - 2024-08-25 13:13:58 - Order placement response: 240825100000100
+2024-08-25 13:13:58,648 - main - INFO - 2024-08-25 13:13:58 - Order placed successfully. Order ID: 240825100000100
+2024-08-25 13:13:58,648 - main - INFO - 2024-08-25 13:13:58 - Order placed successfully. Order ID: 240825100000100
+2024-08-25 13:13:58,648 - main - INFO - 2024-08-25 13:13:58 - Attempting to update trade book for order ID: 240825100000100
+2024-08-25 13:13:58,794 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:13:58,794 - main - INFO - 2024-08-25 13:13:58 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:13:58,794 - main - INFO - 2024-08-25 13:13:58 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825100000100', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:13:58.794610')
+2024-08-25 13:13:58,826 - main - INFO - 2024-08-25 13:13:58 - Affected rows: 1
+2024-08-25 13:13:58,858 - main - INFO - 2024-08-25 13:13:58 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:13:58,858 - main - INFO - 2024-08-25 13:13:58 - Trade book entry created successfully for order ID: 240825100000100
+2024-08-25 13:13:59,025 - main - INFO - 2024-08-25 13:13:59 - Session terminated for user H225144
+2024-08-25 13:14:00,179 - main - INFO - 2024-08-25 13:14:00 - Order data of MIDCPNIFTY26AUG2410075PE for user Hari Shastri
+2024-08-25 13:14:00,179 - main - INFO - 2024-08-25 13:14:00 - Starting broker_buy_order for user 157
+2024-08-25 13:14:00,956 - main - INFO - 2024-08-25 13:14:00 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'MIDCPNIFTY26AUG2410075PE', 'symboltoken': '55677', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '0.05', 'squareoff': '0', 'stoploss': '0', 'quantity': '50000'}
+2024-08-25 13:14:01,138 - main - INFO - 2024-08-25 13:14:01 - Order placement response: 240825100000101
+2024-08-25 13:14:01,138 - main - INFO - 2024-08-25 13:14:01 - Order placed successfully. Order ID: 240825100000101
+2024-08-25 13:14:01,138 - main - INFO - 2024-08-25 13:14:01 - Order placed successfully. Order ID: 240825100000101
+2024-08-25 13:14:01,139 - main - INFO - 2024-08-25 13:14:01 - Attempting to update trade book for order ID: 240825100000101
+2024-08-25 13:14:01,280 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:14:01,280 - main - INFO - 2024-08-25 13:14:01 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:14:01,281 - main - INFO - 2024-08-25 13:14:01 - Query values: (157, 'MIDCPNIFTY26AUG2410075PE', '55677', '50000', '1000', '0.05', '240825100000101', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:14:01.280853')
+2024-08-25 13:14:01,309 - main - INFO - 2024-08-25 13:14:01 - Affected rows: 1
+2024-08-25 13:14:01,339 - main - INFO - 2024-08-25 13:14:01 - Trade book updated successfully for MIDCPNIFTY26AUG2410075PE
+2024-08-25 13:14:01,339 - main - INFO - 2024-08-25 13:14:01 - Trade book entry created successfully for order ID: 240825100000101
+2024-08-25 13:14:01,514 - main - INFO - 2024-08-25 13:14:01 - Session terminated for user H225144
+2024-08-25 13:14:02,517 - main - INFO - 2024-08-25 13:14:02 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE', 'MIDCPNIFTY26AUG2410075PE']
+2024-08-25 13:14:02,665 - main - INFO - 2024-08-25 13:14:02 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-25 13:14:02,666 - main - INFO - 2024-08-25 13:14:02 - Starting broker_buy_order for user 161
+2024-08-25 13:14:03,380 - main - INFO - 2024-08-25 13:14:03 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-25 13:14:03,668 - main - INFO - 2024-08-25 13:14:03 - Order placement response: 240825000000060
+2024-08-25 13:14:03,668 - main - INFO - 2024-08-25 13:14:03 - Order placed successfully. Order ID: 240825000000060
+2024-08-25 13:14:03,669 - main - INFO - 2024-08-25 13:14:03 - Order placed successfully. Order ID: 240825000000060
+2024-08-25 13:14:03,669 - main - INFO - 2024-08-25 13:14:03 - Attempting to update trade book for order ID: 240825000000060
+2024-08-25 13:14:03,813 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:14:03,814 - main - INFO - 2024-08-25 13:14:03 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:14:03,814 - main - INFO - 2024-08-25 13:14:03 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825000000060', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:14:03.814472')
+2024-08-25 13:14:03,846 - main - INFO - 2024-08-25 13:14:03 - Affected rows: 1
+2024-08-25 13:14:03,876 - main - INFO - 2024-08-25 13:14:03 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:14:03,877 - main - INFO - 2024-08-25 13:14:03 - Trade book entry created successfully for order ID: 240825000000060
+2024-08-25 13:14:04,069 - main - INFO - 2024-08-25 13:14:04 - Session terminated for user P59461464
+2024-08-25 13:14:05,281 - main - INFO - 2024-08-25 13:14:05 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-25 13:14:05,284 - main - INFO - 2024-08-25 13:14:05 - Starting broker_buy_order for user 161
+2024-08-25 13:14:06,237 - main - INFO - 2024-08-25 13:14:06 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-25 13:14:06,483 - main - INFO - 2024-08-25 13:14:06 - Order placement response: 240825000000061
+2024-08-25 13:14:06,483 - main - INFO - 2024-08-25 13:14:06 - Order placed successfully. Order ID: 240825000000061
+2024-08-25 13:14:06,483 - main - INFO - 2024-08-25 13:14:06 - Order placed successfully. Order ID: 240825000000061
+2024-08-25 13:14:06,483 - main - INFO - 2024-08-25 13:14:06 - Attempting to update trade book for order ID: 240825000000061
+2024-08-25 13:14:06,622 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:14:06,622 - main - INFO - 2024-08-25 13:14:06 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:14:06,623 - main - INFO - 2024-08-25 13:14:06 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825000000061', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:14:06.622857')
+2024-08-25 13:14:06,651 - main - INFO - 2024-08-25 13:14:06 - Affected rows: 1
+2024-08-25 13:14:06,681 - main - INFO - 2024-08-25 13:14:06 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:14:06,682 - main - INFO - 2024-08-25 13:14:06 - Trade book entry created successfully for order ID: 240825000000061
+2024-08-25 13:14:06,877 - main - INFO - 2024-08-25 13:14:06 - Session terminated for user P59461464
+2024-08-25 13:14:08,023 - main - INFO - 2024-08-25 13:14:08 - Order data of MIDCPNIFTY26AUG2410075PE for user Prasanna Deshmukh
+2024-08-25 13:14:08,024 - main - INFO - 2024-08-25 13:14:08 - Starting broker_buy_order for user 161
+2024-08-25 13:14:08,859 - main - INFO - 2024-08-25 13:14:08 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'MIDCPNIFTY26AUG2410075PE', 'symboltoken': '55677', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '0.05', 'squareoff': '0', 'stoploss': '0', 'quantity': '50000'}
+2024-08-25 13:14:09,113 - main - INFO - 2024-08-25 13:14:09 - Order placement response: 240825000000062
+2024-08-25 13:14:09,113 - main - INFO - 2024-08-25 13:14:09 - Order placed successfully. Order ID: 240825000000062
+2024-08-25 13:14:09,113 - main - INFO - 2024-08-25 13:14:09 - Order placed successfully. Order ID: 240825000000062
+2024-08-25 13:14:09,113 - main - INFO - 2024-08-25 13:14:09 - Attempting to update trade book for order ID: 240825000000062
+2024-08-25 13:14:09,252 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:14:09,253 - main - INFO - 2024-08-25 13:14:09 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:14:09,253 - main - INFO - 2024-08-25 13:14:09 - Query values: (161, 'MIDCPNIFTY26AUG2410075PE', '55677', '50000', '1000', '0.05', '240825000000062', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:14:09.253177')
+2024-08-25 13:14:09,281 - main - INFO - 2024-08-25 13:14:09 - Affected rows: 1
+2024-08-25 13:14:09,310 - main - INFO - 2024-08-25 13:14:09 - Trade book updated successfully for MIDCPNIFTY26AUG2410075PE
+2024-08-25 13:14:09,310 - main - INFO - 2024-08-25 13:14:09 - Trade book entry created successfully for order ID: 240825000000062
+2024-08-25 13:14:09,515 - main - INFO - 2024-08-25 13:14:09 - Session terminated for user P59461464
+2024-08-25 13:14:10,518 - main - INFO - 2024-08-25 13:14:10 - Orders placed for user Prasanna Deshmukh with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE', 'MIDCPNIFTY26AUG2410075PE']
+2024-08-25 13:18:01,157 - main - INFO - 2024-08-25 13:18:01 - Received request to exit_teacher_instrument: teacher_id=157 order_data=[{'instrument': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837'}, {'instrument': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}]
+2024-08-25 13:18:01,298 - main - INFO - 2024-08-25 13:18:01 - Starting process_teacher_instrument_exit for teacher 157
+2024-08-25 13:18:01,441 - main - INFO - 2024-08-25 13:18:01 - Fetched trade for teacher 157: {'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240825100000099', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}
+2024-08-25 13:18:01,442 - main - ERROR - 2024-08-25 13:18:01 - Error in exit_teacher_instrument: 'exit_lot'
+2024-08-25 13:19:16,567 - main - INFO - 2024-08-25 13:19:16 - Received request to exit_teacher_instrument: teacher_id=157 order_data=[{'instrument': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'exit_lot': '1'}, {'instrument': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'exit_lot': '1'}]
+2024-08-25 13:19:16,709 - main - INFO - 2024-08-25 13:19:16 - Starting process_teacher_instrument_exit for teacher 157
+2024-08-25 13:19:16,848 - main - INFO - 2024-08-25 13:19:16 - Fetched trade for teacher 157: {'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240825100000099', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}
+2024-08-25 13:19:16,849 - main - INFO - 2024-08-25 13:19:16 - Starting broker_exit_instrument for teacher 157
+2024-08-25 13:19:18,001 - main - INFO - 2024-08-25 13:19:18 - Generated session for teacher 157
+2024-08-25 13:19:18,202 - main - INFO - 2024-08-25 13:19:18 - Order placement response: 240825100000107
+2024-08-25 13:19:18,464 - main - INFO - 2024-08-25 13:19:18 - Terminated session for teacher 157
+2024-08-25 13:19:18,467 - main - INFO - 2024-08-25 13:19:18 - Starting process_teacher_instrument_exit for teacher 157
+2024-08-25 13:19:18,605 - main - INFO - 2024-08-25 13:19:18 - Fetched trade for teacher 157: {'stock_symbol': 'FINNIFTY27AUG2418900CE', 'stock_token': '46329', 'stock_quantity': '25000', 'price': '3440.6', 'orderid': '240825100000100', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}
+2024-08-25 13:19:18,605 - main - INFO - 2024-08-25 13:19:18 - Starting broker_exit_instrument for teacher 157
+2024-08-25 13:19:19,452 - main - INFO - 2024-08-25 13:19:19 - Generated session for teacher 157
+2024-08-25 13:19:19,617 - main - INFO - 2024-08-25 13:19:19 - Order placement response: 240825100000108
+2024-08-25 13:19:19,824 - main - INFO - 2024-08-25 13:19:19 - Terminated session for teacher 157
+2024-08-25 13:24:47,675 - main - INFO - 2024-08-25 13:24:47 - Order data of BANKNIFTY28AUG2444300PE for user Hari Shastri
+2024-08-25 13:24:47,676 - main - INFO - 2024-08-25 13:24:47 - Starting broker_buy_order for user 157
+2024-08-25 13:24:48,406 - main - INFO - 2024-08-25 13:24:48 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-25 13:24:48,643 - main - INFO - 2024-08-25 13:24:48 - Order placement response: 240825100000109
+2024-08-25 13:24:48,643 - main - INFO - 2024-08-25 13:24:48 - Order placed successfully. Order ID: 240825100000109
+2024-08-25 13:24:48,643 - main - INFO - 2024-08-25 13:24:48 - Order placed successfully. Order ID: 240825100000109
+2024-08-25 13:24:48,643 - main - INFO - 2024-08-25 13:24:48 - Attempting to update trade book for order ID: 240825100000109
+2024-08-25 13:24:48,780 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:24:48,781 - main - INFO - 2024-08-25 13:24:48 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:24:48,781 - main - INFO - 2024-08-25 13:24:48 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825100000109', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:24:48.780980')
+2024-08-25 13:24:48,810 - main - INFO - 2024-08-25 13:24:48 - Affected rows: 1
+2024-08-25 13:24:48,840 - main - INFO - 2024-08-25 13:24:48 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:24:48,840 - main - INFO - 2024-08-25 13:24:48 - Trade book entry created successfully for order ID: 240825100000109
+2024-08-25 13:24:49,018 - main - INFO - 2024-08-25 13:24:49 - Session terminated for user H225144
+2024-08-25 13:24:50,169 - main - INFO - 2024-08-25 13:24:50 - Order data of FINNIFTY27AUG2418900CE for user Hari Shastri
+2024-08-25 13:24:50,170 - main - INFO - 2024-08-25 13:24:50 - Starting broker_buy_order for user 157
+2024-08-25 13:24:50,944 - main - INFO - 2024-08-25 13:24:50 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-25 13:24:51,165 - main - INFO - 2024-08-25 13:24:51 - Order placement response: 240825100000110
+2024-08-25 13:24:51,166 - main - INFO - 2024-08-25 13:24:51 - Order placed successfully. Order ID: 240825100000110
+2024-08-25 13:24:51,167 - main - INFO - 2024-08-25 13:24:51 - Order placed successfully. Order ID: 240825100000110
+2024-08-25 13:24:51,168 - main - INFO - 2024-08-25 13:24:51 - Attempting to update trade book for order ID: 240825100000110
+2024-08-25 13:24:51,308 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:24:51,309 - main - INFO - 2024-08-25 13:24:51 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:24:51,312 - main - INFO - 2024-08-25 13:24:51 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825100000110', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:24:51.309688')
+2024-08-25 13:24:51,345 - main - INFO - 2024-08-25 13:24:51 - Affected rows: 1
+2024-08-25 13:24:51,378 - main - INFO - 2024-08-25 13:24:51 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:24:51,379 - main - INFO - 2024-08-25 13:24:51 - Trade book entry created successfully for order ID: 240825100000110
+2024-08-25 13:24:51,643 - main - INFO - 2024-08-25 13:24:51 - Session terminated for user H225144
+2024-08-25 13:24:52,794 - main - INFO - 2024-08-25 13:24:52 - Order data of MIDCPNIFTY26AUG2410075PE for user Hari Shastri
+2024-08-25 13:24:52,794 - main - INFO - 2024-08-25 13:24:52 - Starting broker_buy_order for user 157
+2024-08-25 13:24:53,742 - main - INFO - 2024-08-25 13:24:53 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'MIDCPNIFTY26AUG2410075PE', 'symboltoken': '55677', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '0.05', 'squareoff': '0', 'stoploss': '0', 'quantity': '50000'}
+2024-08-25 13:24:54,084 - main - INFO - 2024-08-25 13:24:54 - Order placement response: 240825100000111
+2024-08-25 13:24:54,085 - main - INFO - 2024-08-25 13:24:54 - Order placed successfully. Order ID: 240825100000111
+2024-08-25 13:24:54,086 - main - INFO - 2024-08-25 13:24:54 - Order placed successfully. Order ID: 240825100000111
+2024-08-25 13:24:54,087 - main - INFO - 2024-08-25 13:24:54 - Attempting to update trade book for order ID: 240825100000111
+2024-08-25 13:24:54,227 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:24:54,228 - main - INFO - 2024-08-25 13:24:54 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:24:54,228 - main - INFO - 2024-08-25 13:24:54 - Query values: (157, 'MIDCPNIFTY26AUG2410075PE', '55677', '50000', '1000', '0.05', '240825100000111', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:24:54.228120')
+2024-08-25 13:24:54,258 - main - INFO - 2024-08-25 13:24:54 - Affected rows: 1
+2024-08-25 13:24:54,288 - main - INFO - 2024-08-25 13:24:54 - Trade book updated successfully for MIDCPNIFTY26AUG2410075PE
+2024-08-25 13:24:54,294 - main - INFO - 2024-08-25 13:24:54 - Trade book entry created successfully for order ID: 240825100000111
+2024-08-25 13:24:54,650 - main - INFO - 2024-08-25 13:24:54 - Session terminated for user H225144
+2024-08-25 13:24:55,656 - main - INFO - 2024-08-25 13:24:55 - Orders placed for user Hari Shastri with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE', 'MIDCPNIFTY26AUG2410075PE']
+2024-08-25 13:24:55,809 - main - INFO - 2024-08-25 13:24:55 - Order data of BANKNIFTY28AUG2444300PE for user Prasanna Deshmukh
+2024-08-25 13:24:55,810 - main - INFO - 2024-08-25 13:24:55 - Starting broker_buy_order for user 161
+2024-08-25 13:24:56,757 - main - INFO - 2024-08-25 13:24:56 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '1.4', 'squareoff': '0', 'stoploss': '0', 'quantity': '15000'}
+2024-08-25 13:24:57,052 - main - INFO - 2024-08-25 13:24:57 - Order placement response: 240825000000063
+2024-08-25 13:24:57,053 - main - INFO - 2024-08-25 13:24:57 - Order placed successfully. Order ID: 240825000000063
+2024-08-25 13:24:57,053 - main - INFO - 2024-08-25 13:24:57 - Order placed successfully. Order ID: 240825000000063
+2024-08-25 13:24:57,053 - main - INFO - 2024-08-25 13:24:57 - Attempting to update trade book for order ID: 240825000000063
+2024-08-25 13:24:57,193 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:24:57,194 - main - INFO - 2024-08-25 13:24:57 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:24:57,194 - main - INFO - 2024-08-25 13:24:57 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825000000063', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:24:57.194127')
+2024-08-25 13:24:57,223 - main - INFO - 2024-08-25 13:24:57 - Affected rows: 1
+2024-08-25 13:24:57,256 - main - INFO - 2024-08-25 13:24:57 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:24:57,257 - main - INFO - 2024-08-25 13:24:57 - Trade book entry created successfully for order ID: 240825000000063
+2024-08-25 13:24:57,476 - main - INFO - 2024-08-25 13:24:57 - Session terminated for user P59461464
+2024-08-25 13:24:58,622 - main - INFO - 2024-08-25 13:24:58 - Order data of FINNIFTY27AUG2418900CE for user Prasanna Deshmukh
+2024-08-25 13:24:58,622 - main - INFO - 2024-08-25 13:24:58 - Starting broker_buy_order for user 161
+2024-08-25 13:24:59,376 - main - INFO - 2024-08-25 13:24:59 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '3440.6', 'squareoff': '0', 'stoploss': '0', 'quantity': '25000'}
+2024-08-25 13:24:59,606 - main - INFO - 2024-08-25 13:24:59 - Order placement response: 240825000000064
+2024-08-25 13:24:59,606 - main - INFO - 2024-08-25 13:24:59 - Order placed successfully. Order ID: 240825000000064
+2024-08-25 13:24:59,606 - main - INFO - 2024-08-25 13:24:59 - Order placed successfully. Order ID: 240825000000064
+2024-08-25 13:24:59,607 - main - INFO - 2024-08-25 13:24:59 - Attempting to update trade book for order ID: 240825000000064
+2024-08-25 13:24:59,742 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:24:59,742 - main - INFO - 2024-08-25 13:24:59 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:24:59,742 - main - INFO - 2024-08-25 13:24:59 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825000000064', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:24:59.742339')
+2024-08-25 13:24:59,769 - main - INFO - 2024-08-25 13:24:59 - Affected rows: 1
+2024-08-25 13:24:59,798 - main - INFO - 2024-08-25 13:24:59 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:24:59,798 - main - INFO - 2024-08-25 13:24:59 - Trade book entry created successfully for order ID: 240825000000064
+2024-08-25 13:24:59,959 - main - INFO - 2024-08-25 13:24:59 - Session terminated for user P59461464
+2024-08-25 13:25:01,119 - main - INFO - 2024-08-25 13:25:01 - Order data of MIDCPNIFTY26AUG2410075PE for user Prasanna Deshmukh
+2024-08-25 13:25:01,121 - main - INFO - 2024-08-25 13:25:01 - Starting broker_buy_order for user 161
+2024-08-25 13:25:01,985 - main - INFO - 2024-08-25 13:25:01 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'MIDCPNIFTY26AUG2410075PE', 'symboltoken': '55677', 'transactiontype': 'BUY', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'price': '0.05', 'squareoff': '0', 'stoploss': '0', 'quantity': '50000'}
+2024-08-25 13:25:02,202 - main - INFO - 2024-08-25 13:25:02 - Order placement response: 240825000000065
+2024-08-25 13:25:02,202 - main - INFO - 2024-08-25 13:25:02 - Order placed successfully. Order ID: 240825000000065
+2024-08-25 13:25:02,202 - main - INFO - 2024-08-25 13:25:02 - Order placed successfully. Order ID: 240825000000065
+2024-08-25 13:25:02,203 - main - INFO - 2024-08-25 13:25:02 - Attempting to update trade book for order ID: 240825000000065
+2024-08-25 13:25:02,337 - main - INFO - Database connection test result: {'1': 1}
+2024-08-25 13:25:02,338 - main - INFO - 2024-08-25 13:25:02 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:25:02,338 - main - INFO - 2024-08-25 13:25:02 - Query values: (161, 'MIDCPNIFTY26AUG2410075PE', '55677', '50000', '1000', '0.05', '240825000000065', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'BUY', '2024-08-25 13:25:02.338132')
+2024-08-25 13:25:02,367 - main - INFO - 2024-08-25 13:25:02 - Affected rows: 1
+2024-08-25 13:25:02,399 - main - INFO - 2024-08-25 13:25:02 - Trade book updated successfully for MIDCPNIFTY26AUG2410075PE
+2024-08-25 13:25:02,400 - main - INFO - 2024-08-25 13:25:02 - Trade book entry created successfully for order ID: 240825000000065
+2024-08-25 13:25:02,594 - main - INFO - 2024-08-25 13:25:02 - Session terminated for user P59461464
+2024-08-25 13:25:03,597 - main - INFO - 2024-08-25 13:25:03 - Orders placed for user Prasanna Deshmukh with instruments: ['BANKNIFTY28AUG2444300PE', 'FINNIFTY27AUG2418900CE', 'MIDCPNIFTY26AUG2410075PE']
+2024-08-25 13:25:44,156 - main - INFO - 2024-08-25 13:25:44 - Received request to exit_position: teacher_id='157' order_data=[{'instrument': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837'}, {'instrument': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329'}]
+2024-08-25 13:25:44,308 - main - INFO - 2024-08-25 13:25:44 - Found 2 active users
+2024-08-25 13:25:44,309 - main - INFO - 2024-08-25 13:25:44 - Starting process_instrument_orders for user 157
+2024-08-25 13:25:44,447 - main - INFO - 2024-08-25 13:25:44 - Fetched trades list for user 157: [{'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240825100000109', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}, {'stock_symbol': 'FINNIFTY27AUG2418900CE', 'stock_token': '46329', 'stock_quantity': '25000', 'price': '3440.6', 'orderid': '240825100000110', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}]
+2024-08-25 13:25:44,447 - main - INFO - 2024-08-25 13:25:44 - Database connection closed for user 157
+2024-08-25 13:25:44,447 - main - INFO - 2024-08-25 13:25:44 - Starting place_exit_orders for user 157
+2024-08-25 13:25:44,629 - main - INFO - 2024-08-25 13:25:44 - Starting process_instrument_orders for user 161
+2024-08-25 13:25:44,769 - main - INFO - 2024-08-25 13:25:44 - Fetched trades list for user 161: [{'stock_symbol': 'BANKNIFTY28AUG2444300PE', 'stock_token': '42837', 'stock_quantity': '15000', 'price': '1.4', 'orderid': '240825000000063', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}, {'stock_symbol': 'FINNIFTY27AUG2418900CE', 'stock_token': '46329', 'stock_quantity': '25000', 'price': '3440.6', 'orderid': '240825000000064', 'transactiontype': 'BUY', 'lot_size': '1000', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY'}]
+2024-08-25 13:25:44,770 - main - INFO - 2024-08-25 13:25:44 - Database connection closed for user 161
+2024-08-25 13:25:44,770 - main - INFO - 2024-08-25 13:25:44 - Starting place_exit_orders for user 161
+2024-08-25 13:25:45,021 - main - INFO - 2024-08-25 13:25:45 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '15000'}
+2024-08-25 13:25:45,204 - main - INFO - 2024-08-25 13:25:45 - Order placement response: 240825100000112
+2024-08-25 13:25:45,314 - main - INFO - 2024-08-25 13:25:45 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:25:45,315 - main - INFO - 2024-08-25 13:25:45 - Query values: (157, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825100000109', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-25 13:25:45.314724')
+2024-08-25 13:25:45,343 - main - INFO - 2024-08-25 13:25:45 - Affected rows: 1
+2024-08-25 13:25:45,372 - main - INFO - 2024-08-25 13:25:45 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:25:45,373 - main - ERROR - 2024-08-25 13:25:45 - Error placing exit order for BANKNIFTY28AUG2444300PE: argument of type 'int' is not iterable
+2024-08-25 13:25:45,374 - main - INFO - 2024-08-25 13:25:45 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'BANKNIFTY28AUG2444300PE', 'symboltoken': '42837', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '15000'}
+2024-08-25 13:25:45,608 - main - INFO - 2024-08-25 13:25:45 - Order placement response: 240825000000066
+2024-08-25 13:25:45,721 - main - INFO - 2024-08-25 13:25:45 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:25:45,721 - main - INFO - 2024-08-25 13:25:45 - Query values: (161, 'BANKNIFTY28AUG2444300PE', '42837', '15000', '1000', '1.4', '240825000000063', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-25 13:25:45.720939')
+2024-08-25 13:25:45,750 - main - INFO - 2024-08-25 13:25:45 - Affected rows: 1
+2024-08-25 13:25:45,780 - main - INFO - 2024-08-25 13:25:45 - Trade book updated successfully for BANKNIFTY28AUG2444300PE
+2024-08-25 13:25:45,781 - main - ERROR - 2024-08-25 13:25:45 - Error placing exit order for BANKNIFTY28AUG2444300PE: argument of type 'int' is not iterable
+2024-08-25 13:25:45,874 - main - INFO - 2024-08-25 13:25:45 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '25000'}
+2024-08-25 13:25:46,073 - main - INFO - 2024-08-25 13:25:46 - Order placement response: 240825100000113
+2024-08-25 13:25:46,183 - main - INFO - 2024-08-25 13:25:46 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:25:46,184 - main - INFO - 2024-08-25 13:25:46 - Query values: (157, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825100000110', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-25 13:25:46.183790')
+2024-08-25 13:25:46,212 - main - INFO - 2024-08-25 13:25:46 - Affected rows: 1
+2024-08-25 13:25:46,242 - main - INFO - 2024-08-25 13:25:46 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:25:46,242 - main - ERROR - 2024-08-25 13:25:46 - Error placing exit order for FINNIFTY27AUG2418900CE: argument of type 'int' is not iterable
+2024-08-25 13:25:46,281 - main - INFO - 2024-08-25 13:25:46 - Placing order with params: {'variety': 'NORMAL', 'tradingsymbol': 'FINNIFTY27AUG2418900CE', 'symboltoken': '46329', 'transactiontype': 'SELL', 'exchange': 'NFO', 'ordertype': 'MARKET', 'producttype': 'CARRYFORWARD', 'duration': 'DAY', 'quantity': '25000'}
+2024-08-25 13:25:46,521 - main - INFO - 2024-08-25 13:25:46 - Order placement response: 240825000000067
+2024-08-25 13:25:46,634 - main - INFO - 2024-08-25 13:25:46 - Executing INSERT query: 
+            INSERT INTO trade_book_live
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            
+2024-08-25 13:25:46,635 - main - INFO - 2024-08-25 13:25:46 - Query values: (161, 'FINNIFTY27AUG2418900CE', '46329', '25000', '1000', '3440.6', '240825000000064', 'NFO', 'MARKET', 'CARRYFORWARD', 'DAY', 'SELL', '2024-08-25 13:25:46.634642')
+2024-08-25 13:25:46,665 - main - INFO - 2024-08-25 13:25:46 - Affected rows: 1
+2024-08-25 13:25:46,694 - main - INFO - 2024-08-25 13:25:46 - Trade book updated successfully for FINNIFTY27AUG2418900CE
+2024-08-25 13:25:46,695 - main - ERROR - 2024-08-25 13:25:46 - Error placing exit order for FINNIFTY27AUG2418900CE: argument of type 'int' is not iterable
+2024-08-25 13:25:46,896 - main - INFO - 2024-08-25 13:25:46 - Session terminated for user 157
+2024-08-25 13:25:47,355 - main - INFO - 2024-08-25 13:25:47 - Session terminated for user 161
+2024-08-25 13:25:47,356 - main - INFO - 2024-08-25 13:25:47 - Exit orders processed for all users
+
