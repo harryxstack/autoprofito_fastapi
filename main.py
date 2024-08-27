@@ -56,7 +56,7 @@ class ExitStudentAllInstrumentsRequest(BaseModel):
 class ExitPositionRequest(BaseModel):
     teacher_id: str
     order_data: List[Dict[str, Any]]
-    
+
 def get_current_time_formatted():
     return datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
@@ -166,14 +166,14 @@ async def process_orders_for_user(user: Dict[str, Any], instrument_data: List[Di
     return instrument_list
 
 # Broker buy order function
-async def insert_trade_book_live(connection, user_id, tradingsymbol, symboltoken, actual_quantity2, lot_size_limit, ltp, buy_order_id, exchange, ordertype, producttype, duration, transactionType):
+async def insert_trade_book_live(connection, user_id, tradingsymbol, symboltoken, actual_quantity2, lot_size_limit, ltp, buy_order_id, exchange, ordertype, producttype, duration, transactionType, uniqueorderid):
     try:
         with connection.cursor() as cursor:
             currentDateAndTime = datetime.now()
             insert_query = """
             INSERT INTO trade_book_live
-            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            (user_id, stock_symbol, stock_token, stock_quantity, lot_size, price, orderid, exchange, ordertype, producttype, duration, transactiontype, datetime,uniqueorderid)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             insert_values = (
                 user_id,
@@ -188,7 +188,8 @@ async def insert_trade_book_live(connection, user_id, tradingsymbol, symboltoken
                 str(producttype),
                 str(duration),
                 str(transactionType),
-                str(currentDateAndTime)
+                str(currentDateAndTime),
+                str(uniqueorderid)
             )
             
             logger.info(f"{get_current_time_formatted()} - Executing INSERT query: {insert_query}")
@@ -212,7 +213,7 @@ async def insert_trade_book_live(connection, user_id, tradingsymbol, symboltoken
 
 async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
     logger.info(f"{get_current_time_formatted()} - Starting broker_buy_order for user {user['user_id']}")
-    
+
     broker_credentials = await fetch_broker_credentials(user['user_id'])
     if not broker_credentials:
         logger.error(f"{get_current_time_formatted()} - Broker credentials not found for user {user['user_id']}")
@@ -231,7 +232,7 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
     ordertype = order_data["ordertype"]
     producttype = order_data["producttype"]
     transactionType = order_data["transactionType"]
-    
+
     try:
         token = broker_qr_totp_token
         totp = pyotp.TOTP(token).now()
@@ -243,9 +244,9 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
         smartApi = SmartConnect(api_key)
         username = broker_client_id
         pwd = broker_password
-        
+
         data = await asyncio.get_event_loop().run_in_executor(None, smartApi.generateSession, username, pwd, totp)
-        
+
         if data["message"] != 'SUCCESS':
             logger.error(f"{get_current_time_formatted()} - Session generation failed for user {user['user_id']}")
             return False
@@ -254,10 +255,10 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
         if 'data' not in ltp_data or 'ltp' not in ltp_data['data']:
             logger.error(f"{get_current_time_formatted()} - Failed to get LTP data for {tradingsymbol}")
             return False
-        
+
         ltp = float(ltp_data['data']['ltp'])
         actual_quantity2 = int(lotsize * lot_size_limit)
-        duration="DAY"
+        duration = "DAY"
 
         if actual_quantity2 <= 0:
             logger.error(f"{get_current_time_formatted()} - Actual quantity for {tradingsymbol} is less than or equal to 0")
@@ -282,75 +283,94 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
         try:
             response = await asyncio.get_event_loop().run_in_executor(None, smartApi.placeOrder, order_params)
             logger.info(f"{get_current_time_formatted()} - Order placement response: {response}")
-            
+
             if not response:
                 logger.error(f"{get_current_time_formatted()} - No response received from placeOrder for {tradingsymbol}")
                 return False
-            
-            # Check if the response is a string (likely an order ID)
+
+            buy_order_id = None
+            uniqueorderid = None
+
             if isinstance(response, str) and response.isdigit():
                 buy_order_id = response
                 logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {buy_order_id}")
             elif isinstance(response, dict):
-                # Handle dictionary response (as before)
-                if 'status' in response:
-                    if response['status'] != True:
-                        logger.error(f"{get_current_time_formatted()} - Order placement failed for {tradingsymbol}. Status: {response['status']}, Message: {response.get('message', 'No message')}")
-                        return False
-                else:
-                    logger.error(f"{get_current_time_formatted()} - Unexpected response format for {tradingsymbol}. Response: {response}")
-                    return False
-                
-                if 'orderid' not in response:
-                    logger.error(f"{get_current_time_formatted()} - OrderID not found in response for {tradingsymbol}. Response: {response}")
+                if 'status' in response and response['status'] != True:
+                    logger.error(f"{get_current_time_formatted()} - Order placement failed for {tradingsymbol}. Status: {response['status']}, Message: {response.get('message', 'No message')}")
                     return False
                 
                 buy_order_id = response.get("orderid")
+                uniqueorderid = response.get("uniqueorderid")
+
+                if not buy_order_id:
+                    logger.error(f"{get_current_time_formatted()} - OrderID not found in response for {tradingsymbol}. Response: {response}")
+                    return False
             else:
                 logger.error(f"{get_current_time_formatted()} - Unexpected response type for {tradingsymbol}. Response: {response}")
                 return False
 
-            logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {buy_order_id}")
+            logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {buy_order_id}, Unique Order ID: {uniqueorderid}")
 
             if buy_order_id and len(str(buy_order_id)) > 10 and str(buy_order_id).isdigit():
-                logger.info(f"{get_current_time_formatted()} - Attempting to update trade book for order ID: {buy_order_id}")
+                logger.info(f"{get_current_time_formatted()} - Attempting to fetch order details for order ID: {buy_order_id}")
                 
-                connection = await create_connection()
-                if not connection:
-                    logger.error(f"{get_current_time_formatted()} - Database connection failed")
-                    return False
+                order_details = await fetch_order_details(smartApi, buy_order_id)
                 
-                try:
-                    # Test database connection
-                    with connection.cursor() as cursor:
-                        cursor.execute("SELECT 1")
-                        result = cursor.fetchone()
-                        logger.info(f"Database connection test result: {result}")
-
-                    insert_success = await insert_trade_book_live(
-                        connection, 
-                        user['user_id'], 
-                        tradingsymbol, 
-                        symboltoken,
-                        actual_quantity2, 
-                        lot_size_limit, 
-                        ltp, 
-                        buy_order_id,
-                        exchange,
-                        ordertype,
-                        producttype,
-                        duration, 
-                        transactionType
-                    )
+                if order_details:
+                    uniqueorderid = order_details.get('uniqueorderid')
+                    order_status = order_details.get('status')
                     
-                    if insert_success:
-                        logger.info(f"{get_current_time_formatted()} - Trade book entry created successfully for order ID: {buy_order_id}")
-                        return True
+                    if uniqueorderid:
+                        logger.info(f"{get_current_time_formatted()} - Retrieved uniqueorderid: {uniqueorderid}")
                     else:
-                        logger.error(f"{get_current_time_formatted()} - Failed to create trade book entry for order ID: {buy_order_id}")
+                        logger.warning(f"{get_current_time_formatted()} - uniqueorderid not found in order details")
+                    
+                    if order_status == 'rejected':
+                        rejection_reason = order_details.get('text', 'No reason provided')
+                        logger.warning(f"{get_current_time_formatted()} - Order {buy_order_id} was rejected. Reason: {rejection_reason}")
                         return False
-                finally:
-                    connection.close()
+
+                    logger.info(f"{get_current_time_formatted()} - Attempting to update trade book for order ID: {buy_order_id}")
+
+                    connection = await create_connection()
+                    if not connection:
+                        logger.error(f"{get_current_time_formatted()} - Database connection failed")
+                        return False
+
+                    try:
+                        with connection.cursor() as cursor:
+                            cursor.execute("SELECT 1")
+                            result = cursor.fetchone()
+                            logger.info(f"Database connection test result: {result}")
+
+                        insert_success = await insert_trade_book_live(
+                            connection,
+                            user['user_id'],
+                            tradingsymbol,
+                            symboltoken,
+                            actual_quantity2,
+                            lot_size_limit,
+                            ltp,
+                            buy_order_id,
+                            exchange,
+                            ordertype,
+                            producttype,
+                            duration,
+                            transactionType,
+                            uniqueorderid
+                        )
+
+                        if insert_success:
+                            logger.info(f"{get_current_time_formatted()} - Trade book entry created successfully for order ID: {buy_order_id}")
+                            return True
+                        else:
+                            logger.error(f"{get_current_time_formatted()} - Failed to create trade book entry for order ID: {buy_order_id}")
+                            return False
+                    finally:
+                        connection.close()
+                else:
+                    logger.error(f"{get_current_time_formatted()} - Failed to fetch order details for order ID: {buy_order_id}")
+                    return False
             else:
                 logger.error(f"{get_current_time_formatted()} - Invalid order ID for {tradingsymbol}")
                 return False
@@ -369,6 +389,20 @@ async def broker_buy_order(user: Dict[str, Any], order_data: Dict[str, Any]):
         except Exception as e:
             logger.error(f"{get_current_time_formatted()} - Error terminating session: {str(e)}")
 
+async def fetch_order_details(smartApi, order_id):
+    try:
+        order_book = await asyncio.get_event_loop().run_in_executor(
+            None, 
+            smartApi.orderBook
+        )
+        for order in order_book.get('data', []):
+            if order.get('orderid') == order_id:
+                return order
+        return None
+    except Exception as e:
+        logger.error(f"{get_current_time_formatted()} - Error fetching order details: {str(e)}")
+        return None
+    
 @app.post("/execute_orders")
 async def execute_orders_api(request: ExecuteOrdersRequest):
     try:
@@ -450,14 +484,14 @@ async def broker_sell_students_all_pending_order(user: Dict[str, Any], trades: L
         for trade in trades:
             tradingsymbol = trade["stock_symbol"]
             symboltoken = trade["stock_token"]
-            transaction_type1=trade["transactiontype"]
-            exchange=trade["exchange"]
-            ordertype=trade["ordertype"]
-            producttype=trade["producttype"]
-            duration=trade["duration"]
-            lot_size_limit=trade["lot_size"]
-            orderid=trade["orderid"]
-            price=trade["price"]
+            transaction_type1 = trade["transactiontype"]
+            exchange = trade["exchange"]
+            ordertype = trade["ordertype"]
+            producttype = trade["producttype"]
+            duration = trade["duration"]
+            lot_size_limit = trade["lot_size"]
+            orderid = trade["orderid"]
+            price = trade["price"]
            
             try:
                 quantity = abs(int(float(trade["stock_quantity"])))
@@ -465,11 +499,7 @@ async def broker_sell_students_all_pending_order(user: Dict[str, Any], trades: L
                 logger.error(f"{get_current_time_formatted()} - Invalid quantity format for trade {trade}: {e}")
                 continue
 
-            transactionType=None
-            if transaction_type1 == "BUY":
-                transactionType="SELL"
-            else:
-                transactionType="BUY"
+            transactionType = "SELL" if transaction_type1 == "BUY" else "BUY"
                 
             order_params = {
                 "variety": "NORMAL",
@@ -480,6 +510,7 @@ async def broker_sell_students_all_pending_order(user: Dict[str, Any], trades: L
                 "ordertype": ordertype,
                 "producttype": producttype,
                 "duration": duration,
+                "price": str(price),
                 "quantity": str(quantity)
             }
             logger.info(f"{get_current_time_formatted()} - Placing order with params: {order_params}")
@@ -488,65 +519,92 @@ async def broker_sell_students_all_pending_order(user: Dict[str, Any], trades: L
                 response = await asyncio.get_event_loop().run_in_executor(None, smartApi.placeOrder, order_params)
                 logger.info(f"{get_current_time_formatted()} - Order placement response: {response}")
                 
-                connection = await create_connection()
-                actual_quantity2=str(quantity)
-                lot_size_limit=lot_size_limit
-                ltp=price
-                buy_order_id=orderid
-                exchange=exchange
-                ordertype=ordertype
-                producttype=producttype
-                duration=duration
-                
-                if not connection:
-                    logger.error(f"{get_current_time_formatted()} - Database connection failed")
-                    return False
-                
-                try:
-                    # Test database connection
-                    with connection.cursor() as cursor:
-                        cursor.execute("SELECT 1")
-                        result = cursor.fetchone()
-                        logger.info(f"Database connection test result: {result}")
-
-                    insert_success = await insert_trade_book_live(
-                        connection,
-                        user['user_id'],
-                        tradingsymbol,
-                        symboltoken,
-                        actual_quantity2,
-                        lot_size_limit,
-                        ltp,
-                        buy_order_id,
-                        exchange,
-                        ordertype,
-                        producttype,
-                        duration,
-                        transactionType
-                    )
-                finally:
-                    connection.close()
-            
                 if not response:
                     logger.error(f"{get_current_time_formatted()} - No response received from placeOrder for {tradingsymbol}")
-                    return False
-        
-                if response:
-                    if isinstance(response, str):
-                        try:
-                            response_data = json.loads(response)
-                        except json.JSONDecodeError:
-                            logger.error(f"{get_current_time_formatted()} - Invalid JSON response: {response}")
-                            continue
-                    else:
-                        response_data = response
+                    continue
 
-                    if response_data and 'status' in response_data and response_data['status'] == 'SUCCESS':
-                        logger.info(f"{get_current_time_formatted()} - Exit order placed for {tradingsymbol} with order ID {response_data['data']['orderId']}")
-                    else:
-                        logger.error(f"{get_current_time_formatted()} - Failed to place exit order for {tradingsymbol}. Response: {response_data}")
+                sell_order_id = None
+                uniqueorderid = None
+
+                if isinstance(response, str) and response.isdigit():
+                    sell_order_id = response
+                    logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {sell_order_id}")
+                elif isinstance(response, dict):
+                    if 'status' in response and response['status'] != True:
+                        logger.error(f"{get_current_time_formatted()} - Order placement failed for {tradingsymbol}. Status: {response['status']}, Message: {response.get('message', 'No message')}")
+                        continue
+                    
+                    sell_order_id = response.get("orderid")
+                    uniqueorderid = response.get("uniqueorderid")
+                    
+                    if not sell_order_id:
+                        logger.error(f"{get_current_time_formatted()} - OrderID not found in response for {tradingsymbol}. Response: {response}")
+                        continue
                 else:
-                    logger.error(f"{get_current_time_formatted()} - Empty response from placeOrder for {tradingsymbol}")
+                    logger.error(f"{get_current_time_formatted()} - Unexpected response type for {tradingsymbol}. Response: {response}")
+                    continue
+
+                logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {sell_order_id}, Unique Order ID: {uniqueorderid}")
+
+                if sell_order_id and len(str(sell_order_id)) > 10 and str(sell_order_id).isdigit():
+                    logger.info(f"{get_current_time_formatted()} - Attempting to fetch order details for order ID: {sell_order_id}")
+                    
+                    order_details = await fetch_order_details(smartApi, sell_order_id)
+                    
+                    if order_details:
+                        uniqueorderid = order_details.get('uniqueorderid', uniqueorderid)
+                        order_status = order_details.get('status')
+                        
+                        if uniqueorderid:
+                            logger.info(f"{get_current_time_formatted()} - Retrieved uniqueorderid: {uniqueorderid}")
+                        else:
+                            logger.warning(f"{get_current_time_formatted()} - uniqueorderid not found in order details")
+                        
+                        if order_status == 'rejected':
+                            rejection_reason = order_details.get('text', 'No reason provided')
+                            logger.warning(f"{get_current_time_formatted()} - Order {sell_order_id} was rejected. Reason: {rejection_reason}")
+                            continue
+
+                        logger.info(f"{get_current_time_formatted()} - Attempting to update trade book for order ID: {sell_order_id}")
+
+                        connection = await create_connection()
+                        if not connection:
+                            logger.error(f"{get_current_time_formatted()} - Database connection failed")
+                            continue
+
+                        try:
+                            with connection.cursor() as cursor:
+                                cursor.execute("SELECT 1")
+                                result = cursor.fetchone()
+                                logger.info(f"Database connection test result: {result}")
+
+                            insert_success = await insert_trade_book_live(
+                                connection,
+                                user['user_id'],
+                                tradingsymbol,
+                                symboltoken,
+                                str(quantity),
+                                lot_size_limit,
+                                price,
+                                sell_order_id,
+                                exchange,
+                                ordertype,
+                                producttype,
+                                duration,
+                                transactionType,
+                                uniqueorderid
+                            )
+
+                            if insert_success:
+                                logger.info(f"{get_current_time_formatted()} - Trade book entry created successfully for order ID: {sell_order_id}")
+                            else:
+                                logger.error(f"{get_current_time_formatted()} - Failed to create trade book entry for order ID: {sell_order_id}")
+                        finally:
+                            connection.close()
+                    else:
+                        logger.error(f"{get_current_time_formatted()} - Failed to fetch order details for order ID: {sell_order_id}")
+                else:
+                    logger.error(f"{get_current_time_formatted()} - Invalid order ID for {tradingsymbol}")
 
             except Exception as e:
                 logger.error(f"{get_current_time_formatted()} - Error placing exit order for {tradingsymbol}: {e}")
@@ -670,9 +728,10 @@ async def process_student_instrument_exit(user: Dict[str, Any], instrument_data:
     else:
         logger.info(f"{get_current_time_formatted()} - No trade found for user {user['user_id']} and instrument {instrument_data['tradingsymbol']}")
         return {"st": 2, "msg": f"No trade found for user {user['user_id']} and instrument {instrument_data['tradingsymbol']}"}
-
+    
 async def broker_exit_instrument(user: Dict[str, Any], trade: Dict[str, Any]):
     logger.info(f"{get_current_time_formatted()} - Starting broker_exit_instrument for user {user['user_id']}")
+    
     broker_credentials = await fetch_broker_credentials(user['user_id'])
     if not broker_credentials:
         logger.error(f"{get_current_time_formatted()} - Broker credentials not found for user {user['user_id']}")
@@ -695,7 +754,7 @@ async def broker_exit_instrument(user: Dict[str, Any], trade: Dict[str, Any]):
         symboltoken = trade["stock_token"]
         quantity = abs(int(float(trade["stock_quantity"])))
         transaction_type = "SELL" if trade["transactiontype"] == "BUY" else "BUY"
-        
+
         order_params = {
             "variety": "NORMAL",
             "tradingsymbol": tradingsymbol,
@@ -705,27 +764,82 @@ async def broker_exit_instrument(user: Dict[str, Any], trade: Dict[str, Any]):
             "ordertype": trade["ordertype"],
             "producttype": trade["producttype"],
             "duration": trade["duration"],
+            "price": str(trade["price"]),
             "quantity": str(quantity)
         }
 
-        order_id = obj.placeOrder(order_params)
-        logger.info(f"{get_current_time_formatted()} - Placed order for user {user['user_id']}: {order_id}")
+        response = obj.placeOrder(order_params)
+        logger.info(f"{get_current_time_formatted()} - Order placement response: {response}")
 
-        # Insert the new order into trade_book_live
-        with connection.cursor() as cursor:
-            currentDateAndTime = datetime.now()
-            insert_query = """
-            INSERT INTO trade_book_live (user_id, stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration, datetime)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """
-            cursor.execute(insert_query, (
-                user['user_id'], tradingsymbol, symboltoken, -quantity, trade["price"],
-                order_id, transaction_type, trade["lot_size"], trade["exchange"],
-                trade["ordertype"], trade["producttype"], trade["duration"], currentDateAndTime
-            ))
-            connection.commit()
+        if not response:
+            logger.error(f"{get_current_time_formatted()} - No response received from placeOrder for {tradingsymbol}")
+            return False
 
-        return True
+        order_id = None
+        uniqueorderid = None
+
+        if isinstance(response, str) and response.isdigit():
+            order_id = response
+            logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {order_id}")
+        elif isinstance(response, dict):
+            if 'status' in response and response['status'] != True:
+                logger.error(f"{get_current_time_formatted()} - Order placement failed for {tradingsymbol}. Status: {response['status']}, Message: {response.get('message', 'No message')}")
+                return False
+            
+            order_id = response.get("orderid")
+            uniqueorderid = response.get("uniqueorderid")
+            
+            if not order_id:
+                logger.error(f"{get_current_time_formatted()} - OrderID not found in response for {tradingsymbol}. Response: {response}")
+                return False
+        else:
+            logger.error(f"{get_current_time_formatted()} - Unexpected response type for {tradingsymbol}. Response: {response}")
+            return False
+
+        logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {order_id}, Unique Order ID: {uniqueorderid}")
+
+        if order_id and len(str(order_id)) > 10 and str(order_id).isdigit():
+            logger.info(f"{get_current_time_formatted()} - Attempting to fetch order details for order ID: {order_id}")
+            
+            order_details = await fetch_order_details(obj, order_id)
+            
+            if order_details:
+                uniqueorderid = order_details.get('uniqueorderid', uniqueorderid)
+                order_status = order_details.get('status')
+                
+                if uniqueorderid:
+                    logger.info(f"{get_current_time_formatted()} - Retrieved uniqueorderid: {uniqueorderid}")
+                else:
+                    logger.warning(f"{get_current_time_formatted()} - uniqueorderid not found in order details")
+                
+                if order_status == 'rejected':
+                    rejection_reason = order_details.get('text', 'No reason provided')
+                    logger.warning(f"{get_current_time_formatted()} - Order {order_id} was rejected. Reason: {rejection_reason}")
+                    return False
+
+                logger.info(f"{get_current_time_formatted()} - Attempting to update trade book for order ID: {order_id}")
+
+                with connection.cursor() as cursor:
+                    currentDateAndTime = datetime.now()
+                    insert_query = """
+                    INSERT INTO trade_book_live (user_id, stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration, datetime, uniqueorderid)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    """
+                    cursor.execute(insert_query, (
+                        user['user_id'], tradingsymbol, symboltoken, -quantity, trade["price"],
+                        order_id, transaction_type, trade["lot_size"], trade["exchange"],
+                        trade["ordertype"], trade["producttype"], trade["duration"], currentDateAndTime, uniqueorderid
+                    ))
+                    connection.commit()
+
+                logger.info(f"{get_current_time_formatted()} - Trade book entry created successfully for order ID: {order_id}")
+                return True
+            else:
+                logger.error(f"{get_current_time_formatted()} - Failed to fetch order details for order ID: {order_id}")
+                return False
+        else:
+            logger.error(f"{get_current_time_formatted()} - Invalid order ID for {tradingsymbol}")
+            return False
 
     except Exception as e:
         logger.error(f"{get_current_time_formatted()} - Error in broker_exit_instrument: {e}")
@@ -792,6 +906,7 @@ async def process_student_all_instruments_exit(user: Dict[str, Any]):
 
 async def broker_exit_all_instruments(user: Dict[str, Any], trades: List[Dict[str, Any]]):
     logger.info(f"{get_current_time_formatted()} - Starting broker_exit_all_instruments for user {user['user_id']}")
+    
     broker_credentials = await fetch_broker_credentials(user['user_id'])
     if not broker_credentials:
         logger.error(f"{get_current_time_formatted()} - Broker credentials not found for user {user['user_id']}")
@@ -811,13 +926,12 @@ async def broker_exit_all_instruments(user: Dict[str, Any], trades: List[Dict[st
         logger.info(f"{get_current_time_formatted()} - Generated session for user {user['user_id']}")
 
         all_orders_placed = True
-
         for trade in trades:
             tradingsymbol = trade["stock_symbol"]
             symboltoken = trade["stock_token"]
             quantity = abs(int(float(trade["stock_quantity"])))
             transaction_type = "SELL" if trade["transactiontype"] == "BUY" else "BUY"
-            
+
             order_params = {
                 "variety": "NORMAL",
                 "tradingsymbol": tradingsymbol,
@@ -827,26 +941,87 @@ async def broker_exit_all_instruments(user: Dict[str, Any], trades: List[Dict[st
                 "ordertype": trade["ordertype"],
                 "producttype": trade["producttype"],
                 "duration": trade["duration"],
+                "price": str(trade["price"]),
                 "quantity": str(quantity)
             }
 
             try:
-                order_id = obj.placeOrder(order_params)
-                logger.info(f"{get_current_time_formatted()} - Placed order for user {user['user_id']}, instrument {tradingsymbol}: {order_id}")
+                response = obj.placeOrder(order_params)
+                logger.info(f"{get_current_time_formatted()} - Order placement response for {tradingsymbol}: {response}")
 
-                # Insert the new order into trade_book_live
-                with connection.cursor() as cursor:
-                    currentDateAndTime = datetime.now()
-                    insert_query = """
-                    INSERT INTO trade_book_live (user_id, stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration, datetime)
-                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """
-                    cursor.execute(insert_query, (
-                        user['user_id'], tradingsymbol, symboltoken, -quantity, trade["price"],
-                        order_id, transaction_type, trade["lot_size"], trade["exchange"],
-                        trade["ordertype"], trade["producttype"], trade["duration"], currentDateAndTime
-                    ))
-                    connection.commit()
+                if not response:
+                    logger.error(f"{get_current_time_formatted()} - No response received from placeOrder for {tradingsymbol}")
+                    all_orders_placed = False
+                    continue
+
+                order_id = None
+                uniqueorderid = None
+
+                if isinstance(response, str) and response.isdigit():
+                    order_id = response
+                    logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {order_id}")
+                elif isinstance(response, dict):
+                    if 'status' in response and response['status'] != True:
+                        logger.error(f"{get_current_time_formatted()} - Order placement failed for {tradingsymbol}. Status: {response['status']}, Message: {response.get('message', 'No message')}")
+                        all_orders_placed = False
+                        continue
+                    
+                    order_id = response.get("orderid")
+                    uniqueorderid = response.get("uniqueorderid")
+                    
+                    if not order_id:
+                        logger.error(f"{get_current_time_formatted()} - OrderID not found in response for {tradingsymbol}. Response: {response}")
+                        all_orders_placed = False
+                        continue
+                else:
+                    logger.error(f"{get_current_time_formatted()} - Unexpected response type for {tradingsymbol}. Response: {response}")
+                    all_orders_placed = False
+                    continue
+
+                logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {order_id}, Unique Order ID: {uniqueorderid}")
+
+                if order_id and len(str(order_id)) > 10 and str(order_id).isdigit():
+                    logger.info(f"{get_current_time_formatted()} - Attempting to fetch order details for order ID: {order_id}")
+                    
+                    order_details = await fetch_order_details(obj, order_id)
+                    
+                    if order_details:
+                        uniqueorderid = order_details.get('uniqueorderid', uniqueorderid)
+                        order_status = order_details.get('status')
+                        
+                        if uniqueorderid:
+                            logger.info(f"{get_current_time_formatted()} - Retrieved uniqueorderid: {uniqueorderid}")
+                        else:
+                            logger.warning(f"{get_current_time_formatted()} - uniqueorderid not found in order details")
+                        
+                        if order_status == 'rejected':
+                            rejection_reason = order_details.get('text', 'No reason provided')
+                            logger.warning(f"{get_current_time_formatted()} - Order {order_id} was rejected. Reason: {rejection_reason}")
+                            all_orders_placed = False
+                            continue
+
+                        logger.info(f"{get_current_time_formatted()} - Attempting to update trade book for order ID: {order_id}")
+
+                        with connection.cursor() as cursor:
+                            currentDateAndTime = datetime.now()
+                            insert_query = """
+                            INSERT INTO trade_book_live (user_id, stock_symbol, stock_token, stock_quantity, price, orderid, transactiontype, lot_size, exchange, ordertype, producttype, duration, datetime, uniqueorderid)
+                            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                            """
+                            cursor.execute(insert_query, (
+                                user['user_id'], tradingsymbol, symboltoken, -quantity, trade["price"],
+                                order_id, transaction_type, trade["lot_size"], trade["exchange"],
+                                trade["ordertype"], trade["producttype"], trade["duration"], currentDateAndTime, uniqueorderid
+                            ))
+                            connection.commit()
+
+                        logger.info(f"{get_current_time_formatted()} - Trade book entry created successfully for order ID: {order_id}")
+                    else:
+                        logger.error(f"{get_current_time_formatted()} - Failed to fetch order details for order ID: {order_id}")
+                        all_orders_placed = False
+                else:
+                    logger.error(f"{get_current_time_formatted()} - Invalid order ID for {tradingsymbol}")
+                    all_orders_placed = False
 
             except Exception as e:
                 logger.error(f"{get_current_time_formatted()} - Error placing exit order for user {user['user_id']}, instrument {tradingsymbol}: {e}")
@@ -866,8 +1041,6 @@ async def broker_exit_all_instruments(user: Dict[str, Any], trades: List[Dict[st
         except:
             pass
         connection.close()
-
-
 
 
 
@@ -930,7 +1103,6 @@ async def process_instrument_orders(user: Dict[str, Any], order_data: List[Dict[
         logger.info(f"{get_current_time_formatted()} - No trades found for user {user['user_id']}")
         return {"st": 2, "msg": f"No trades found for user {user['user_id']}"}
 
-# Place exit orders using broker's API
 async def place_exit_orders(user: Dict[str, Any], trades: List[Dict[str, Any]]):
     logger.info(f"{get_current_time_formatted()} - Starting place_exit_orders for user {user['user_id']}")
     broker_credentials = await fetch_broker_credentials(user['user_id'])
@@ -957,6 +1129,7 @@ async def place_exit_orders(user: Dict[str, Any], trades: List[Dict[str, Any]]):
             logger.error(f"{get_current_time_formatted()} - Session generation failed for user {user['user_id']}: {session_data}")
             return False
 
+        all_orders_placed = True
         for trade in trades:
             tradingsymbol = trade["stock_symbol"]
             symboltoken = trade["stock_token"]
@@ -966,13 +1139,13 @@ async def place_exit_orders(user: Dict[str, Any], trades: List[Dict[str, Any]]):
             producttype = trade["producttype"]
             duration = trade["duration"]
             lot_size_limit = trade["lot_size"]
-            orderid = trade["orderid"]
             price = trade["price"]
            
             try:
                 quantity = abs(int(float(trade["stock_quantity"])))
             except ValueError as e:
                 logger.error(f"{get_current_time_formatted()} - Invalid quantity format for trade {trade}: {e}")
+                all_orders_placed = False
                 continue
 
             transactionType = "SELL" if transaction_type1 == "BUY" else "BUY"
@@ -986,6 +1159,7 @@ async def place_exit_orders(user: Dict[str, Any], trades: List[Dict[str, Any]]):
                 "ordertype": ordertype,
                 "producttype": producttype,
                 "duration": duration,
+                "price": str(price),
                 "quantity": str(quantity)
             }
             logger.info(f"{get_current_time_formatted()} - Placing order with params: {order_params}")
@@ -993,57 +1167,116 @@ async def place_exit_orders(user: Dict[str, Any], trades: List[Dict[str, Any]]):
             try:
                 response = await asyncio.get_event_loop().run_in_executor(None, smartApi.placeOrder, order_params)
                 logger.info(f"{get_current_time_formatted()} - Order placement response: {response}")
-                
-                connection = await create_connection()
-                if not connection:
-                    logger.error(f"{get_current_time_formatted()} - Database connection failed")
-                    return False
-                
-                try:
-                    insert_success = await insert_trade_book_live(
-                        connection,
-                        user['user_id'],
-                        tradingsymbol,
-                        symboltoken,
-                        str(quantity),
-                        lot_size_limit,
-                        price,
-                        orderid,
-                        exchange,
-                        ordertype,
-                        producttype,
-                        duration,
-                        transactionType
-                    )
-                finally:
-                    connection.close()
-            
+
                 if not response:
                     logger.error(f"{get_current_time_formatted()} - No response received from placeOrder for {tradingsymbol}")
-                    return False
+                    all_orders_placed = False
+                    continue
 
-                response_data = json.loads(response) if isinstance(response, str) else response
-                if response_data and 'status' in response_data and response_data['status'] == 'SUCCESS':
-                    logger.info(f"{get_current_time_formatted()} - Exit order placed for {tradingsymbol} with order ID {response_data['data']['orderId']}")
+                order_id = None
+                uniqueorderid = None
+
+                if isinstance(response, str) and response.isdigit():
+                    order_id = response
+                    logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {order_id}")
+                elif isinstance(response, dict):
+                    if 'status' in response and response['status'] != True:
+                        logger.error(f"{get_current_time_formatted()} - Order placement failed for {tradingsymbol}. Status: {response['status']}, Message: {response.get('message', 'No message')}")
+                        all_orders_placed = False
+                        continue
+                    
+                    order_id = response.get("orderid")
+                    uniqueorderid = response.get("uniqueorderid")
+                    
+                    if not order_id:
+                        logger.error(f"{get_current_time_formatted()} - OrderID not found in response for {tradingsymbol}. Response: {response}")
+                        all_orders_placed = False
+                        continue
                 else:
-                    logger.error(f"{get_current_time_formatted()} - Failed to place exit order for {tradingsymbol}. Response: {response_data}")
+                    logger.error(f"{get_current_time_formatted()} - Unexpected response type for {tradingsymbol}. Response: {response}")
+                    all_orders_placed = False
+                    continue
+
+                logger.info(f"{get_current_time_formatted()} - Order placed successfully. Order ID: {order_id}, Unique Order ID: {uniqueorderid}")
+
+                if order_id and len(str(order_id)) > 10 and str(order_id).isdigit():
+                    logger.info(f"{get_current_time_formatted()} - Attempting to fetch order details for order ID: {order_id}")
+                    
+                    order_details = await fetch_order_details(smartApi, order_id)
+                    
+                    if order_details:
+                        uniqueorderid = order_details.get('uniqueorderid', uniqueorderid)
+                        order_status = order_details.get('status')
+                        
+                        if uniqueorderid:
+                            logger.info(f"{get_current_time_formatted()} - Retrieved uniqueorderid: {uniqueorderid}")
+                        else:
+                            logger.warning(f"{get_current_time_formatted()} - uniqueorderid not found in order details")
+                        
+                        if order_status == 'rejected':
+                            rejection_reason = order_details.get('text', 'No reason provided')
+                            logger.warning(f"{get_current_time_formatted()} - Order {order_id} was rejected. Reason: {rejection_reason}")
+                            all_orders_placed = False
+                            continue
+
+                        logger.info(f"{get_current_time_formatted()} - Attempting to update trade book for order ID: {order_id}")
+
+                        connection = await create_connection()
+                        if not connection:
+                            logger.error(f"{get_current_time_formatted()} - Database connection failed")
+                            all_orders_placed = False
+                            continue
+
+                        try:
+                            insert_success = await insert_trade_book_live(
+                                connection,
+                                user['user_id'],
+                                tradingsymbol,
+                                symboltoken,
+                                str(-quantity),  # Negative quantity for exit orders
+                                lot_size_limit,
+                                price,
+                                order_id,
+                                exchange,
+                                ordertype,
+                                producttype,
+                                duration,
+                                transactionType,
+                                uniqueorderid
+                            )
+
+                            if insert_success:
+                                logger.info(f"{get_current_time_formatted()} - Trade book entry created successfully for order ID: {order_id}")
+                            else:
+                                logger.error(f"{get_current_time_formatted()} - Failed to create trade book entry for order ID: {order_id}")
+                                all_orders_placed = False
+                        finally:
+                            connection.close()
+                    else:
+                        logger.error(f"{get_current_time_formatted()} - Failed to fetch order details for order ID: {order_id}")
+                        all_orders_placed = False
+                else:
+                    logger.error(f"{get_current_time_formatted()} - Invalid order ID for {tradingsymbol}")
+                    all_orders_placed = False
 
             except Exception as e:
                 logger.error(f"{get_current_time_formatted()} - Error placing exit order for {tradingsymbol}: {e}")
+                all_orders_placed = False
 
             await asyncio.sleep(0.5)  # Rate limit handling
 
+        return all_orders_placed
+
     except Exception as e:
         logger.error(f"{get_current_time_formatted()} - Error in place_exit_orders: {e}")
+        return False
     finally:
         try:
             await asyncio.get_event_loop().run_in_executor(None, smartApi.terminateSession, broker_client_id)
             logger.info(f"{get_current_time_formatted()} - Session terminated for user {user['user_id']}")
         except Exception as e:
             logger.error(f"{get_current_time_formatted()} - Error terminating session for user {user['user_id']}: {e}")
-
-    return True  # Return True even if some orders failed, to continue processing other users
-
+            
 @app.post("/exit_position")
 async def exit_position(request: ExitPositionRequest):
     logger.info(f"{get_current_time_formatted()} - Received request to exit_position: {request}")
