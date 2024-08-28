@@ -1,0 +1,145 @@
+2024-08-27 18:39:36,958 - xyz - INFO - Order placement response: 240827101648756
+2024-08-27 18:39:37,084 - xyz - INFO - Retrieved uniqueorderid: 1d9737d1-6ef7-4503-9233-113dd0ea9522
+2024-08-27 18:39:37,084 - xyz - WARNING - Order 240827101648756 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:37,871 - xyz - INFO - Order placement response: 240827101482557
+2024-08-27 18:39:38,001 - xyz - INFO - Retrieved uniqueorderid: 01fbde26-9be8-4a09-a679-72f6b9b78b77
+2024-08-27 18:39:38,002 - xyz - WARNING - Order 240827101482557 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:38,867 - xyz - INFO - Order placement response: 240827001093012
+2024-08-27 18:39:39,087 - xyz - INFO - Retrieved uniqueorderid: 679a1ebc-20d9-4e51-8093-9f69b99cd114
+2024-08-27 18:39:39,088 - xyz - WARNING - Order 240827001093012 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:39,995 - xyz - INFO - Order placement response: 240827101585022
+2024-08-27 18:39:40,235 - xyz - INFO - Retrieved uniqueorderid: d786ec87-7c21-4295-b568-06c09e37a673
+2024-08-27 18:39:40,235 - xyz - WARNING - Order 240827101585022 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:41,125 - xyz - INFO - Order placement response: 240827101648767
+2024-08-27 18:39:41,271 - xyz - INFO - Retrieved uniqueorderid: 33bab8b9-380c-4adc-bca6-fd84953b8065
+2024-08-27 18:39:41,272 - xyz - WARNING - Order 240827101648767 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:42,176 - xyz - INFO - Order placement response: 240827001093017
+2024-08-27 18:39:42,379 - xyz - INFO - Retrieved uniqueorderid: 5fd15695-5bae-4dd1-823b-e1fc2323ae30
+2024-08-27 18:39:42,380 - xyz - WARNING - Order 240827001093017 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:43,297 - xyz - INFO - Order placement response: 240827001381587
+2024-08-27 18:39:43,527 - xyz - INFO - Retrieved uniqueorderid: 4a89b12f-b689-41a3-b11c-d8467d6062b6
+2024-08-27 18:39:43,527 - xyz - WARNING - Order 240827001381587 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:44,502 - xyz - INFO - Order placement response: 240827101648776
+2024-08-27 18:39:44,677 - xyz - INFO - Retrieved uniqueorderid: 941d9ce4-1949-41e2-82ac-28079717aae1
+2024-08-27 18:39:44,678 - xyz - WARNING - Order 240827101648776 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:45,719 - xyz - INFO - Order placement response: 240827001093024
+2024-08-27 18:39:45,942 - xyz - INFO - Retrieved uniqueorderid: b1c9c835-9880-40d1-87f9-b2c04d905ef7
+2024-08-27 18:39:45,942 - xyz - WARNING - Order 240827001093024 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:39:46,089 - xyz - INFO - Skipping student Harry as their broker is not 'angle_one'
+2024-08-27 18:40:36,257 - xyz - INFO - Order placement response: 240827101648930
+2024-08-27 18:40:36,386 - xyz - INFO - Retrieved uniqueorderid: 5a378911-4ae2-44a7-b3c2-bb66be951f8c
+2024-08-27 18:40:36,386 - xyz - WARNING - Order 240827101648930 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:40:37,150 - xyz - INFO - Order placement response: 240827101482646
+2024-08-27 18:40:37,307 - xyz - INFO - Retrieved uniqueorderid: acd2affe-da82-44f8-b053-0488e9f050ab
+2024-08-27 18:40:37,307 - xyz - WARNING - Order 240827101482646 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:40:41,313 - xyz - INFO - Order placement response: 240827001093166
+2024-08-27 18:40:41,518 - xyz - INFO - Retrieved uniqueorderid: 212f177b-243b-4c48-a5a4-ec319de05c84
+2024-08-27 18:40:41,519 - xyz - WARNING - Order 240827001093166 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:40:42,349 - xyz - INFO - Order placement response: 240827101585141
+2024-08-27 18:40:42,561 - xyz - INFO - Retrieved uniqueorderid: cac4f15b-7917-4082-bb0f-d97e01580e4d
+2024-08-27 18:40:42,562 - xyz - WARNING - Order 240827101585141 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:40:43,359 - xyz - INFO - Order placement response: 240827101648952
+2024-08-27 18:40:43,492 - xyz - INFO - Retrieved uniqueorderid: 013cd674-5d85-4037-8351-2248046979a8
+2024-08-27 18:40:43,493 - xyz - WARNING - Order 240827101648952 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:40:44,368 - xyz - INFO - Order placement response: 240827001093178
+2024-08-27 18:40:44,592 - xyz - INFO - Retrieved uniqueorderid: 6754ebe5-b867-43fa-8bf9-2d5fdde3d838
+2024-08-27 18:40:44,592 - xyz - WARNING - Order 240827001093178 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:40:45,453 - xyz - INFO - Order placement response: 240827001381715
+2024-08-27 18:40:45,676 - xyz - INFO - Retrieved uniqueorderid: dc1303a9-b135-43ff-9469-891a82e58c5f
+2024-08-27 18:40:45,676 - xyz - WARNING - Order 240827001381715 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:42:20,078 - xyz - INFO - Order placement response: 240827101649238
+2024-08-27 18:42:20,204 - xyz - INFO - Retrieved uniqueorderid: 1c6e4257-ba30-4b66-a370-f8ed53f631ac
+2024-08-27 18:42:20,204 - xyz - WARNING - Order 240827101649238 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:42:20,323 - xyz - INFO - Skipping user aruna shinde as toggle is True and this is not the teacher
+2024-08-27 18:42:20,323 - xyz - INFO - Skipping user Prasanna Deshmukh as toggle is True and this is not the teacher
+2024-08-27 18:42:20,323 - xyz - INFO - Skipping user Viraj Kadam as toggle is True and this is not the teacher
+2024-08-27 18:42:20,323 - xyz - INFO - Skipping user Pramod Kale as toggle is True and this is not the teacher
+2024-08-27 18:42:20,323 - xyz - INFO - Skipping user Prachi Jadhav as toggle is True and this is not the teacher
+2024-08-27 18:42:20,323 - xyz - INFO - Skipping user Vaibhav Taware as toggle is True and this is not the teacher
+2024-08-27 18:42:36,216 - xyz - INFO - Order placement response: 240827101649273
+2024-08-27 18:42:36,347 - xyz - INFO - Retrieved uniqueorderid: 9429a300-5566-4fdf-b14c-fa1870211739
+2024-08-27 18:42:36,347 - xyz - WARNING - Order 240827101649273 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:42:36,465 - xyz - INFO - Skipping user aruna shinde as toggle is True and this is not the teacher
+2024-08-27 18:42:36,465 - xyz - INFO - Skipping user Prasanna Deshmukh as toggle is True and this is not the teacher
+2024-08-27 18:42:36,466 - xyz - INFO - Skipping user Viraj Kadam as toggle is True and this is not the teacher
+2024-08-27 18:42:36,466 - xyz - INFO - Skipping user Pramod Kale as toggle is True and this is not the teacher
+2024-08-27 18:42:36,466 - xyz - INFO - Skipping user Prachi Jadhav as toggle is True and this is not the teacher
+2024-08-27 18:42:36,466 - xyz - INFO - Skipping user Vaibhav Taware as toggle is True and this is not the teacher
+2024-08-27 18:43:04,131 - xyz - INFO - Order placement response: 240827101649339
+2024-08-27 18:43:04,260 - xyz - INFO - Retrieved uniqueorderid: 0d96a479-6e21-4dc7-b1fe-cc3e9d0fa042
+2024-08-27 18:43:04,261 - xyz - WARNING - Order 240827101649339 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:43:05,029 - xyz - INFO - Order placement response: 240827101482862
+2024-08-27 18:43:05,183 - xyz - INFO - Retrieved uniqueorderid: 12d8e574-0544-4498-8515-84b68bce01fa
+2024-08-27 18:43:05,184 - xyz - WARNING - Order 240827101482862 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:43:06,167 - xyz - INFO - Order placement response: 240827001093481
+2024-08-27 18:43:06,422 - xyz - INFO - Retrieved uniqueorderid: 75b434b9-f07e-4205-bc16-30d84e1a6ab6
+2024-08-27 18:43:06,422 - xyz - WARNING - Order 240827001093481 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:43:07,294 - xyz - INFO - Order placement response: 240827101585414
+2024-08-27 18:43:07,514 - xyz - INFO - Retrieved uniqueorderid: f0dd91a7-0610-42a4-bbc2-f7c54e4af0cc
+2024-08-27 18:43:07,514 - xyz - WARNING - Order 240827101585414 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:43:08,426 - xyz - INFO - Order placement response: 240827101649354
+2024-08-27 18:43:08,570 - xyz - INFO - Retrieved uniqueorderid: eadf3198-3282-4899-a27d-8c096d3b4166
+2024-08-27 18:43:08,570 - xyz - WARNING - Order 240827101649354 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:43:09,474 - xyz - INFO - Order placement response: 240827001093485
+2024-08-27 18:43:09,664 - xyz - INFO - Retrieved uniqueorderid: 41121e50-fb81-413e-9116-a38d43f9f745
+2024-08-27 18:43:09,664 - xyz - WARNING - Order 240827001093485 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:43:10,587 - xyz - INFO - Order placement response: 240827001381975
+2024-08-27 18:43:10,816 - xyz - INFO - Retrieved uniqueorderid: 35d88724-6081-4f8d-b166-25c7b8edbfca
+2024-08-27 18:43:10,817 - xyz - WARNING - Order 240827001381975 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:51:13,960 - xyz - INFO - Order placement response: 240827101650413
+2024-08-27 18:51:14,104 - xyz - INFO - Retrieved uniqueorderid: 7617bb74-b380-48a6-a735-3edde30b11f6
+2024-08-27 18:51:14,104 - xyz - WARNING - Order 240827101650413 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:51:14,958 - xyz - INFO - Order placement response: 240827101483726
+2024-08-27 18:51:15,129 - xyz - INFO - Retrieved uniqueorderid: f1e06922-33a2-4ae7-b6a7-5e646bd46c86
+2024-08-27 18:51:15,134 - xyz - WARNING - Order 240827101483726 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:51:16,121 - xyz - INFO - Order placement response: 240827001094781
+2024-08-27 18:51:16,340 - xyz - INFO - Retrieved uniqueorderid: c96ad254-ac2b-47d7-a08c-4e6f09287fb6
+2024-08-27 18:51:16,340 - xyz - WARNING - Order 240827001094781 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:51:17,307 - xyz - INFO - Order placement response: 240827101586529
+2024-08-27 18:51:17,562 - xyz - INFO - Retrieved uniqueorderid: f6d195e7-cdaf-41f7-8807-8b48fbc61bd0
+2024-08-27 18:51:17,562 - xyz - WARNING - Order 240827101586529 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:51:18,573 - xyz - INFO - Order placement response: 240827101650426
+2024-08-27 18:51:18,704 - xyz - INFO - Retrieved uniqueorderid: f2dbd994-9f23-48ca-a193-1033f33bdb43
+2024-08-27 18:51:18,705 - xyz - WARNING - Order 240827101650426 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:51:19,981 - xyz - INFO - Order placement response: 240827001094793
+2024-08-27 18:51:20,232 - xyz - INFO - Retrieved uniqueorderid: 1e1be8af-fb22-4515-bc02-991018374380
+2024-08-27 18:51:20,232 - xyz - WARNING - Order 240827001094793 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:51:21,247 - xyz - INFO - Order placement response: 240827001382997
+2024-08-27 18:51:21,469 - xyz - INFO - Retrieved uniqueorderid: c24d8d4d-7a3c-47e4-87d1-970e6b094ec9
+2024-08-27 18:51:21,469 - xyz - WARNING - Order 240827001382997 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:54:18,143 - xyz - INFO - Order placement response: 240827101650704
+2024-08-27 18:54:18,316 - xyz - INFO - Retrieved uniqueorderid: 67d0055e-ef8c-4f5e-8b6c-79516409a7d0
+2024-08-27 18:54:18,319 - xyz - WARNING - Order 240827101650704 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:54:19,262 - xyz - INFO - Order placement response: 240827101483970
+2024-08-27 18:54:19,439 - xyz - INFO - Retrieved uniqueorderid: 99254331-ecd2-4266-8adf-40fc29e9fd69
+2024-08-27 18:54:19,441 - xyz - WARNING - Order 240827101483970 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:54:20,704 - xyz - INFO - Order placement response: 240827001095149
+2024-08-27 18:54:20,977 - xyz - INFO - Retrieved uniqueorderid: b4e0dad6-4d27-41a1-84df-e80c0c721764
+2024-08-27 18:54:20,977 - xyz - WARNING - Order 240827001095149 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:54:22,082 - xyz - INFO - Order placement response: 240827101586879
+2024-08-27 18:54:22,389 - xyz - INFO - Retrieved uniqueorderid: 533bc91b-43e1-4458-9dd3-419f336485e9
+2024-08-27 18:54:22,389 - xyz - WARNING - Order 240827101586879 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:54:23,598 - xyz - INFO - Order placement response: 240827101650709
+2024-08-27 18:54:23,748 - xyz - INFO - Retrieved uniqueorderid: c12d1cc6-2484-4966-9780-886c348d30f1
+2024-08-27 18:54:23,749 - xyz - WARNING - Order 240827101650709 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:54:24,886 - xyz - INFO - Order placement response: 240827001095162
+2024-08-27 18:54:25,098 - xyz - INFO - Retrieved uniqueorderid: 1f517c1f-2e7b-470a-8fb0-fcfecd9c7482
+2024-08-27 18:54:25,098 - xyz - WARNING - Order 240827001095162 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:54:26,290 - xyz - INFO - Order placement response: 240827001383308
+2024-08-27 18:54:26,620 - xyz - INFO - Retrieved uniqueorderid: 9e36907a-0a34-4300-bbbb-9842dcc744fc
+2024-08-27 18:54:26,622 - xyz - WARNING - Order 240827001383308 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:55:15,162 - xyz - INFO - Order placement response: 240827101650778
+2024-08-27 18:55:15,310 - xyz - INFO - Retrieved uniqueorderid: 512e2514-d97a-40fb-9fa8-309cfa30de28
+2024-08-27 18:55:15,310 - xyz - WARNING - Order 240827101650778 was rejected. Reason: The connection to the exchange server is currently unavailable.
+2024-08-27 18:55:15,451 - xyz - INFO - Skipping user aruna shinde as only_teacher_execute is True and this is not the teacher
+2024-08-27 18:55:15,452 - xyz - INFO - Skipping user Prasanna Deshmukh as only_teacher_execute is True and this is not the teacher
+2024-08-27 18:55:15,453 - xyz - INFO - Skipping user Viraj Kadam as only_teacher_execute is True and this is not the teacher
+2024-08-27 18:55:15,453 - xyz - INFO - Skipping user Pramod Kale as only_teacher_execute is True and this is not the teacher
+2024-08-27 18:55:15,453 - xyz - INFO - Skipping user Prachi Jadhav as only_teacher_execute is True and this is not the teacher
+2024-08-27 18:55:15,454 - xyz - INFO - Skipping user Vaibhav Taware as only_teacher_execute is True and this is not the teacher
+2024-08-28 00:02:45,297 - xyz - ERROR - Error in exit_all_student_pending: (pymysql.err.OperationalError) (2006, "MySQL server has gone away (TimeoutError(110, 'Connection timed out'))")
+[SQL: SELECT user.user_id AS user_user_id, user.name AS user_name, user.teacher_id AS user_teacher_id, user.broker_conn_status AS user_broker_conn_status, user.is_active AS user_is_active, user.trade_status AS user_trade_status, user.lot_size_limit AS user_lot_size_limit, user.broker AS user_broker 
+FROM user 
+WHERE (user.user_id = %(user_id_1)s OR user.teacher_id = %(teacher_id_1)s) AND user.broker_conn_status = %(broker_conn_status_1)s AND user.is_active = %(is_active_1)s AND user.trade_status = %(trade_status_1)s]
+[parameters: {'user_id_1': 157, 'teacher_id_1': 157, 'broker_conn_status_1': 1, 'is_active_1': 1, 'trade_status_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
