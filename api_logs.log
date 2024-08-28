@@ -143,3 +143,8 @@ FROM user
 WHERE (user.user_id = %(user_id_1)s OR user.teacher_id = %(teacher_id_1)s) AND user.broker_conn_status = %(broker_conn_status_1)s AND user.is_active = %(is_active_1)s AND user.trade_status = %(trade_status_1)s]
 [parameters: {'user_id_1': 157, 'teacher_id_1': 157, 'broker_conn_status_1': 1, 'is_active_1': 1, 'trade_status_1': 1}]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
+
+
+
+
+
