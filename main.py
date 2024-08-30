@@ -293,7 +293,7 @@ async def execute_orders_api(request: ExecuteOrdersRequest, db: Session = Depend
                 "orders": user_results
             })
 
-        return {"status": "success", "results": results}
+        return {"st": 1, "results": results, "msg": "Order Placed Successfully"}
     except Exception as e:
         logger.error(f"Error in execute_orders_api: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal server error")
@@ -421,7 +421,7 @@ async def exit_all_student_pending(request: ExitPendingRequest, db: Session = De
             user_result = await process_student_pending_orders(user, trades, db)
             results.append(user_result)
 
-        return {"status": "success", "results": results}
+        return {"st": 1, "results": results, "msg":"Exit Order placed on accounts"}
     except Exception as e:
         logger.error(f"Error in exit_all_student_pending: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal server error")
@@ -448,7 +448,7 @@ async def exit_student_instrument(request: ExitStudentInstrumentRequest, db: Ses
         raise HTTPException(status_code=404, detail="Trade not found")
 
     result = await process_student_pending_orders(user, [trade], db)
-    return result
+    return {"st": 1, "results": result, "msg":"Exit Order placed on accounts"}
 
 #exit_students_all_instruments
 @app.post("/exit_students_all_instrument/")
@@ -459,7 +459,7 @@ async def exit_students_all_instrument(request: ExitStudentAllInstrumentsRequest
 
     trades = db.query(TradeBookLive).filter(TradeBookLive.user_id == user.user_id).all()
     result = await process_student_pending_orders(user, trades, db)
-    return result
+    return {"st": 1, "results": result, "msg":"All Exit placed successfully"}
 
 #exit_position
 @app.post("/exit_position/")
@@ -486,4 +486,4 @@ async def exit_position(request: ExitPositionRequest, db: Session = Depends(get_
                 user_results.append(result)
         results.append({"user_id": user.user_id, "results": user_results})
 
-    return {"status": "success", "results": results}
+    return {"st": 1, "results": result, "msg":"Exit Order placed on accounts"}
