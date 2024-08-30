@@ -1,3 +1,4 @@
+#required imports 
 from fastapi import FastAPI, HTTPException, Depends
 from pydantic import BaseModel
 from sqlalchemy import create_engine, Column, Integer, String, Float, DateTime, ForeignKey
@@ -11,8 +12,9 @@ import pyotp
 from SmartApi import SmartConnect
 from sqlalchemy.orm import Session
 import time
+from fastapi.middleware.cors import CORSMiddleware
 
-
+#loggersettings
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 file_handler = logging.FileHandler('api_logs.log')
@@ -21,14 +23,25 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 file_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 
+#fastapi declaration
 app = FastAPI()
 
+#corsmiddleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://autoprofito.com"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+#Database connection settings
 DATABASE_URL = "mysql+pymysql://root:MahitNahi%4012@172.105.61.104/stocksync"
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-
+#pydantic models for fastapi module
 class User(Base):
     __tablename__ = "user"
     user_id = Column(Integer, primary_key=True)
