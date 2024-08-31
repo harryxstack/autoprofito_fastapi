@@ -13,6 +13,7 @@ from SmartApi import SmartConnect
 from sqlalchemy.orm import Session
 import time
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.exc import SQLAlchemyError
 
 #loggersettings
 logging.basicConfig(level=logging.INFO)
@@ -108,9 +109,13 @@ class ExecuteOrdersRequest(BaseModel):
 class ExitPendingRequest(BaseModel):
     teacher_id: int
 
+class InstrumentData(BaseModel):
+    tradingsymbol: str
+    symboltoken: str
+
 class ExitStudentInstrumentRequest(BaseModel):
     student_id: int
-    instrument_data: Dict[str, str]
+    instrument_data: InstrumentData
 
 class ExitStudentAllInstrumentsRequest(BaseModel):
     student_id: int
@@ -429,26 +434,35 @@ async def exit_all_student_pending(request: ExitPendingRequest, db: Session = De
 #exit_student_instrument
 @app.post("/exit_student_instrument/")
 async def exit_student_instrument(request: ExitStudentInstrumentRequest, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.user_id == request.student_id).first()
-    for user in user:
+    try:
+        user = db.query(User).filter(User.user_id == request.student_id).first()
+        
+        if not user:
+            raise HTTPException(status_code=404, detail="User not found")
+        
         if user.broker != "angle_one":
             logger.info(f"Skipping user {user.name} as their broker is not 'angle_one'")
-            continue
+            return {"st": 0, "msg": "User's broker is not 'angle_one'"}
+        
+        trade = db.query(TradeBookLive).filter(
+            TradeBookLive.user_id == user.user_id,
+            TradeBookLive.stock_symbol == request.instrument_data.tradingsymbol,
+            TradeBookLive.stock_token == request.instrument_data.symboltoken
+        ).first()
+        
+        if not trade:
+            raise HTTPException(status_code=404, detail="Trade not found")
+        
+        result = await process_student_pending_orders(user, [trade], db)
+        return {"st": 1, "results": result, "msg": "Exit Order placed on accounts"}
+    
+    except SQLAlchemyError as e:
+        logger.error(f"Database error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+    except Exception as e:
+        logger.error(f"Unexpected error: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal server error")
 
-    if not user:
-        raise HTTPException(status_code=404, detail="User not found")
-
-    trade = db.query(TradeBookLive).filter(
-        TradeBookLive.user_id == user.user_id,
-        TradeBookLive.stock_symbol == request.instrument_data['tradingsymbol'],
-        TradeBookLive.stock_token == request.instrument_data['symboltoken']
-    ).first()
-
-    if not trade:
-        raise HTTPException(status_code=404, detail="Trade not found")
-
-    result = await process_student_pending_orders(user, [trade], db)
-    return {"st": 1, "results": result, "msg":"Exit Order placed on accounts"}
 
 #exit_students_all_instruments
 @app.post("/exit_students_all_instrument/")
