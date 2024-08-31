@@ -14,6 +14,7 @@ from sqlalchemy.orm import Session
 import time
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.exc import SQLAlchemyError
+from fastapi.responses import JSONResponse
 
 #loggersettings
 logging.basicConfig(level=logging.INFO)
@@ -273,7 +274,13 @@ async def execute_orders_api(request: ExecuteOrdersRequest, db: Session = Depend
     try:
         users = await fetch_users(db, request.teacher_id)
         if not users:
-            raise HTTPException(status_code=404, detail="No active users found")
+            return JSONResponse(
+                status_code=404,
+                content={
+                    "st": 2,
+                    "msg": "User data not found"
+                }
+            )
 
         results = []
         for user in users:
@@ -415,7 +422,13 @@ async def exit_all_student_pending(request: ExitPendingRequest, db: Session = De
                 continue
 
         if not users:
-            raise HTTPException(status_code=404, detail="No active users found")
+            return JSONResponse(
+                            status_code=404,
+                            content={
+                                "st": 2,
+                                "msg": "User data not found"
+                            }
+                        )
 
         results = []
         for user in users:
@@ -438,7 +451,13 @@ async def exit_student_instrument(request: ExitStudentInstrumentRequest, db: Ses
         user = db.query(User).filter(User.user_id == request.student_id).first()
         
         if not user:
-            raise HTTPException(status_code=404, detail="User not found")
+            return JSONResponse(
+                status_code=404,
+                content={
+                    "st": 2,
+                    "msg": "User data not found"
+                }
+            )
         
         if user.broker != "angle_one":
             logger.info(f"Skipping user {user.name} as their broker is not 'angle_one'")
@@ -468,8 +487,15 @@ async def exit_student_instrument(request: ExitStudentInstrumentRequest, db: Ses
 @app.post("/exit_students_all_instrument/")
 async def exit_students_all_instrument(request: ExitStudentAllInstrumentsRequest, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.user_id == request.student_id).first()
+    
     if not user:
-        raise HTTPException(status_code=404, detail="User not found")
+        return JSONResponse(
+                status_code=404,
+                content={
+                    "st": 2,
+                    "msg": "User data not found"
+                }
+            )
 
     trades = db.query(TradeBookLive).filter(TradeBookLive.user_id == user.user_id).all()
     result = await process_student_pending_orders(user, trades, db)
@@ -480,7 +506,13 @@ async def exit_students_all_instrument(request: ExitStudentAllInstrumentsRequest
 async def exit_position(request: ExitPositionRequest, db: Session = Depends(get_db)):
     users = await fetch_users(db, request.teacher_id)
     if not users:
-        raise HTTPException(status_code=404, detail="No active users found")
+        return JSONResponse(
+                    status_code=404,
+                    content={
+                        "st": 2,
+                        "msg": "User data not found"
+                    }
+                )
 
     results = []
     for user in users:

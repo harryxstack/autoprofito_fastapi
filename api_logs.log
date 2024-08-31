@@ -1,4 +1,0 @@
-2024-09-01 01:01:13,815 - main - INFO - Order placement response: 240901000000026
-2024-09-01 01:01:13,990 - main - INFO - Retrieved uniqueorderid: 7842b4e5-6af7-4ea0-acd5-149d645ed372
-2024-09-01 01:01:13,990 - main - WARNING - Order 240901000000026 was rejected. Reason: RMS:Field Not Found 63002
-2024-09-01 01:01:14,212 - main - INFO - Session terminated for user 441
