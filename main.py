@@ -177,7 +177,11 @@ async def place_order(user, order_data, db):
     obj = SmartConnect(api_key=broker_credentials.api_key)
 
     try:
-        data = obj.generateSession(broker_credentials.client_id, broker_credentials.password, pyotp.TOTP(broker_credentials.qr_totp_token).now())
+        data = obj.generateSession(
+            broker_credentials.client_id,
+            broker_credentials.password,
+            pyotp.TOTP(broker_credentials.qr_totp_token).now()
+        )
         if data["message"] != "SUCCESS":
             logger.error(f"Failed to generate session for user {user.user_id}")
             return False
@@ -205,61 +209,59 @@ async def place_order(user, order_data, db):
             "quantity": str(quantity)
         }
 
-        for attempt in range(5):  # Retry up to 5 times
-            try:
-                response = obj.placeOrder(order_params)
-                logger.info(f"Order placement response: {response}")
+        try:
+            response = obj.placeOrder(order_params)
+            logger.info(f"Order placement response: {response}")
 
-                if isinstance(response, str):  # Response is a string
-                    order_id = response
+            if isinstance(response, str):  # Response is a string
+                order_id = response
 
-                    # Fetch the order details
-                    order_details = await fetch_order_details(obj, order_id)
-                    if order_details:
-                        uniqueorderid = order_details.get('uniqueorderid')
-                        order_status = order_details.get('status', 'unknown')  # Ensure default value
-                        
-                        if uniqueorderid:
-                            logger.info(f"Retrieved uniqueorderid: {uniqueorderid}")
-                        if order_status == 'rejected':
-                            rejection_reason = order_details.get('text', 'No reason provided')
-                            logger.warning(f"Order {order_id} was rejected. Reason: {rejection_reason}")
-                            return False
+                # Fetch the order details
+                order_details = await fetch_order_details(obj, order_id)
+                if order_details:
+                    uniqueorderid = order_details.get('uniqueorderid')
+                    order_status = order_details.get('status', 'unknown')  # Ensure default value
 
-                        try:
-                            new_trade = TradeBookLive(
-                                user_id=user.user_id,
-                                stock_symbol=order_data.instrument,
-                                stock_token=instrument.token,
-                                stock_quantity=quantity,
-                                price=ltp,
-                                orderid=order_id,
-                                transactiontype=order_data.transactionType,
-                                exchange=order_data.exchange,
-                                ordertype=order_data.orderType,
-                                producttype=order_data.productType,
-                                duration="DAY",
-                                datetime=datetime.now(),
-                                uniqueorderid=uniqueorderid,
-                                lot_size=user.lot_size_limit
-                            )
-                            db.add(new_trade)
-                            db.commit()
-                            logger.info(f"Trade recorded successfully for order ID {order_id}")
-                            return True
-                        except Exception as e:
-                            logger.error(f"Error saving trade details: {str(e)}")
-                            return False
-                    else:
-                        logger.error(f"Order details not found for order ID {order_id}")
+                    if uniqueorderid:
+                        logger.info(f"Retrieved uniqueorderid: {uniqueorderid}")
+                    if order_status == 'rejected':
+                        rejection_reason = order_details.get('text', 'No reason provided')
+                        logger.warning(f"Order {order_id} was rejected. Reason: {rejection_reason}")
+                        return False
+
+                    try:
+                        new_trade = TradeBookLive(
+                            user_id=user.user_id,
+                            stock_symbol=order_data.instrument,
+                            stock_token=instrument.token,
+                            stock_quantity=quantity,
+                            price=ltp,
+                            orderid=order_id,
+                            transactiontype=order_data.transactionType,
+                            exchange=order_data.exchange,
+                            ordertype=order_data.orderType,
+                            producttype=order_data.productType,
+                            duration="DAY",
+                            datetime=datetime.now(),
+                            uniqueorderid=uniqueorderid,
+                            lot_size=user.lot_size_limit
+                        )
+                        db.add(new_trade)
+                        db.commit()
+                        logger.info(f"Trade recorded successfully for order ID {order_id}")
+                        return True
+                    except Exception as e:
+                        logger.error(f"Error saving trade details: {str(e)}")
                         return False
                 else:
-                    logger.error(f"Unexpected response format: {response}")
+                    logger.error(f"Order details not found for order ID {order_id}")
                     return False
-            except Exception as e:
-                logger.error(f"Exception in place_order on attempt {attempt + 1}: {str(e)}")
-                time.sleep(2 ** attempt)
-        return False
+            else:
+                logger.error(f"Unexpected response format: {response}")
+                return False
+        except Exception as e:
+            logger.error(f"Exception in place_order: {str(e)}")
+            return False
     except Exception as e:
         logger.error(f"Exception in place_order: {str(e)}")
         return False
@@ -287,13 +289,13 @@ async def execute_orders_api(request: ExecuteOrdersRequest, db: Session = Depend
             if user.broker != "angle_one":
                 logger.info(f"Skipping user {user.name} as their broker is not 'angle_one'")
                 continue
-            
+
             user_results = []
             for order in request.order_data:
                 if request.only_teacher_execute and user.user_id != request.teacher_id:
                     logger.info(f"Skipping user {user.name} as only_teacher_execute is True and this is not the teacher")
                     continue
-                
+
                 success = await place_order(user, order, db)
                 user_results.append({
                     "instrument": order.instrument,
@@ -309,6 +311,7 @@ async def execute_orders_api(request: ExecuteOrdersRequest, db: Session = Depend
     except Exception as e:
         logger.error(f"Error in execute_orders_api: {str(e)}")
         raise HTTPException(status_code=500, detail="Internal server error")
+
 
 
 async def process_student_pending_orders(user, trades, db):
