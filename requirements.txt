@@ -1,0 +1,6 @@
+fastapi==0.99.0
+pydantic==2.2.1
+mysql-connector-python==8.0.33
+pyotp==2.8.0
+smartapi-python==1.0.1  # Replace with the actual version if needed
+logging==0.5.1.2
