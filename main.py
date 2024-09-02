@@ -39,7 +39,7 @@ app.add_middleware(
 
 #Database connection settings
 DATABASE_URL = "mysql+pymysql://root:MahitNahi%4012@172.105.61.104/stocksync"
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, pool_pre_ping=True, pool_recycle=3600,  pool_size=10, max_overflow=20, pool_timeout=30)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
